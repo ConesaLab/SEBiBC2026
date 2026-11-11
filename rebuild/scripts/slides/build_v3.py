@@ -106,10 +106,15 @@ def title_slide(out, pick_no):
     sheet_qr(p, 1163.5, 229, 142)
     text(p, 1234.5, 413.3, [("Marking sheet", "Bold")], 15.2, STRONG, align="center")
     wipe(p, (890, 448, 1345, 566), WHITE)
+    if MATERIALS:                                                  # the card grows by one paragraph; 873, 1368 and 12 are the original card's edges and corner radius
+        box(p, (873, 540, 1368, 642.5), fill=WHITE, radius=12)
     text(p, 898, 468.0, [("Pick a paper:", "Bold", ORANGE_INK), (" six published datasets, already", "Regular")], 17.8, STRONG)
     text(p, 898, 493.0, "run on paintomics.org. They are on slide %d." % pick_no, 17.8, STRONG)
     text(p, 898, 528.5, [("Then mark:", "Bold", ORANGE_INK), (" in the marking sheet, give each", "Regular")], 17.8, STRONG)
     text(p, 898, 554.5, "statement the AI wrote one of four marks.", 17.8, STRONG)
+    if MATERIALS:                                                  # for people on a laptop: an address short enough to type
+        text(p, 898, 590.0, [("On a laptop:", "Bold", ORANGE_INK), (" " + D.bare(MATERIALS), "SemiBold")], 17.8, STRONG)
+        text(p, 898, 616.0, "the marking sheet is linked at the top of that page.", 17.8, STRONG)
 
 
 def can_cannot(out):
@@ -251,10 +256,13 @@ def your_turn(out, pick_no):
     p = D.blank_content(out, like=29, title="Your turn")
     text(p, 1232, 65, [("until 10:47", "Bold")], 18, ORANGE_INK, align="right")
     card(p, L, 118, 452, 566)
-    sheet_qr(p, L + 60, 160, 260)
-    text(p, L + 190, 470, [("The marking sheet", "Bold")], 19, STRONG, align="center")
-    text(p, L + 190, 496, "one tab per paper, every statement on it", 15, MUTED, align="center")
-    text(p, L + 190, 520, "no account needed", 15, MUTED, align="center")
+    up = 6 if MATERIALS else 0                                     # the code and its lines move up to make room for one more line
+    sheet_qr(p, L + 60, 160 - up, 260)
+    text(p, L + 190, 470 - up, [("The marking sheet", "Bold")], 19, STRONG, align="center")
+    text(p, L + 190, 496 - up, "one tab per paper, every statement on it", 15, MUTED, align="center")
+    text(p, L + 190, 520 - up, "no account needed", 15, MUTED, align="center")
+    if MATERIALS:                                                  # the address to type, for people who cannot scan
+        text(p, L + 190, 544 - up, [("on a laptop: ", "Regular"), (D.bare(MATERIALS), "SemiBold", TEAL_DARK)], 15, MUTED, align="center")
     steps = [("Pick a paper", "six papers, A to F: slide %d" % pick_no),
              ("Open the marking sheet and go to your paper's tab", "every statement the AI wrote about that paper's data is listed there"),
              ("Take the first free Rater column", "your initials or a nickname go in its yellow cell"),

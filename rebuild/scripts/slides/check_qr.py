@@ -83,4 +83,13 @@ else:
         failed = True
     else:
         print("RESULT: ok. The materials code is on slide%s %s and leads to" % ("s" if len(MATERIALS_SLIDES) > 1 else "", names(MATERIALS_SLIDES)), materials)
+TEXT_SLIDES = MAP.get("materials_text_slides", [])                  # slides that print the materials address, for people who type it
+if materials and TEXT_SLIDES:
+    typed, pages = materials.split("://", 1)[-1], pymupdf.open(DECK)
+    missing = [i for i in TEXT_SLIDES if typed not in pages[i - 1].get_text()]
+    if missing:
+        print("RESULT: PROBLEM. The address to type, %s, is not printed on slide(s) %s." % (typed, ", ".join(map(str, missing))))
+        failed = True
+    else:
+        print("RESULT: ok. The address to type, %s, is printed on slides %s." % (typed, names(TEXT_SLIDES)))
 sys.exit(1 if failed else 0)

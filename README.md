@@ -4,6 +4,10 @@ Slides, handout and marking sheet of the workshop **"AI models to interpret syst
 SEBiBC 2026, Toledo, Friday 13 November 2026, 10:00 to 11:00.
 Tianyuan Liu and Ana Conesa, I²SysBio (CSIC–Universitat de València). Chair: Ana Rojas.
 
+**In the room? [Open the marking sheet](https://docs.google.com/spreadsheets/d/1iW8rkhe8KT5AWozriMbvSKxYZA8Xa6lObqIG04MJPTw/edit?usp=sharing).**
+It is a shared Google Sheet and needs no account. The six papers and their job pages are in the table under
+[The practice](#the-practice), and the slides are [here](SEBiBC26_TELLME_PaintOmicsAI_v5.pdf).
+
 [PaintOmics](https://paintomics.org) paints multi-omics data on pathways (KEGG, Reactome, MapMan, OmniPath).
 PaintOmics AI, built in the ELIXIR project TELLME, then reads the result: AI agents walk the pathway network with
 your values on it and write an interpretation as numbered statements, each with the data and the papers behind it.

@@ -106,7 +106,8 @@ def build():
     out.save(OUT, garbage=3, deflate=True)
     deck_map = {"deck": NAME, "slides": len(seq), "pick_a_paper": pick_no,
                 "sheet_qr_slides": [1, where("your_turn"), where(V3.room_found), where(V3.thank_you)],
-                "materials_qr_slides": [where(V3.thank_you)] if V3.MATERIALS else []}
+                "materials_qr_slides": [where(V3.thank_you)] if V3.MATERIALS else [],
+                "materials_text_slides": [1, where("your_turn"), where(V3.thank_you)] if V3.MATERIALS else []}   # where its address is printed, to type
     (D.ROOT / "slides" / "deck_map.json").write_text(json.dumps(deck_map, indent=1) + "\n")
     return log, deck_map
 
