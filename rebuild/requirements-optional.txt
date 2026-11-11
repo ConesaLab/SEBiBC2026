@@ -1,0 +1,3 @@
+# only used to choose QR codes that two decoders read, and to read them back after a build
+opencv-python-headless
+zxing-cpp

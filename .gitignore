@@ -1,0 +1,16 @@
+# private notes: the to-do list of the people giving the workshop
+todo.md
+
+# the earlier version of the slides that the build draws on (it has slides that were taken out of the talk)
+rebuild/docs/
+
+# made by rebuild.sh
+rebuild/.venv/
+rebuild/slides/work/
+rebuild/slides/assets/qr/
+rebuild/slides/*.pdf
+rebuild/slides/*.html
+__pycache__/
+*.pyc
+
+.DS_Store

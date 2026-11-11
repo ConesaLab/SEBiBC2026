@@ -1,0 +1,350 @@
+[
+ {
+  "id": "hernandez2017_c5ar1_microglia",
+  "short": "Hernandez 2017",
+  "topic": "Does deleting the C5a receptor change microglia in an Alzheimer's model?",
+  "system": "Mouse \u00b7 microglia \u00b7 Arctic model \u00d7 C5ar1 knockout \u00b7 2, 5, 7, 10 months",
+  "omics": "Gene expression (RNA-seq time course)",
+  "used_paintomics": "PaintOmics 3: KEGG enrichment of each of nine time-course gene clusters (Additional file 7), used to choose the genes of Figs. 5 and 6.",
+  "conclusions": [
+   "Inflammatory genes (NF-kappa B, cytokine-cytokine receptor, Toll-like receptor and chemokine signalling) rise in Arctic microglia from 5 months and stay lower when C5ar1 is deleted.",
+   "Phagosome, lysosome and antigen-presentation genes are increased in Arctic microglia and increased further in Arctic/C5aR1KO, from as early as 2 months.",
+   "Deleting C5ar1 prevents the spatial-memory deficit and the loss of neuronal complexity at 10 months without changing plaque load (behaviour and histology, not in the omics)."
+  ],
+  "journal": "Mol Neurodegener",
+  "tag": "Mouse \u00b7 gene expression, 4 ages \u00d7 3 contrasts",
+  "jobID": "7NHQTK7rWz",
+  "url": "https://paintomics.org/?jobID=7NHQTK7rWz",
+  "organism": "mmu",
+  "doi": "10.1186/s13024-017-0210-z",
+  "pmcid": "PMC5604420",
+  "citation": "Hernandez MX, Jiang S, Cole TA, Chu SH, Fonseca MI, Fang MJ, Hohsfield LA, Torres MD, Green KN, Wetsel RA, Mortazavi A, Tenner AJ. Prevention of C5aR1 signaling delays microglial inflammatory polarization, favors clearance pathways and suppresses cognitive loss. Mol Neurodegener. 2017;12(1):66.",
+  "job_name": "Hernandez 2017 - C5aR1 knockout in Arctic Alzheimer's mouse microglia, RNA-seq time course",
+  "ai_status": "done",
+  "held_back": false,
+  "gates": {
+   "anchor": "pass",
+   "artifact": "pass",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {},
+  "ai_title": "The whole network: what changed after App induction",
+  "statements": 8,
+  "legs": 81,
+  "papers_cited": 9,
+  "omic_names": [
+   "Gene expression"
+  ],
+  "featured": true,
+  "letter": "A"
+ },
+ {
+  "id": "wang2019_hnf4a_hpsc",
+  "short": "Wang 2019",
+  "journal": "iScience",
+  "topic": "What does HNF4\u03b1 need to make hepatocytes? Two edited mutants",
+  "system": "Human \u00b7 stem-cell-derived hepatic progenitors (day 9) \u00b7 HNF4A DNA-binding-domain deletion and SUMO-site mutant vs wild type",
+  "omics": "Gene expression + proteomics",
+  "tag": "Human \u00b7 gene expression + proteomics, 2 mutants vs wild type",
+  "used_paintomics": "PaintOmics 3: joint transcriptome + proteome KEGG enrichment of each mutant (section \"Integrating Transcriptomics and Proteomics Datasets\", Fig. 6A).",
+  "conclusions": [
+   "HNF4\u03b1 without its DNA-binding domain cannot specify hepatic progenitors; the SUMO-site point mutant makes progenitors but fails to form functional hepatocytes (phenotype, not in the omics).",
+   "Both mutants share dysregulated genes and proteins in cholesterol/lipid metabolism and cell-matrix interaction: cholesterol metabolism is the top KEGG pathway in the DBD mutant, and five of its top-10 pathways (cholesterol metabolism, complement and coagulation, ECM-receptor interaction, focal adhesion, cell adhesion molecules) are shared with the SUMO mutant.",
+   "The DBD mutant also loses mitochondrial proteins: subunits of respiratory-chain complexes I to V are down (proteomics)."
+  ],
+  "jobID": "Y6n7275a0Z",
+  "url": "https://paintomics.org/?jobID=Y6n7275a0Z",
+  "organism": "hsa",
+  "doi": "10.1016/j.isci.2019.05.028",
+  "pmcid": "PMC6556878",
+  "citation": "Wang Y, Tatham MH, Schmidt-Heck W, Swann C, Singh-Dolt K, Meseguer-Ripolles J, Lucendo-Villarin B, Kunath T, Rudd TR, Smith AJH, Hengstler JG, Godoy P, Hay RT, Hay DC. Multiomics Analyses of HNF4alpha Protein Domain Function during Human Pluripotent Stem Cell Differentiation. iScience. 2019;16:206-217.",
+  "job_name": "Wang 2019 - HNF4A DBD and SUMO-site mutant hPSC hepatic progenitors (transcriptome + proteome)",
+  "ai_status": "done",
+  "held_back": false,
+  "gates": {
+   "anchor": "pass",
+   "artifact": "pass",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {},
+  "ai_title": "HNF4A DBD-specific collapse of the hepatic secretory and adhesion programmes in HNF1A-perturbed hepatic progenitors",
+  "statements": 8,
+  "legs": 55,
+  "papers_cited": 11,
+  "omic_names": [
+   "Gene expression",
+   "Proteomics"
+  ],
+  "featured": true,
+  "letter": "B"
+ },
+ {
+  "id": "jimenez2021_hbmec_lbp",
+  "short": "Jim\u00e9nez-Mungu\u00eda 2021",
+  "journal": "Sci Rep",
+  "topic": "How do brain endothelial cells respond to pneumococcus and to its adhesin alone?",
+  "system": "Human \u00b7 brain microvascular endothelial cells \u00b7 live S. pneumoniae or its adhesion protein Lbp vs untreated cells",
+  "omics": "Gene expression (RNA-seq)",
+  "tag": "Human \u00b7 gene expression, 2 treatments vs control",
+  "used_paintomics": "PaintOmics: KEGG pathways and molecular functions of the genes responding to both treatments (Table 4, Fig. 2A, Suppl. dataset 1.8).",
+  "conclusions": [
+   "The adhesin alone reproduces much of the response to the live bacterium: 350 genes change after S. pneumoniae and 443 after Lbp, 231 of them in both.",
+   "The shared response is inflammatory signalling: the common genes take part in cytokine and chemokine signalling, TNF signalling and phagosome formation.",
+   "Lbp additionally induces cell senescence and breakdown, and remodelling of the extracellular matrix (Reactome analysis)."
+  ],
+  "jobID": "2Dh754YEIO",
+  "url": "https://paintomics.org/?jobID=2Dh754YEIO",
+  "organism": "hsa",
+  "doi": "10.1038/s41598-021-87021-4",
+  "pmcid": "PMC8041795",
+  "citation": "Jim\u00e9nez-Mungu\u00eda I, Tome\u010dkov\u00e1 Z, Mochn\u00e1\u010dov\u00e1 E, Bhide K, Majerov\u00e1 P, Bhide M. Transcriptomic analysis of human brain microvascular endothelial cells exposed to laminin binding protein (adhesion lipoprotein) and Streptococcus pneumoniae. Sci Rep 11:7970 (2021).",
+  "job_name": "Jimenez-Munguia 2021 - Brain endothelial cells exposed to S. pneumoniae or its adhesin Lbp (RNA-seq)",
+  "ai_status": "done",
+  "held_back": false,
+  "gates": {
+   "anchor": "n/a",
+   "artifact": "pass",
+   "context": "pass",
+   "direction": "pass",
+   "title": "pass"
+  },
+  "failed_why": {},
+  "ai_title": "Transcriptional responses of human brain microvascular endothelial cells to Streptococcus pneumoniae and its lactoferrin-binding protein",
+  "statements": 16,
+  "legs": 61,
+  "papers_cited": 16,
+  "omic_names": [
+   "Gene expression"
+  ],
+  "featured": true,
+  "letter": "C"
+ },
+ {
+  "id": "balzano2021_teddy",
+  "short": "Balzano-Nogueira 2021",
+  "journal": "Genome Biol",
+  "topic": "What changes in blood in the year before islet autoimmunity?",
+  "system": "Human \u00b7 TEDDY birth cohort \u00b7 children who later develop islet autoantibodies vs matched controls \u00b7 12, 9, 6, 3 and 0 months before seroconversion",
+  "omics": "Gene expression + metabolomics (with lipid classes)",
+  "tag": "Human \u00b7 gene expression + metabolomics, 5 time windows",
+  "used_paintomics": "PaintOmics 3: the predictive signature projected onto KEGG pathway maps, from which the metabolic and immune models of Figs. 5 and 6 were drawn.",
+  "conclusions": [
+   "A multi-omics signature (862 genes, 245 metabolites, 3 dietary biomarkers) separates children who will develop islet autoimmunity from matched controls up to 12 months before seroconversion; the 12- and 9-month windows carry most of the information.",
+   "Cases show a sustained metabolic phenotype: impaired lipid metabolism (structural lipids and the APOA1/PPAR\u03b1 axis down) with glycolysis, TCA cycle and oxidative phosphorylation up, leading to accumulation of reactive oxygen species.",
+   "That state is linked to inflammation and immune activation before any autoantibody appears: arachidonate metabolism, early TNF\u03b1, antigen presentation, low IL10/TGF\u03b2, matrix remodelling and cytotoxicity genes."
+  ],
+  "note": "Ana Conesa is the senior author.",
+  "jobID": "560S3O473C",
+  "url": "https://paintomics.org/?jobID=560S3O473C",
+  "organism": "hsa",
+  "doi": "10.1186/s13059-021-02262-w",
+  "pmcid": "PMC7818777",
+  "citation": "Balzano-Nogueira L, Ramirez R, Zamkovaya T, et al. Integrative analyses of TEDDY Omics data reveal lipid metabolism abnormalities, increased intracellular ROS and heightened inflammation prior to autoimmunity for type 1 diabetes. Genome Biol 22:39 (2021).",
+  "job_name": "Balzano-Nogueira 2021 - TEDDY: blood transcriptome + plasma metabolome before islet autoimmunity",
+  "ai_status": "done",
+  "held_back": true,
+  "gates": {
+   "anchor": "n/a",
+   "artifact": "FAIL",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {
+   "artifact": "the check's walker, which steps only from relevant feature to relevant feature, found 0 modules on the data and 2.4 on shuffled (permuted) data on average (p = 1.00), with seeds hotter than on shuffled data (p = 0.02), which counts only with at least two modules: it could not tell this data from shuffled data on this graph. Of 12,183 measured features, 518 are relevant; 148 pairs of them are adjacent, 156.1 expected by chance (p = 0.57)"
+  },
+  "ai_title": "Results",
+  "statements": 14,
+  "legs": 62,
+  "papers_cited": 22,
+  "omic_names": [
+   "Gene expression",
+   "Metabolomics"
+  ],
+  "featured": true,
+  "letter": "D"
+ },
+ {
+  "id": "rubio2021_mhe",
+  "short": "Rubio 2021",
+  "topic": "Minimal hepatic encephalopathy in cirrhosis: what changes in blood?",
+  "system": "Human \u00b7 patients with vs without MHE \u00b7 blood cells and serum",
+  "omics": "Gene expression + metabolomics + serum cytokines",
+  "used_paintomics": "PaintOmics 3: KEGG enrichment of the differential genes and the network of significant pathways (Fig. 2, Table S2).",
+  "conclusions": [
+   "Blood-cell gene expression points to a shift in T-helper populations: Th1/Th2 and Th17 differentiation, Jak-STAT, cytokine-cytokine receptor interaction and cell adhesion molecules form one network of altered immune pathways.",
+   "A second group of altered pathways is lipid metabolism: fat digestion and absorption, cholesterol metabolism, steroid and primary bile acid biosynthesis, PPAR signalling.",
+   "Serum molecules link to the transcriptome in modules: CCL20, CX3CL1, CXCL13, IL-15, IL-22 and IL-6 with altered chemotaxis; long-chain unsaturated phospholipids with fatty-acid transport and prostaglandin production."
+  ],
+  "note": "Ana Conesa and Sonia Tarazona are co-authors.",
+  "journal": "Sci Rep",
+  "tag": "Human \u00b7 gene expression + metabolomics + serum cytokines",
+  "jobID": "3oP1p37B25",
+  "url": "https://paintomics.org/?jobID=3oP1p37B25",
+  "organism": "hsa",
+  "doi": "10.1038/s41598-020-80941-7",
+  "pmcid": "PMC7820002",
+  "citation": "Rubio T, Felipo V, Tarazona S, et al. Multi-omic analysis unveils biological pathways in peripheral immune system associated to minimal hepatic encephalopathy appearance in cirrhotic patients. Sci Rep 11:1907 (2021).",
+  "job_name": "Rubio 2021 - Minimal hepatic encephalopathy in cirrhosis: blood transcriptome, metabolome, cytokines",
+  "ai_status": "done",
+  "held_back": true,
+  "gates": {
+   "anchor": "n/a",
+   "artifact": "FAIL",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {
+   "artifact": "the check's walker, which steps only from relevant gene to relevant gene, found 2 modules on the data and 2.1 on shuffled (permuted) data on average (p = 0.75), with seeds no hotter than on shuffled data (p = 0.08): it could not tell this data from shuffled data on this graph. Of 10,138 measured genes, 385 are relevant; 117 pairs of them are adjacent, 95.1 expected by chance (p = 0.20)"
+  },
+  "ai_title": "Chemokine, growth-factor and lipid-metabolism signals in the MHE-vs-noMHE comparison of blood cells and serum from cirrhosis patients",
+  "statements": 10,
+  "legs": 62,
+  "papers_cited": 14,
+  "omic_names": [
+   "Gene expression",
+   "Metabolomics",
+   "Serum cytokines"
+  ],
+  "featured": true,
+  "letter": "E"
+ },
+ {
+  "id": "fabregas2018_brl3_drought",
+  "short": "F\u00e0bregas 2018",
+  "journal": "Nat Commun",
+  "topic": "Why do plants that overexpress the BRL3 receptor survive drought?",
+  "system": "Arabidopsis \u00b7 roots \u00b7 BRL3-overexpressing vs wild type, well watered and after 5 days without water",
+  "omics": "Gene expression + metabolomics",
+  "tag": "Arabidopsis \u00b7 gene expression + metabolomics, genotype \u00d7 drought",
+  "used_paintomics": "PaintOmics 3: joint KEGG enrichment of root transcripts and metabolites, run for watered and for drought (Suppl. Fig. 11, Suppl. Data 16 and 17).",
+  "conclusions": [
+   "BRL3-overexpressing roots carry a primed osmoprotectant signature: proline and sugars (sucrose, trehalose, myo-inositol) are already higher when well watered, and trehalose, sucrose, proline and raffinose rise further under drought.",
+   "Stress-response genes (water deprivation, abscisic acid) are constitutively active in BRL3-overexpressing roots, and the deregulated genes are enriched in the root vasculature.",
+   "Joint transcript and metabolite pathway analysis points to sugars: sucrose metabolism is deregulated constitutively and more so under drought, and galactose metabolism (raffinose-family oligosaccharides) under drought; BRL3 promotes drought tolerance mainly by controlling sugar metabolism."
+  ],
+  "note": "From CRAG, Barcelona. Ana Conesa is a co-author.",
+  "jobID": "044DBhQFC7",
+  "url": "https://paintomics.org/?jobID=044DBhQFC7",
+  "organism": "ath",
+  "doi": "10.1038/s41467-018-06861-3",
+  "pmcid": "PMC6224425",
+  "citation": "Fabregas N, Lozano-Elena F, Blasco-Escamez D, et al. Overexpression of the vascular brassinosteroid receptor BRL3 confers drought resistance without penalizing plant growth. Nat Commun. 2018;9:4680.",
+  "job_name": "Fabregas 2018 - BRL3ox vs WT Arabidopsis roots, watered and drought (RNA-seq + GC-MS)",
+  "ai_status": "done",
+  "held_back": true,
+  "gates": {
+   "anchor": "n/a",
+   "artifact": "FAIL",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {
+   "artifact": "the check's walker, which steps only from relevant feature to relevant feature, found 1 module on the data and 0.6 on shuffled (permuted) data on average (p = 0.45), with seeds hotter than on shuffled data (p = 0.02), which counts only with at least two modules: it could not tell this data from shuffled data on this graph. Of 2,915 measured features, 312 are relevant; 431 pairs of them are adjacent, 230.2 expected by chance (p = 0.02)"
+  },
+  "ai_title": "BRL3ox rewires phenylpropanoid, sugar and hormone modules in Arabidopsis roots under drought",
+  "statements": 13,
+  "legs": 90,
+  "papers_cited": 18,
+  "omic_names": [
+   "Gene expression",
+   "Metabolomics"
+  ],
+  "featured": true,
+  "letter": "F"
+ },
+ {
+  "id": "khurana2023_mesc_lpd",
+  "short": "Khurana 2023",
+  "journal": "Stem Cell Rev Rep",
+  "topic": "Does a mother's low-protein diet leave a mark on embryonic stem cells?",
+  "system": "Mouse \u00b7 embryonic stem cell lines derived from blastocysts of low-protein-diet vs normal-diet mothers",
+  "omics": "Gene expression + metabolomics (only the published metabolites)",
+  "tag": "Mouse \u00b7 gene expression + metabolomics, one contrast",
+  "used_paintomics": "PaintOmics 4: joint transcript and metabolite KEGG enrichment (Table 3, Suppl. Fig. 4).",
+  "conclusions": [
+   "MAPK signalling is the top integrated pathway: regulators such as Maff, Rassf1, Jund, Atf4 and Dusp8 are up in low-protein-diet lines, with ERK1/2 phosphorylation about halved and more apoptosis (the last two are wet-lab results).",
+   "Upstream glycolysis is impaired: glucose 6-phosphate and fructose 6-phosphate accumulate and Gpi1 and Mpi expression is reduced, a bottleneck at phosphofructokinase.",
+   "Stem-cell lines derive less efficiently from low-protein-diet blastocysts, while established lines keep equal pluripotency-marker expression (not in the omics)."
+  ],
+  "featured": false,
+  "why_not_featured": "public data incomplete: 24 relevant genes, and only the 55 metabolites printed in the paper (no background)",
+  "jobID": "phS3E514H6",
+  "url": "https://paintomics.org/?jobID=phS3E514H6",
+  "organism": "mmu",
+  "doi": "10.1007/s12015-022-10490-1",
+  "pmcid": "PMC10070223",
+  "citation": "Khurana P, Cox A, Islam B, Eckert JJ, Willaime-Morawek S, Gould JM, Smyth NR, McHugh PC, Fleming TP. Maternal Undernutrition Induces Cell Signalling and Metabolic Dysfunction in Undifferentiated Mouse Embryonic Stem Cells. Stem Cell Rev Rep 19(3):767-783 (2023).",
+  "job_name": "Khurana 2023 - Maternal low protein diet: mouse ESC lines, RNA-seq + metabolomics (LPD vs NPD)",
+  "ai_status": "done",
+  "held_back": true,
+  "gates": {
+   "anchor": "n/a",
+   "artifact": "FAIL",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {
+   "artifact": "the check's walker, which steps only from relevant feature to relevant feature, found 0 modules on the data and 0.0 on shuffled (permuted) data on average (p = 1.00), with seeds hotter than on shuffled data (p = 0.02), which counts only with at least two modules: it could not tell this data from shuffled data on this graph. Of 7,875 measured features, 31 are relevant; 5 pairs of them are adjacent, 0.6 expected by chance (p = 0.04)"
+  },
+  "ai_title": "Results",
+  "statements": 12,
+  "legs": 56,
+  "papers_cited": 15,
+  "omic_names": [
+   "Gene expression",
+   "Metabolomics"
+  ]
+ },
+ {
+  "id": "lopezortiz2022_pepper_drosophila",
+  "short": "Lopez-Ortiz 2022",
+  "journal": "Int J Mol Sci",
+  "topic": "What does a habanero-pepper diet do to a fruit fly?",
+  "system": "Drosophila \u00b7 whole adult flies \u00b7 habanero-supplemented vs control diet",
+  "omics": "Gene expression (only the 539 significant genes are public) + metabolomics",
+  "tag": "Fruit fly \u00b7 gene expression + metabolomics, one contrast",
+  "used_paintomics": "PaintOmics 4 is named once, in the Methods, for visualisation and analysis of the metabolome; the joint gene and metabolite KEGG analysis (Results 2.9, Fig. 7) is the matching result.",
+  "conclusions": [
+   "The habanero diet changed 539 genes, among them 12 olfactory and taste genes (Gr, Or and Obp families, ten of them up), read as altered olfactory perception and feeding behaviour.",
+   "59 metabolites changed more than 2-fold: campesterol, sitosterol and sucrose rose most; azelaic acid and citric acid fell most.",
+   "Integrating both layers on KEGG singles out six pathways: glycerolipid; glycine, serine and threonine; glyoxylate and dicarboxylate; insect hormone biosynthesis; phenylalanine; and pyrimidine metabolism."
+  ],
+  "featured": false,
+  "why_not_featured": "public data incomplete: only the 539 significant genes are public (no gene background)",
+  "jobID": "wkJR2XP316",
+  "url": "https://paintomics.org/?jobID=wkJR2XP316",
+  "organism": "dme",
+  "doi": "10.3390/ijms23179924",
+  "pmcid": "PMC9455967",
+  "citation": "Lopez-Ortiz C, Edwards M, Natarajan P, Pacheco-Valenciana A, Nimmakayala P, Adjeroh DA, Sirbu C, Reddy UK. Peppers in Diet: Genome-Wide Transcriptome and Metabolome Changes in Drosophila melanogaster. Int J Mol Sci 23(17):9924 (2022).",
+  "job_name": "Lopez-Ortiz 2022 - Habanero pepper diet in Drosophila: whole-fly transcriptome and metabolome",
+  "ai_status": "done",
+  "held_back": true,
+  "gates": {
+   "anchor": "n/a",
+   "artifact": "FAIL",
+   "context": "pass",
+   "direction": "n/a",
+   "title": "pass"
+  },
+  "failed_why": {
+   "artifact": "the check's walker, which steps only from relevant feature to relevant feature, found 0 modules on the data and 0.1 on shuffled (permuted) data on average (p = 1.00), with seeds hotter than on shuffled data (p = 0.02), which counts only with at least two modules: it could not tell this data from shuffled data on this graph. Of 195 measured features, 120 are relevant; 56 pairs of them are adjacent, 36.5 expected by chance (p = 0.02)"
+  },
+  "ai_title": "Results",
+  "statements": 8,
+  "legs": 55,
+  "papers_cited": 10,
+  "omic_names": [
+   "Gene expression",
+   "Metabolomics"
+  ]
+ }
+]

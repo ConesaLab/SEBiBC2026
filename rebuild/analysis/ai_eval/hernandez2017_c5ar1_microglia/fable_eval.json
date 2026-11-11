@@ -1,0 +1,149 @@
+{
+ "dataset": "hernandez2017_c5ar1_microglia",
+ "evaluator": "Claude Fable 5.2, effort xhigh",
+ "date": "2026-11-10",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Values match: Ccl6 is +1.32, +1.19 and +0.90 in Arctic vs WT at 5, 7 and 10 months, and Arctic/C5aR1KO vs Arctic stays at +0.08 to +0.42, so the knockout does not lower it. Ccl6 sits in the authors' cluster 2; the paper never names it. The Aβ citation lists other chemokines, not Ccl6.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values match: Arctic vs WT rises from +0.21 (2 months) to +1.20 (7 months) and Arctic/C5aR1KO vs Arctic is -0.96 to -0.66 at all four ages. This is the paper's own finding (Fig. 5, RT-PCR of Cxcl2). At 2 months there is no Arctic induction to reverse; the knockout lowers Cxcl2 anyway.",
+   "in_paper_where": "Results, 'Pathway analysis reveals less inflammation and higher degradative capacity in Arctic/C5aR1KO'; Fig. 5a and 5c (Cxcl2 RT-PCR); Discussion, NF-kB paragraph."
+  },
+  {
+   "n": 3,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Knockout effect is right and large: -1.43 to -0.83 against Arctic and -2.06 to -0.43 against WT, as the paper reports (Vegfa down 46% by RT-PCR). The 'late Arctic rise' is weak (+0.57 at 10 months; the paper's RT-PCR found no Arctic-WT difference). The VEGF review cited is only general context.",
+   "in_paper_where": "Results, same section; Fig. 5a and 5c (Vegfa RT-PCR, 46% lower in Arctic/C5aR1KO than Arctic at 5 months)."
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Right: Axl rises at 5-7 months (+2.06, +1.96) and the knockout does not change that (-0.14, -0.16); it is a known plaque-associated microglia gene. Wrong: the 2-month 'dip' (-1.06) and 'rescue' (+1.77) come largely from one low Arctic mouse (6.9 vs 17.6 TPM; WT 17-24), so 'normalises the early phase' is unsupported.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "G"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "Numbers match but are noise-sized: -0.36 and +0.29 with two mice per group, and the knockout without the transgene shows the same -0.34 at 10 months, so there is no Arctic-specific Hck dip. Clearance genes are up, not down, at 10 months (Trem2 +0.50, Ctsd +0.80). What remains is textbook Hck biology.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "low",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Quoted values match, but only the ages that fit are quoted: the knockout effect is absent at 10 months in both backgrounds (+0.13, +0.12) and at 5 months without the transgene (-0.06). The authors' whole cluster 1 (251 genes) alternates the same way, suggesting a cohort effect rather than C5aR1 dependence.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "The 'restoration' is read from C5aR1KO vs WT (+0.31, +0.29), mice without the transgene, which cannot show rescue of an Arctic effect. The right contrast, Arctic/C5aR1KO vs Arctic, is +0.19, -0.13, +0.09, +0.09: nothing. The decline itself (at most -0.31) is within two-mouse noise. The authors put Cx3cr1 in cluster 3, no Arctic-knockout difference.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "K",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values match: Tlr2 +0.44 and +0.62 at 5 and 7 months, Cd14 +1.02, +0.66, +0.68 from 5 months. Both citations fit (CD14, TLR2 and TLR4 needed for the microglial response to fibrillar Aβ). The paper names Tlr2 and the TLR-Aβ link but not Cd14. The knockout values quoted are single noise-sized points.",
+   "in_paper_where": "Results on cluster 2 and Fig. 6 (Tlr2 among phagocytosis-promoting receptors raised in Arctic); Discussion ('Fibrillar Aß is a ligand for TLR2 and TLR4'). Cd14 is not named."
+  }
+ ],
+ "overall": {
+  "score_1_to_5": 3,
+  "comment": "Every quoted number matches the uploaded file and the citations are real and mostly apt. The report recovers part of the paper's first conclusion (Cxcl2 and Vegfa lowered by the C5aR1 knockout) and adds that Ccl6, Axl, Tlr2 and Cd14 rise in Arctic microglia regardless of C5aR1, but it misses the second conclusion entirely (phagosome and lysosome genes rising further in Arctic/C5aR1KO). Half the statements read single two-mouse contrasts as effects (Hck, Cx3cr1, the Axl 2-month dip, Stat5a at selected ages), one of them on the wrong contrast."
+ }
+}

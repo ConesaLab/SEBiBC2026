@@ -1,0 +1,254 @@
+{
+ "dataset": "balzano2021_teddy",
+ "evaluator": "Claude Fable 5.2, effort xhigh",
+ "date": "2026-11-10",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "C"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "doubtful"
+   },
+   "justification": "Quoted values are right but tiny (+0.07, +0.08, +0.06, -0.05, one window each); about one gene in ten is that far from zero by chance. The 'sequential wave' is not in time order (NANOG 9 months, SALL1 6, SALL4 3; SOX2 dips). The cited study induced these genes by culturing leukocytes, not in fresh blood.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "wrong"
+   },
+   "justification": "ACOT4 is lower in cases in all five windows (-0.01 to -0.12), correctly quoted. But a thioesterase releases free fatty acids from acyl-CoAs, so less ACOT4 predicts fewer, not more. The fatty-acid 'rise' (+0.06 to +0.10) is no bigger than the typical metabolite difference (0.09); the largest value is oleic acid -0.30 at 12 months.",
+   "in_paper_where": "Results, 'Enrichment and partial correlation analysis' and Fig. 3b: fatty acids higher in cases, impaired beta-oxidation; ACOT genes are not mentioned."
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "The ACOT2 'bump' is +0.04 in one window, a size one gene in four reaches. It is not the only ACOT positive at 9 months (ACOT9 +0.06, ACOT6 +0.04), and the fatty acids peak later (6 months, +0.06 to +0.10, also chance-sized). S2 explains the same fatty acids by the opposite mechanism.",
+   "in_paper_where": "Results, 'Enrichment and partial correlation analysis' and Fig. 3b: fatty acids higher in cases; ACOT genes are not mentioned."
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "C",
+    "G"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "ok"
+   },
+   "justification": "Numbers are correct, but the statement only reports where features sit on the KEGG Alcoholism map (deacetylases next to histones) and concludes nothing about seroconversion. HIST1H2BI is called 'mild positive' although its largest value is -0.06. The cited study is of sun-exposed and aged skin and supports nothing about children's blood.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "HDAC11 is +0.17 at 12 months only (top 1-2% of genes, not in the signature); quoted and flagged correctly. The cited study does show HDAC11 repressing IL-10 in antigen-presenting cells. The prediction holds in this data: IL10 is lower in cases in all five windows (-0.01 to -0.05), as the paper reports without naming HDAC11.",
+   "in_paper_where": "Results, 'TNFalpha activation by ROS accumulation...' and Fig. 6: IL10 lower in cases, read as failure to suppress inflammation; HDAC11 is not mentioned."
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "low",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "HDAC8 is -0.13 at 12 months (not in the signature), quoted correctly; the cited cell-line study supports HDAC8 acting on RIG-I. The hedged prediction can be tested here: interferon-stimulated genes are lower in cases at 12 months (IFI27 -0.38, DDX58 -0.16) but higher at 9 months and at seroconversion. Weak, but acceptable as a hypothesis.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "Numbers are quoted correctly, but the 'rise' peaks at +0.05, a difference one gene in four exceeds in that window; it is not a trend. More APOC3 would raise triglycerides, yet triglycerides are lower in cases in all five windows. The citation is about heart disease in adults who already have type 1 diabetes.",
+   "in_paper_where": "Abstract and Results, 'Lipid metabolism irregularities...': lipid abnormalities precede seroconversion; APOC3 is not mentioned."
+  },
+  {
+   "n": 8,
+   "mark": "Especially good",
+   "reasons": [
+    "N"
+   ],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values and flags are right: APOA1 lower in every window (as the paper says), LCAT -0.15 at 9 months, phosphatidylcholine lower throughout. LCAT is in the authors' signature but not in their text; linking it to its activator APOA1 and substrate is a sensible, hedged addition (lysoPC, an LCAT product, is lowest at 9 months).",
+   "in_paper_where": "Results, 'Lipid metabolism irregularities...', Figs 3b and 5: APOA1 and phosphatidylcholines lower in cases; LCAT and cholesterol esterification are not mentioned."
+  },
+  {
+   "n": 9,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "BTD is in the signature and correctly quoted: near zero until +0.14 at seroconversion (top 1% for that window), with HLCS flat. The biotin background is right and the reading cautious: it admits no direction can be inferred. One window without statistics, so a hypothesis only; the paper does not discuss biotin.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 10,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "low",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Values are right (KARS +0.09, -0.03, +0.03, +0.10, +0.06; in the signature), though 'late' is selective: 12 months is as high as 3 months. The immune reading is hedged and tolerable, but rests on a background sentence in a leukodystrophy paper; QARS, EPRS and AIMP2 share the pattern, which suggests ordinary protein-synthesis machinery.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 11,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values are right: C1QB goes from -0.07 to +0.11, C1QC from -0.01 to +0.06, C1QA positive throughout. None of the three is in the signature; C1R, which is, stays flat. The C1q biology is correct and the conclusion hedged. Other complement genes are also highest at seroconversion (C2 +0.16, SERPING1 +0.13), which supports it.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 12,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "GALR3 is +0.01 to +0.04 in every window, no more than a typical gene shows by chance; that is not 'constitutively up' or 'sustained upregulation'. GAL's dip is -0.06 in one window. The support is a mouse psoriasis knockout and rat thymocytes, and a lower ligand does not point to a tonic signal.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 13,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "CARD6 is in the signature and among the larger differences here (+0.11, +0.16, -0.05, +0.13, +0.05), correctly quoted, though the claim omits the 6-month dip. The cited 2003 study does show CARD6 binding NOD1 and RIPK2 and damping NF-kB. A reasonable, hedged link to early innate signalling; later knockout work questioned the NOD role.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 14,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "The -0.08 dip belongs to APC2, adenomatous polyposis coli 2, matched to APOC2 through an old alias. The real APOC2 row is not in the signature: +0.10 at 9 months, -0.02 at 6. Triglycerides are lower in cases at 6 months (-0.13), the opposite of reduced clearance, and CREB3L3 peaks in the same window.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "score_1_to_5": 2,
+  "comment": "The numbers are quoted accurately almost everywhere, and one chain (APOA1, LCAT, phosphatidylcholine) touches the paper's lipid finding and adds a useful link. But half the statements read differences of 0.04 to 0.08, the size expected by chance in this data, as waves, bumps and trends; one uses the wrong gene (APC2 for APOC2), and two explain the same fatty acids by opposite mechanisms. The paper's main conclusions are not reached (a signature strongest at 12 and 9 months, raised energy metabolism and ROS, TNF up and IL10 down, cell migration and cytotoxicity), and 12-month differences are set aside as 'baseline'."
+ }
+}
