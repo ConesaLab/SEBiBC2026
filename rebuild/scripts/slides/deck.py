@@ -12,6 +12,7 @@ import pymupdf
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 ORIG = ROOT / "docs" / "SEBiBC26_TELLME_PaintOmicsAI.pdf"
+PROBLEMS = ROOT / "docs" / "SEBiBC26_TELLME_PaintOmicsAI_2026-11-11.pdf"   # the 11 Nov deck; only its slides 4-6 (Problems 1-3) are used
 FONTS = ROOT / "slides" / "assets" / "fonts"
 W, H = 1440, 810
 
@@ -118,6 +119,19 @@ def page_image(pno, clip=None, zoom=None):
 def from_original(out, pno):
     """Append original slide `pno` to `out` unchanged and return the new page, ready to be drawn on."""
     out.insert_pdf(orig(), from_page=pno - 1, to_page=pno - 1)
+    return out[-1]
+
+
+_problems = None
+
+
+def from_problems(out, pno):
+    """Append slide `pno` (1-based) of the 11 Nov deck to `out` unchanged and return the new page.
+    Used for its three problem slides (4, 5, 6), each with three cards of published evidence."""
+    global _problems
+    if _problems is None:
+        _problems = pymupdf.open(PROBLEMS)
+    out.insert_pdf(_problems, from_page=pno - 1, to_page=pno - 1)
     return out[-1]
 
 

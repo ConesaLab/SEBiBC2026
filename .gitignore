@@ -1,5 +1,6 @@
-# private notes: the to-do list of the people giving the workshop
+# private notes: the to-do list and the speaker notes of the people giving the workshop
 todo.md
+speaker_notes*.md
 
 # the earlier version of the slides that the build draws on (it has slides that were taken out of the talk)
 rebuild/docs/

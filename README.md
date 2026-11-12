@@ -4,8 +4,8 @@ Slides, handout and marking sheet of the workshop **"AI models to interpret syst
 SEBiBC 2026, Toledo, Friday 13 November 2026, 10:00 to 11:00.
 Tianyuan Liu and Ana Conesa, I²SysBio (CSIC–Universitat de València). Chair: Ana Rojas.
 
-**In the room? [Open the marking sheet](https://docs.google.com/spreadsheets/d/1iW8rkhe8KT5AWozriMbvSKxYZA8Xa6lObqIG04MJPTw/edit?usp=sharing).**
-It is a shared Google Sheet and needs no account. The six papers and their job pages are in the table under
+**In the room? Pick a paper below and open its marking form:** [A](https://forms.gle/1uJ7VTYMQmAF5Gch6) · [B](https://forms.gle/MviRmxDgUZCv99X68) · [C](https://forms.gle/eYt8S9iXbV54zDgn7) · [D](https://forms.gle/9u6CxLaz8MDkThmKA) · [E](https://forms.gle/RX22xEuCdxguFXbD9) · [F](https://forms.gle/QyTJ68AqeFpiYCRd6).
+The forms need no account. The six papers and their job pages are in the table under
 [The practice](#the-practice), and the slides are [here](SEBiBC26_TELLME_PaintOmicsAI_v5.pdf).
 
 [PaintOmics](https://paintomics.org) paints multi-omics data on pathways (KEGG, Reactome, MapMan, OmniPath).
@@ -21,8 +21,8 @@ To get one file: click it in the list above, then the download button at the top
 
 | file | what it is |
 | --- | --- |
-| [`SEBiBC26_TELLME_PaintOmicsAI_v5.pdf`](SEBiBC26_TELLME_PaintOmicsAI_v5.pdf) | the slides (35) |
-| [`practice_handout.pdf`](practice_handout.pdf) | the handout, three A4 pages: one card per paper, with a QR code to the job and to the paper, and the paper's three main conclusions |
+| [`SEBiBC26_TELLME_PaintOmicsAI_v5.pdf`](SEBiBC26_TELLME_PaintOmicsAI_v5.pdf) | the slides (37) |
+| [`practice_handout.pdf`](practice_handout.pdf) | the handout, three A4 pages: one card per paper, with a QR code to the job and to the paper, the link of its marking form, and the paper's three main conclusions |
 | [`practice_datasets.html`](practice_datasets.html) | the handout as a web page with links (download it and open it in a browser) |
 | [`statement_marks.xlsx`](statement_marks.xlsx) | the marking workbook: one tab per paper with every statement the AI wrote. Two more tabs, `Results` and `AI evaluation`, are hidden |
 | [`JOBS.md`](JOBS.md) | the job links on paintomics.org, the full references, and the checks each interpretation passed or failed |
@@ -49,12 +49,22 @@ artifact" check, which asks whether the same walk on shuffled data would have lo
 **Show the interpretation anyway**. The jobs open without an account. They are guest jobs, which the server removes
 seven days after they were last opened, so the links stop working some time after the workshop.
 
-**2. Open the marking sheet and go to your paper's tab.** During the workshop the marking sheet is one shared
-Google Sheet that everyone fills in together:
-<https://docs.google.com/spreadsheets/d/1iW8rkhe8KT5AWozriMbvSKxYZA8Xa6lObqIG04MJPTw/edit?usp=sharing>.
-Outside the workshop hour, use `statement_marks.xlsx`: it is the same workbook.
+**2. Open the paper's marking form.** During the workshop each paper has its own Google Form, with every statement
+the AI wrote, in full:
 
-**3. Take the first free Rater column and give each statement one mark.**
+| | paper | marking form |
+| --- | --- | --- |
+| A | Hernandez 2017 | <https://forms.gle/1uJ7VTYMQmAF5Gch6> |
+| B | Wang 2019 | <https://forms.gle/MviRmxDgUZCv99X68> |
+| C | Jiménez-Munguía 2021 | <https://forms.gle/eYt8S9iXbV54zDgn7> |
+| D | Balzano-Nogueira 2021 | <https://forms.gle/9u6CxLaz8MDkThmKA> |
+| E | Rubio 2021 | <https://forms.gle/RX22xEuCdxguFXbD9> |
+| F | Fàbregas 2018 | <https://forms.gle/QyTJ68AqeFpiYCRd6> |
+
+Outside the workshop hour, use `statement_marks.xlsx`: it lists the same statements, one tab per paper.
+
+**3. Give each statement one mark, then press Submit.** No question is required, and you can edit your answers
+after you submit.
 
 | mark | what it means |
 | --- | --- |
@@ -63,7 +73,7 @@ Outside the workshop hour, use `statement_marks.xlsx`: it is the same workbook.
 | Especially good | Correct, and it adds something: a link the paper did not make, or a clearer mechanism. |
 | Can't judge | You cannot tell without more work. Better than a guess. |
 
-Mark first, then look at the other columns and at the second reader.
+Mark first, then look at the second reader.
 
 ## The second reader
 
@@ -83,8 +93,8 @@ cd rebuild
 ./rebuild.sh "<link of the marking sheet>" "<link of this repository>"
 ```
 
-The scripts draw on top of page images of an earlier version of the slides (`rebuild/docs/`). That file is not in
-this repository, so the build does not run from a fresh copy; the scripts are here as a record of how the slides
+The scripts draw on top of page images of two earlier versions of the slides (`rebuild/docs/`). Those files are not
+in this repository, so the build does not run from a fresh copy; the scripts are here as a record of how the slides
 were made. After the workshop, `rebuild/scripts/10_ratings_report.py` takes the filled-in workbook and writes a page
 that compares the room with the second reader, statement by statement.
 

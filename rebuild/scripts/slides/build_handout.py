@@ -22,7 +22,8 @@ PW, PH, M = 595, 842, 38
 CFG = json.loads((SL / "config.json").read_text()) if (SL / "config.json").exists() else {}
 SHEET = (CFG.get("marking_sheet_url") or "").strip()
 MATERIALS = (CFG.get("materials_url") or "").strip()
-FOOTER = [("Marking sheet: ", SHEET or "link given in the room")] + ([("Slides and materials: ", D.bare(MATERIALS))] if MATERIALS else [])
+FORMS = json.loads((SL / "marking_forms.json").read_text())["forms"]             # one marking form per paper (12 Nov)
+FOOTER = [("Marking: ", "one form per paper, its link is on the paper's card")] + ([("Slides and materials: ", D.bare(MATERIALS))] if MATERIALS else [])
 ORG = {"hsa": "human", "mmu": "mouse", "rno": "rat", "dme": "fruit fly", "ath": "Arabidopsis", "dre": "zebrafish", "sly": "tomato"}
 
 
@@ -42,7 +43,7 @@ def header(p, n, total):
     if n > 1:
         return 56
     y = para(p, M, 50, "Each paper below cites PaintOmics and used it on this data. We ran the same data on paintomics.org, and "
-             "PaintOmics AI wrote what it found as numbered statements. Pick a paper, open its tab in the marking sheet and give every "
+             "PaintOmics AI wrote what it found as numbered statements. Pick a paper, open its form (the link on its card) and give every "
              "statement one of four marks: makes sense, does not make sense, especially good, can't judge. The job page shows "
              "the evidence behind each statement.", 10, PW - 2 * M, color=BODY, leading=1.42)
     return y + 10
@@ -71,13 +72,14 @@ def card(p, d, top, height=None):
     y = para(p, tx, y + 2, d["omics"], 9.6, tw, face="SemiBold", color=TEAL_DARK)
     y = para(p, tx, y + 5, "In the paper: " + d["used_paintomics"], 9.2, tw, color=BODY, leading=1.34)
     text(p, tx, y + 16, [("The paper's main conclusions", "Bold")], 10, STRONG)
+    text(p, tx + tw, y + 16, [("Mark it here: ", "Bold", ORANGE_INK), (D.bare(FORMS[d["letter"]]["short"]), "Mono", STRONG)], 9.5, align="right")
     y += 22
     for i, c in enumerate(d["conclusions"], 1):
         text(p, tx, y + 0.76 * 9.6, [("%d" % i, "Bold")], 9.6, TEAL_DARK)
         y = para(p, tx + 13, y, c, 9.4, tw - 13, color=BODY, leading=1.34) + 3.5
     if d.get("held_back"):
         y = para(p, tx, y + 3, "Held back on the job page by the \"not a graph artifact\" check: click \"Show the interpretation anyway\" "
-                 "there. The marking sheet lists its statements in full.",
+                 "there. The paper's form lists its statements in full.",
                  9, tw, face="SemiBold", color=ORANGE_INK, leading=1.34)
     if d.get("note"):
         y = para(p, tx, y + 3, d["note"], 9, tw, face="Italic", color=MUTED)
@@ -118,12 +120,12 @@ def build_html():
     cards = []
     for d in DATA:
         held = ("<p class='held'>Held back by the “not a graph artifact” check: click <b>Show the interpretation anyway</b>, "
-                "to read it on the job page. The marking sheet lists its statements in full.</p>") if d.get("held_back") else ""
+                "to read it on the job page. The paper's form lists its statements in full.</p>") if d.get("held_back") else ""
         cards.append("""<article><h2><span class="l">%s</span>%s</h2><p class="topic">%s</p>
-<p class="btn"><a class="job" href="%s">Open the job <code>%s</code></a> <a href="https://doi.org/%s">Read the paper</a></p>
+<p class="btn"><a class="job" href="%s">Open the job <code>%s</code></a> <a href="https://doi.org/%s">Read the paper</a> <a href="%s">Mark the statements</a></p>
 <p class="meta">%s<br><b>%s</b></p><p class="cite">%s</p><p><b>In the paper:</b> %s</p>
 <p><b>The paper's main conclusions</b></p><ol>%s</ol>%s</article>""" % (
-            e(d["letter"]), e(d["short"] + " · " + d.get("journal", "")), e(d["topic"]), e(d["url"]), e(d["jobID"]), e(d["doi"]), e(d["system"]), e(d["omics"]),
+            e(d["letter"]), e(d["short"] + " · " + d.get("journal", "")), e(d["topic"]), e(d["url"]), e(d["jobID"]), e(d["doi"]), e(FORMS[d["letter"]]["short"]), e(d["system"]), e(d["omics"]),
             e(short_citation(d["citation"])), e(d["used_paintomics"]), "".join("<li>%s</li>" % e(c) for c in d["conclusions"]), held))
     page = """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Pick a paper · PaintOmics AI practice</title><style>
@@ -138,9 +140,9 @@ article{background:var(--card);border-radius:12px;padding:16px 18px}h2{font-size
 .btn a.job{background:var(--teal);color:#fff}.btn code{font-size:.9em}ol{margin:.3em 0 .3em 1.2em;padding:0}.held{color:var(--orange);font-weight:600}
 footer{max-width:980px;margin:0 auto;padding:0 16px 32px;color:var(--muted)}a{color:var(--dark)}
 </style></head><body><header><h1>Pick a paper</h1><p>PaintOmics AI, powered by TELLME · SEBiBC 2026. Each paper cites PaintOmics and used it on this data;
-we ran the same data on paintomics.org and PaintOmics AI wrote what it found as numbered statements. Pick a paper, open its tab in the marking sheet and give every statement one of four marks. The job page (<b>AI Interpret</b>, top right) shows the evidence behind each statement.</p></header>
+we ran the same data on paintomics.org and PaintOmics AI wrote what it found as numbered statements. Pick a paper, open its form (<b>Mark the statements</b>) and give every statement one of four marks. The job page (<b>AI Interpret</b>, top right) shows the evidence behind each statement.</p></header>
 <main>%s</main><footer><p>%s</p></footer></body></html>""" % ("\n".join(cards), " · ".join(
-        [('<a href="%s">Marking sheet</a>' % e(SHEET)) if SHEET else "Marking sheet: link given in the room"] + (['<a href="%s">Slides and materials</a>' % e(MATERIALS)] if MATERIALS else [])))
+        ["Marking: one form per paper, the button on each card"] + (['<a href="%s">Slides and materials</a>' % e(MATERIALS)] if MATERIALS else [])))
     out = SL / "practice_datasets.html"
     out.write_text(page)
     return out

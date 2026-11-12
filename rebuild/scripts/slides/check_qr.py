@@ -24,6 +24,8 @@ MATERIALS_SLIDES = MAP.get("materials_qr_slides", [])
 
 
 def names(slides):
+    if not slides:
+        return "(none)"
     return ", ".join(map(str, slides[:-1])) + (" and " if len(slides) > 1 else "") + str(slides[-1])
 
 
@@ -62,7 +64,18 @@ if HANDOUT.exists():
         print("  page %d   %d codes%s" % (i, len(found), ", marking sheet among them" if sheet and sheet in found else ""))
 
 failed = False
-if not sheet:
+FORM_SLIDES = MAP.get("form_qr_slides", [])
+if FORM_SLIDES and (ROOT / "slides" / "marking_forms.json").exists():
+    forms = json.loads((ROOT / "slides" / "marking_forms.json").read_text())["forms"]
+    missing = [k for k, v in forms.items() if not all(v["short"] in deck.get(i, []) for i in FORM_SLIDES)]
+    if missing:
+        print("RESULT: PROBLEM. The form code of paper(s) %s was not read on slide %s." % (", ".join(missing), names(FORM_SLIDES)))
+        failed = True
+    else:
+        print("RESULT: ok. The six marking forms' codes are on slide %s." % names(FORM_SLIDES))
+if not SHEET_SLIDES:
+    print("RESULT: the old marking sheet is on no slide (the room marks in the forms).")
+elif not sheet:
     print("RESULT: no marking sheet link is set (slides/config.json); slides %s show the dashed placeholder." % ", ".join(map(str, SHEET_SLIDES[:-1])))
 else:
     missing = [i for i in SHEET_SLIDES if sheet not in deck.get(i, [])]
