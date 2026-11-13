@@ -21,12 +21,12 @@ To get one file: click it in the list above, then the download button at the top
 
 | file | what it is |
 | --- | --- |
-| [`SEBiBC26_TELLME_PaintOmicsAI_v5.pdf`](SEBiBC26_TELLME_PaintOmicsAI_v5.pdf) | the slides (37) |
+| [`SEBiBC26_TELLME_PaintOmicsAI_v5.pdf`](SEBiBC26_TELLME_PaintOmicsAI_v5.pdf) | the slides (38) |
 | [`practice_handout.pdf`](practice_handout.pdf) | the handout, three A4 pages: one card per paper, with a QR code to the job and to the paper, the link of its marking form, and the paper's three main conclusions |
 | [`practice_datasets.html`](practice_datasets.html) | the handout as a web page with links (download it and open it in a browser) |
-| [`statement_marks.xlsx`](statement_marks.xlsx) | the marking workbook: one tab per paper with every statement the AI wrote. Two more tabs, `Results` and `AI evaluation`, are hidden |
+| [`statement_marks.xlsx`](statement_marks.xlsx) | the marking workbook: one tab per paper with every statement the AI wrote. More tabs are hidden: `Results`, and one `AI evaluation` tab per AI reader |
 | [`JOBS.md`](JOBS.md) | the job links on paintomics.org, the full references, and the checks each interpretation passed or failed |
-| [`AI_EVALUATION_SUMMARY.md`](AI_EVALUATION_SUMMARY.md) | the mark a second AI reader gave to every statement, with its reason |
+| [`AI_EVALUATION_SUMMARY.md`](AI_EVALUATION_SUMMARY.md) | the marks the AI readers gave to every statement, with their reasons |
 | [`rebuild/`](rebuild) | the scripts and data that draw the slides and the handout, and the report that compares the room with the second reader |
 
 ## The practice
@@ -64,7 +64,8 @@ the AI wrote, in full:
 Outside the workshop hour, use `statement_marks.xlsx`: it lists the same statements, one tab per paper.
 
 **3. Give each statement one mark, then press Submit.** No question is required, and you can edit your answers
-after you submit.
+after you submit. The first question asks for your name, so that we can thank you in the
+acknowledgements of the paper about this evaluation; leave it empty to stay anonymous.
 
 | mark | what it means |
 | --- | --- |
@@ -73,15 +74,32 @@ after you submit.
 | Especially good | Correct, and it adds something: a link the paper did not make, or a clearer mechanism. |
 | Can't judge | You cannot tell without more work. Better than a guess. |
 
-Mark first, then look at the second reader.
+Mark first, then look at the AI readers.
 
-## The second reader
+## The AI readers
 
-A second AI reader (Claude Fable 5.2, one pass per paper, with the paper's full text, the uploaded values and every
-cited passage open) marked the same 69 statements: 43 make sense, 3 are especially good, 23 do not make sense.
-Its marks and reasons are in `AI_EVALUATION_SUMMARY.md`, in the hidden tab `AI evaluation` of the workbook and, one
-file per paper, in `rebuild/analysis/ai_eval/`. They are one reader's opinion to compare with yours, not an answer
-key, and no person has checked them.
+AI readers marked the same 69 statements, one pass per paper, with the paper's full text, the uploaded values and
+every cited passage open, on the four marks you use:
+
+* **Claude Fable 5.2**, 10 November, extra-high effort: `AI_EVALUATION_SUMMARY.md`, the hidden tab `AI evaluation`,
+  and `rebuild/analysis/ai_eval/<paper>/fable_eval.json`.
+* **Claude Sonnet 5.5**, 12 November, default effort, six readers (one per paper) who never saw Fable's marks:
+  `rebuild/analysis/ai_eval/<paper>/sonnet_eval.json` (on slides 29 and 30 of the deck).
+* **Claude Opus**, 12 November, default effort, six readers (one per paper) who saw neither Fable's nor Sonnet's marks:
+  Opus 5.5 on papers A, D, E and F; Opus 5 on B and C, where a safety classifier stopped Opus 5.5 while it read the paper
+  and Claude Code switched the reader to Opus 5. Marks: `AI_EVALUATION_SUMMARY.md`, the hidden tab
+  `AI evaluation Opus`, and `rebuild/analysis/ai_eval/<paper>/opus_eval.json`.
+* **Gemini 4 Hydrogen**, 12 November, extra-high (XHigh) effort, six readers (one per paper) blind to the prior AI
+  evaluations, verified per statement by an independent AI agent against the paper, citations, walk JSON and uploaded
+  values: `AI_EVALUATION_SUMMARY.md`, the hidden tab `AI evaluation Gemini 4 Hydrogen`,
+  `rebuild/analysis/gemini_eval/<paper>.json`, and `rebuild/analysis/ai_eval/<paper>/gemini_hydrogen_eval.json`.
+* **Gemini 4 Argon**, 12 November, default effort, four blind readers (sharded across the six papers) who never saw
+  Fable's or any other reader's marks: the end of `AI_EVALUATION_SUMMARY.md`, the hidden tab
+  `AI evaluation Gemini 4 Argon`, and `rebuild/analysis/ai_eval/<paper>/gemini_argon_eval.json`.
+
+Their marks, totals and reasons are in those files and on slides 29 and 30 of the deck, and are kept off this page,
+so that you, or another reader, can mark without seeing them by not opening those. They are opinions to compare with
+yours, not an answer key, and no person has checked them.
 
 ## Building the slides again
 

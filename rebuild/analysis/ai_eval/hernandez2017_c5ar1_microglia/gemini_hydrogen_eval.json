@@ -1,0 +1,144 @@
+{
+ "dataset": "hernandez2017_c5ar1_microglia",
+ "evaluator": "Gemini 4 Hydrogen (XHigh)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "All reported fold changes, contrast interpretations, and biological context are accurate. External citation [1] covers related Aβ-induced mouse microglial chemokines rather than Ccl6 itself, and [2] is a transparent self-citation of the source paper; neither misrepresents a reference. Absent from Results/Discussion/Figures (only in MOESM8 Cluster 2 table).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Accurate expression values, correct rescue contrast, direct validation in Hernandez 2017 Fig 5a–c (Cluster 4), and directly supported by [1] for Aβ1-42-driven Cxcl2 induction in mouse microglia (with minor caveat of circular self-citation [2] in prose and basal 2mo C5aR1 dependence).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 3,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All numeric values and contrasts in the claim are accurate and C5aR1KO suppression is confirmed in Hernandez 2017 Fig 5a–c (Cluster 4), with [4] accurately quoted and organism-qualified. Marked 'partly' in paper because Hernandez 2017 shows the 5mo C5aR1KO reduction by qRT-PCR (-46%) but found Arctic vs WT n.s. by RT-PCR and did not discuss Vegfa's angiogenic role.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 4,
+   "mark": "Especially good",
+   "reasons": [
+    "N",
+    "E"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "100% accurate on numbers, contrast logic, biology, and citation [5], while adding a genuinely novel insight absent from Hernandez 2017 (N, E): uncovers Axl (buried in MOESM8 Cluster 2) as a plaque-associated DAM/TAM marker and resolves its biphasic C5aR1 dependence—early 2mo Arctic downregulation rescued by C5aR1KO versus C5aR1-independent mid-life DAM induction at 5–7mo.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Numerically accurate and appropriately hedged ('mild modulation'), with accurate AD mouse microglial support from [6] and without asserting the spurious BCR/Was walk leg in its text. Not mentioned in Hernandez 2017 text/figures (only in MOESM8 Cluster 5).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Exact log2FCs corroborated by replicate TPMs at 2mo and 7mo, accurate contrast separation demonstrating constitutive and Arctic-background C5aR1 dependence, and properly organism-qualified citation [7]. Absent from Hernandez 2017 main text/figures (present only in MOESM8 Cluster 1 and MOESM6 GO table).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Design (X) and Data (D) error: cites the non-Arctic baseline contrast C5aR1KO_vs_WT (+0.31 at 2mo, +0.29 at 10mo) as evidence that C5aR1 knockout 'partially restores' Cx3cr1 under Arctic APP, whereas the actual rescue contrast ArcticC5aR1KO_vs_Arctic is negative at 5mo (-0.13) and flat at 7–10mo (+0.09, +0.09), and Hernandez 2017 Results explicitly state Cluster 3 (containing Cx3cr1) had no Arctic vs Arctic/C5aR1KO difference.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Accurate Arctic mid-late induction data and exact literature support from [8] and [9] in matching mouse microglia/AD models for the CD14–TLR2–TLR4 fibrillar-Aβ phagocytic receptor complex. Marked 'partly' in paper because Tlr2's late induction/phagocytosis role is explicitly discussed (Fig 6, Discussion) and Cd14 appears in the Fig 5a heatmap, whereas pairing them as co-components of the fAβ receptor complex is not stated.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "Six statements make sense, one is especially good (S4 on Axl uncovers a biphasic C5aR1-sensitive 2mo dip versus C5aR1-independent mid-life DAM induction omitted from the paper), and one does not make sense (S7 misreads the non-transgenic C5aR1KO_vs_WT contrast as Arctic rescue of Cx3cr1, when ArcticC5aR1KO_vs_Arctic is flat). Numbers, citations, and contrast handling are otherwise accurate across Ccl6, Cxcl2, Vegfa, Hck, Stat5a, and Tlr2/Cd14."
+ }
+}

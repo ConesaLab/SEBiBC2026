@@ -1,0 +1,299 @@
+{
+  "dataset": "jimenez2021_hbmec_lbp",
+  "evaluator": "Gemini 4 Carbon",
+  "date": "2026-11-12",
+  "statements": [
+    {
+      "n": 1,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "B",
+        "G"
+      ],
+      "in_paper": "yes",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "IL6 mRNA is symmetrically induced (+2.47 in Spneumoniae_vs_control and +2.47 in Lbp_vs_control, both >p99), and the paper reports both IL-6 upregulation and KEGG IL-17 pathway enrichment. However, invoking the KEGG IL-17 edge FOSB -> IL6 (e1) in leukocyte-free hBMEC monoculture is biologically invalid because IL17A-F and IL17RC are unexpressed (IL17RA -0.27/-0.06), and FOSB is induced only under S. pneumoniae (+1.17 vs +0.37 in Lbp). Citation [1] notes bacterial IL-6 release in BMECs (E. coli) without supporting IL-17/FOSB signaling.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs', 'Biological processes identified in the S. pneumoniae-induced hBMECs', and 'Gene ontology of hBMECs transcriptomes induced by S. pneumoniae and Lbp'; Fig. 3C; Table 4; Discussion."
+    },
+    {
+      "n": 2,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "TNFSF13B (BAFF) is strongly Lbp-specific (+3.21 in Lbp_vs_control vs +0.05 in Spneumoniae_vs_control), whereas NFKB2 (+1.66 vs +1.32) and RELB (+2.21 vs +1.38) rise in both arms. However, KEGG edges e3 (NFKB2 -> TNFSF13B) and e4 (walked backward to RELB) encode NF-kB-driven TNFSF13B transcription rather than BAFF-receptor signaling, and all three BAFF receptors (TNFRSF13C, TNFRSF13B, TNFRSF17) are unexpressed in hBMECs (MAP3K14 -0.25/-0.00). Citation [2] concerns B-lymphocyte DYRK1a/BAFF-receptor signaling, which cannot operate autocrinely here.",
+      "in_paper_where": "Table 3 (R-HSA-5676594); Discussion."
+    },
+    {
+      "n": 3,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "K",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "GBP5 is the strongest GBP-family responder, induced +1.85 in Spneumoniae_vs_control and +2.78 in Lbp_vs_control (above GBP2 +1.05/+1.61, GBP4 +0.23/+1.30, GBP3 +0.34/+1.08, and GBP1 -0.12/+1.10). Reactome GBP-mediated host defense edges (GBP2-GBP5-PGGT1B, with housekeeping prenyltransferase PGGT1B unchanged at -0.10/+0.03) appropriately place GBP5 in cell-autonomous interferon-inducible host defense, and citation [3] supports GBP5 as an IFN-inducible innate marker in human/mouse macrophages. The paper reported GBP1-5 induction only under Lbp, overlooking shared GBP5/GBP2 induction under S. pneumoniae.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs'; Discussion."
+    },
+    {
+      "n": 4,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "Although IL1B mRNA rises only under S. pneumoniae (+1.42 vs -0.20 in Lbp), attributing this to the GBP2-CASP4 non-canonical inflammasome is wrong: CASP4 (mouse caspase-11 in citation [4]) senses cytosolic Gram-negative LPS—absent in Gram-positive S. pneumoniae—and mediates post-translational pro-IL-1B cleavage rather than IL1B transcription. Moreover, CASP4 is not relevant (+0.78 Spn, +0.98 Lbp), GBP2 (+1.61 vs +1.05) is higher under Lbp, GSDMD (+0.00/+0.05) and PYCARD (+0.05/+0.10) are flat, and NLRP3 is undetected.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs' and 'Biological processes identified in the S. pneumoniae-induced hBMECs'."
+    },
+    {
+      "n": 5,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "K",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "IL1B mRNA is induced exclusively in Spneumoniae_vs_control (+1.42) and flat in Lbp_vs_control (-0.20), whereas shared NF-kB cytokines and regulators—IL6 (+2.47/+2.47), TNF (+1.81/+2.49), IL1A (+2.60/+1.49), NFKBIA (+1.40/+1.57), NFKB2 (+1.32/+1.66), and RELB (+1.38/+2.21)—are strongly upregulated in both arms. Citation [1] supports bacterial co-induction of IL-1B, IL-1A, IL-6, and TNF-alpha in BMECs (quoted for S. aureus). The paper reported IL-1B induction under S. pneumoniae and shared NF-kB cytokines, without explicitly highlighting Lbp's lack of IL1B induction.",
+      "in_paper_where": "Results, 'Biological processes identified in the S. pneumoniae-induced hBMECs' and 'Gene ontology of hBMECs transcriptomes induced by S. pneumoniae and Lbp'; Fig. 3B; Table 4; Discussion."
+    },
+    {
+      "n": 6,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "Although the quoted values match—TNFSF13B (+0.05 Spn, +3.21 Lbp), NFKB2 (+1.32 Spn, +1.66 Lbp), and RELB (+1.38 Spn, +2.21 Lbp)—claiming TNFSF13B (BAFF) feeds NFKB2 and RELB inverts the pathway in BAFF-receptor-negative hBMECs. All three BAFF receptors (TNFRSF13C, TNFRSF13B, TNFRSF17) are unexpressed, NFKB2 and RELB are already induced (+1.32/+1.38) under S. pneumoniae where TNFSF13B is flat (+0.05), and KEGG edge e19 is walked backward against NF-kB-driven TNFSF13B transcription. Citation [5] studies post-translational NIK/p100 processing in lymphocytes, not endothelial mRNA induction.",
+      "in_paper_where": "Results, 'Biological processes identified in the S. pneumoniae-induced hBMECs'; Table 3 (R-HSA-5676594); Discussion."
+    },
+    {
+      "n": 7,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "yes",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "IL6 mRNA rises identically in both contrasts (+2.47 in Spneumoniae_vs_control and +2.47 in Lbp_vs_control, both >p99), alongside shared canonical NF-kB pathway components TLR2 (+3.04/+3.79), NOD2 (+1.44/+1.79), TNF (+1.81/+2.49), NFKBIA (+1.40/+1.57), and TNFAIP3 (+2.30/+2.44). Citation [6] confirms functional NF-kB (c-Rel/RelA) binding required for TNF-alpha-driven human IL6 promoter activation in HeLa cells. This shared NF-kB-mediated IL-6 induction is explicitly reported across the paper's Results, Table 4, Fig. 3B, and Discussion.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs', 'Biological processes identified in the S. pneumoniae-induced hBMECs', and 'Gene ontology of hBMECs transcriptomes induced by S. pneumoniae and Lbp'; Fig. 3B; Table 4; Discussion."
+    },
+    {
+      "n": 8,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "B"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "While IFNB1 mRNA at 6 h rises only in Spneumoniae_vs_control (+1.60 vs +0.00 in Lbp, consistent with pneumolysin/DNA sensing in citation [7]), concluding that the type I interferon response is specific to live bacteria is contradicted by the uploaded dataset. Canonical type I ISGs—IFIT1 (+1.09 vs -0.48), IFIT2 (+1.02 vs -0.39), IFIT3 (+1.09 vs -0.28), OAS1 (+1.31 vs +0.05), MX2 (+1.68 vs -0.09), and IFI35 (+1.31 vs -0.12)—are strongly induced by Lbp (Table 3 Interferon alpha/beta signaling, FDR 4.54e-4) and not S. pneumoniae, reflecting transient early IFN kinetics.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 9,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "IL15RA is upregulated in Lbp_vs_control (+1.18, relevant DEG) and moderately elevated in Spneumoniae_vs_control (+0.89, ~94th percentile, just below |log2FC| > 1), paralleling TNF induction (+1.81 Spn, +2.49 Lbp). Citation [8] shows in mouse cerebral microvascular endothelial cells that TNF upregulates IL15Ralpha isoforms mediating neuroinflammatory IL-15 signaling across the blood-brain barrier (though 3' QuantSeq here measures total IL15RA mRNA rather than splice variants). Neither IL15RA nor IL-15 signaling was mentioned in the paper.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 10,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "L",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "Alongside induced complement protease genes C1R (+1.04 Spn, +2.24 Lbp) and C1S (+1.23 Spn, +2.28 Lbp), SERPING1 (C1-inhibitor) is upregulated in Lbp_vs_control (+1.16) and weakly positive in Spneumoniae_vs_control (+0.39). Citation [9] supports C1-inhibitor as the physiological brake on C1r, C1s, MASP2, and plasma kallikrein vascular permeability, though C1q subunits (C1QA/B/C) and C2/C4 are unexpressed in monoculture and supplied by plasma in vivo. The paper noted C1R/C1S induction but missed SERPING1 co-induction.",
+      "in_paper_where": "Results, 'Biological processes identified in the S. pneumoniae-induced hBMECs' and 'Gene ontology of hBMECs transcriptomes induced by S. pneumoniae and Lbp'; Discussion."
+    },
+    {
+      "n": 11,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "H",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "NFKB2 is induced in both arms (+1.32 Spn, +1.66 Lbp) alongside RELB (+1.38/+2.21) and canonical NF-kB targets IL6 (+2.47/+2.47), TNF (+1.81/+2.49), NFKBIA (+1.40/+1.57), and TNFAIP3 (+2.30/+2.44). Citation [10] shows that cell-autonomous Nfkb2 signaling in inflamed mouse intestinal epithelium supplements latent RelA dimers to amplify canonical proinflammatory transcription, making this hedged crosstalk hypothesis plausible in hBMECs (pending protein-level check of p100 processing). The paper reported NFKB2, TNF, IL-6, and TNFAIP3 without proposing RelA amplification.",
+      "in_paper_where": "Results, 'Biological processes identified in the S. pneumoniae-induced hBMECs'; Table 3; Discussion."
+    },
+    {
+      "n": 12,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "X"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "does not support",
+        "biology": "doubtful"
+      },
+      "justification": "Although C1S (+2.28 vs +1.23), C1R (+2.24 vs +1.04), CSF1 (+2.01 vs +1.56), and TNF (+2.49 vs +1.81) are higher under Lbp, comparing raw amplitudes ignores the uncalibrated dosing design (27 ug / 1 nmol purified recombinant Lbp vs MOI 0.5 live bacteria) and overlooks NF-kB targets stronger under S. pneumoniae (CXCL6 +4.32 vs +3.30, CXCL1 +3.91 vs +3.11, SELE +4.18 vs +3.19, IL1A +2.60 vs +1.49). Classical complement genes walked in legs 26-29 (C1QA/B/C, C4A) are also unexpressed, and citation [11] studies Gram-negative lactoferrin-binding protein B (LbpB) rather than pneumococcal laminin-binding protein (Lbp, Spr0906).",
+      "in_paper_where": "Results, 'Gene ontology of hBMECs transcriptomes induced by S. pneumoniae and Lbp'; Discussion; Conclusion."
+    },
+    {
+      "n": 13,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "Calling CEBPB 'induced in both arms (+0.47/+1.10)' misreads a union relevance-flag artefact: CEBPB is a DEG only under Lbp (+1.10), whereas +0.47 under S. pneumoniae sits near the 75th-percentile background (abs_p75 = 0.42) and fails DEG criteria. Moreover, CEBPB mRNA (+0.47 Spn vs +1.10 Lbp) moves opposite in relative strength to CXCL1 (+3.91 vs +3.11), CXCL8 (+3.98 vs +3.60), and CXCL6 (+4.32 vs +3.30), all higher under S. pneumoniae. Citation [12] addresses C/EBPbeta LAP in mouse macrophages rather than brain endothelium.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs' and 'Gene ontology of hBMECs transcriptomes induced by S. pneumoniae and Lbp'; Fig. 4; Discussion."
+    },
+    {
+      "n": 14,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "While the RNA-seq fold changes match—IL6 (+2.47/+2.47), IL1B (+1.42 Spn vs -0.20 Lbp), and IL1A (+2.60/+1.49)—explaining pneumococcus-specific IL1B mRNA induction via pneumolysin-driven NLRP3 inflammasome activation and IL-1B processing conflates Signal 1 transcription with Signal 2 post-translational cleavage. Citations [13] and [14] show NLRP3/ASC/caspase-1 proteolytic maturation and secretion of IL-1B protein in mouse myeloid cells, not IL1B mRNA synthesis. Furthermore, NLRP3 is undetected in this hBMEC dataset, and PYCARD (+0.05/+0.10), GSDMD (+0.00/+0.05), and CASP1 (+0.53/+0.66) are non-relevant.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs' and 'Biological processes identified in the S. pneumoniae-induced hBMECs'; Discussion."
+    },
+    {
+      "n": 15,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "L",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "Lbp coordinately induces ISRE targets IFIT1 (+1.09 vs -0.48 Spn), IFIT2 (+1.02 vs -0.39), IFIT3 (+1.09 vs -0.28), CXCL10 (+3.17 vs +1.43), and CXCL11 (+3.59 vs +0.28)—alongside OAS1 (+1.31), MX2 (+1.68), STAT1 (+0.65), and STAT2 (+0.89)—while IRF9 mRNA is uninduced (-0.50 Lbp, -0.20 Spn). Citation [15] supports post-translational assembly of STAT1-STAT2-IRF9 (ISGF3) on DNA from constitutive IRF9/STAT2 pools without IRF9 transcription, though IRFs/NF-kB may co-regulate CXCL10/CXCL11. The paper reported Lbp-induced IFIT1-3 and interferon signaling, missing CXCL10/CXCL11 and ISGF3.",
+      "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs'; Table 3."
+    },
+    {
+      "n": 16,
+      "mark": "Especially good",
+      "reasons": [
+        "N",
+        "E"
+      ],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "CXCL10 (+3.17 Lbp vs +1.43 Spn) and CXCL11 (+3.59 Lbp vs +0.28 Spn) both exceed the 99th percentile in Lbp_vs_control and define a major Lbp-skewed chemokine axis completely omitted by the authors, who discussed only neutrophil ELR+ CXC chemokines (CXCL1/2/3/5/6/8) and ICAM-1/CTSS. Citation [16] and BBB immunology support endothelial CXCL10/CXCL11 secretion recruiting CXCR3+ T cells (with CXCR3 appropriately absent in pure endothelium alongside induced VCAM1 +3.13 and ICAM1 +2.22). Identifying this CXCR3-ligand pair genuinely links Lbp's interferon response to T-cell recruitment.",
+      "in_paper_where": ""
+    }
+  ],
+  "overall": {
+    "score_1_to_5": 3,
+    "comment": "Every quoted log2 fold change matches the uploaded RNA-seq table across all 16 statements, but mechanistic and citation validity is split evenly (1 'Especially good', 7 'Makes sense', and 8 'Does not make sense'). Relative to the authors' three main conclusions, the report captures that Lbp alone reproduces much of the pneumococcal response (Conclusion 1) and recovers shared cytokine, chemokine, TNF, and NF-kB signalling though not phagosome formation (Conclusion 2), while completely missing Lbp-driven extracellular matrix remodelling and cellular senescence (Conclusion 3). Its standout contribution is surfacing the strong Lbp-skewed CXCL10 (+3.17) and CXCL11 (+3.59) CXCR3-ligand axis for T-cell recruitment (S16), alongside ISGF3/IRF9 post-translational ISG control (S15) and SERPING1 C1-inhibitor co-induction (S10). Recurring errors include applying B-cell BAFF-R (S2, S6), T-cell IL-17 (S1), Gram-negative LPS/CASP4 (S4), and post-translational NLRP3 cleavage (S14) mechanisms to BAFFR/NLRP3-negative endothelial mRNA data, contradicting the dataset's own Lbp-driven ISGs from 6 h IFNB1 alone (S8), misreading union relevance flags (S13), and confusing laminin-binding protein (Lbp) with lactoferrin-binding protein B (LbpB) (S12)."
+  }
+}

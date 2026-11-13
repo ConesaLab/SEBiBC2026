@@ -1,0 +1,145 @@
+{
+ "dataset": "hernandez2017_c5ar1_microglia",
+ "evaluator": "Claude Opus 5.5",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Values right: Ccl6 rises +1.32/+1.19/+0.90 at 5/7/10 months in Arctic only (C5aR1KO vs WT about -0.1), and Arctic/C5aR1KO vs Arctic stays positive (+0.08 to +0.42), so C5aR1 loss does not undo it. [1] lists other chemokines, not Ccl6; [2] describes the general decrease that Ccl6 escapes, without saying so.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values right: Cxcl2 rises +0.92 to +1.20 in Arctic from 5 months and Arctic/C5aR1KO lowers it (-0.80 to -0.66), as in the paper's Fig. 5 and RT-PCR (4.4x up at 5 months, lower in Arctic/C5aR1KO). [1] shows Abeta1-42 induces CXCL2 in mouse microglia. The 2-month drop is APP-independent (C5aR1KO vs WT -0.95).",
+   "in_paper_where": "Results, 'Pathway analysis reveals less inflammation...' (Fig. 5a; Fig. 5c RT-PCR); Discussion (Cxcl2 as NF-kB target)"
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Numbers right, but Arctic equals WT at 2 and 5 months (-0.16, -0.04), so the big knockout drops there (-1.43, -1.23; -2.06 without the transgene) are an APP-independent C5aR1KO effect, not a reversal 'at every age'. The paper's RT-PCR found no Arctic rise at 5 or 10 months. [4] is a human vascular VEGF review.",
+   "in_paper_where": "Results, 'Pathway analysis...' (Fig. 5a; Fig. 5c: Vegfa not increased in Arctic at 5 months but 46% lower in Arctic/C5aR1KO)"
+  },
+  {
+   "n": 4,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values right: Axl +2.06/+1.96 in Arctic at 5/7 months, untouched by C5aR1 loss (-0.14, -0.16); Axl is a known plaque-associated (DAM) microglial gene, as [5] shows. Weak point: at 2 months Arctic/C5aR1KO sits +0.71 above WT, an overshoot rather than 'normalisation', and rests on one two-mouse Arctic group. Axl is not in the paper.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "All Hck changes are at most 0.36 log2 with two mice per group. The 10-month 'Arctic dip' (-0.36) is matched by C5aR1KO vs WT (-0.34): the WT 10-month group is simply high, so it is not an APP effect and cannot reflect Abeta clearance; clearance genes rise in Arctic microglia here. [6] is quoted correctly.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Values right: C5aR1 loss lowers Stat5a at 2 and 7 months in both backgrounds (-1.09/-1.50; -0.96/-0.85), not at 10 months (+0.13), and the Arctic decline is mild (-0.26, -0.46). [7] shows GM-CSF induces STAT5A in BV-2 cells, not a C5aR1 link; the consequence is hedged. Not in the paper.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "misread",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "The Arctic decline is right but small (-0.31 at 7 months). 'Partially restored by C5aR1 knockout' rests on C5aR1KO vs WT (+0.31, +0.29), which has no transgene; the contrast that tests restoration, Arctic/C5aR1KO vs Arctic, is +0.09 at 7 and 10 months and -0.13 at 5 months: no restoration.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values right: Tlr2 +0.44/+0.62 at 5/7 months, Cd14 +0.38 rising to +1.02 and staying about +0.67. [8] shows CD14 with TLR2/TLR4 binds fibrillar Abeta and starts signalling to phagocytosis; [9] supports TLR2 in Abeta clearance. The paper shows Tlr2 as an Arctic-induced phagocytic receptor and TLR2/4 as fAbeta receptors; Cd14 is the addition.",
+   "in_paper_where": "Results, cluster 2 / Fig. 6 (Tlr2 among phagocytosis-promoting receptors); Discussion ('Fibrillar Aß is a ligand for TLR2 and TLR4'). Cd14 not mentioned."
+  }
+ ],
+ "overall": {
+  "comment": "The interpretation reads most values correctly and recovers the paper's main inflammatory finding through Cxcl2 (Arctic-induced, lowered by C5aR1 loss), with sensible additions not in the paper (Ccl6 and Axl induced by APP but C5aR1-independent, Stat5a, Cd14 with Tlr2). Its errors are contrast and baseline readings: Vegfa 'reversal' and Cx3cr1 'restoration' rest on knockout effects without the transgene, and the Hck 'late dip' is a WT 10-month baseline effect. It misses the paper's second main conclusion, that phagosome and lysosome genes rise further in Arctic/C5aR1KO."
+ }
+}

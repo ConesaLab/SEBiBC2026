@@ -1,0 +1,148 @@
+{
+ "dataset": "hernandez2017_c5ar1_microglia",
+ "evaluator": "Gemini 4 Argon, default effort",
+ "model": "gemini-4-argon",
+ "date": "2026-11-12",
+ "overall": {
+  "score_1_to_5": 4,
+  "comment": "PaintOmics AI accurately reads the 12 age-by-genotype contrasts in adult mouse microglia, reproducing the paper's core split between C5aR1-dependent pro-inflammatory signals (Cxcl2, Vegfa) and preserved phagocytic/DAM receptors (Tlr2, Cd14, Axl). Its main slip is in S7, where it cites the non-Arctic C5aR1KO_vs_WT contrast to claim that C5aR1 deletion restores the Arctic-driven decline of Cx3cr1 even though ArcticC5aR1KO_vs_Arctic is near zero."
+ },
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "All fold changes for Ccl6 match the uploaded data (Arctic_vs_WT +0.17 at 2mo, +1.32 at 5mo, +1.19 at 7mo, +0.90 at 10mo; ArcticC5aR1KO_vs_Arctic +0.27, +0.08, +0.12, +0.42), showing an APP-driven chemokine induction that is not reversed by C5aR1 ablation. Reference [1] supports Aβ1-42 induction of related CCL chemokines (CCL2, CCL3, CCL4, CCL7) in primary mouse microglia, while [2] is a self-citation of the source study.",
+   "in_paper_where": "Not in the paper; the paper highlights Ccl3, Ccl4, Cxcl2, and Cxcl16 in Cluster 4 (Fig. 5a) but does not mention Ccl6."
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Every reported value for Cxcl2 matches the uploaded node (Arctic_vs_WT +0.21 at 2mo, +0.92 at 5mo, +1.20 at 7mo, +0.92 at 10mo; ArcticC5aR1KO_vs_Arctic −0.96, −0.80, −0.80, −0.66; C5aR1KO_vs_WT −0.95 at 2mo). Reference [1] directly shows Aβ1-42 induction of Cxcl2 mRNA in primary mouse microglia, and the finding is a central validated result of Hernandez et al. (Fig. 5a–c).",
+   "in_paper_where": "Results and Discussion; plotted in the Cluster 4 heatmap and NF-κB pathway schematic (Fig. 5a–b) and validated by qRT-PCR at 5 and 10 months (Fig. 5c)."
+  },
+  {
+   "n": 3,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "The uploaded data for Vegfa match all cited values (Arctic_vs_WT −0.16 at 2mo, −0.04 at 5mo, +0.28 at 7mo, +0.57 at 10mo; ArcticC5aR1KO_vs_Arctic −1.43 to −0.83; C5aR1KO_vs_WT −2.06 at 2mo), and Vegfa suppression in Arctic/C5aR1KO is explicitly validated by qRT-PCR in Fig. 5c. Reference [4] provides general human AD background on VEGF-A/VEGFR2 signalling rather than microglial C5aR1 regulation.",
+   "in_paper_where": "Results and Discussion; plotted in the Cluster 4 heatmap and NF-κB schematic (Fig. 5a–b) and validated by qRT-PCR at 5 and 10 months (Fig. 5c)."
+  },
+  {
+   "n": 4,
+   "mark": "Especially good",
+   "reasons": [
+    "A",
+    "E"
+   ],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All numbers match the uploaded Axl node (Arctic_vs_WT −1.06 at 2mo, +2.06 at 5mo, +1.96 at 7mo, +0.62 at 10mo; ArcticC5aR1KO_vs_Arctic +1.77 at 2mo, −0.14 at 5mo, −0.16 at 7mo), and reference [5] directly supports Axl upregulation in plaque-associated microglia in 5XFAD mice and human EOAD plaques. Surfacing this strong biphasic trajectory of a canonical DAM phagocytic receptor—omitted from the paper because it falls outside the KEGG phagosome/lysosome maps—adds genuine biological insight.",
+   "in_paper_where": "Not in the paper; the authors manually added Trem2 and Tyrobp to the phagosome/lysosome heatmap (Fig. 6) but did not mention Axl."
+  },
+  {
+   "n": 5,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "The numbers for Hck match the uploaded data (Arctic_vs_WT_10mo −0.36; ArcticC5aR1KO_vs_Arctic_2mo +0.29) and the statement appropriately qualifies the effect size as mild. Reference [6] directly demonstrates that Hck regulates Aβ-stimulated microglial phagocytosis and that Hck deficiency exacerbates plaque pathology in J20 mice.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "All cited values for Stat5a match the uploaded node (ArcticC5aR1KO_vs_Arctic −1.09 at 2mo, −0.62 at 5mo, −0.96 at 7mo; C5aR1KO_vs_WT −1.50 at 2mo, −0.85 at 7mo), showing consistent suppression of Stat5a in C5aR1-deficient microglia from 2 to 7 months. Reference [7] supports STAT5A induction and nuclear translocation in cytokine-stimulated microglia, though not specifically downstream of C5aR1.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "To claim that the age-dependent Arctic APP decline of Cx3cr1 (Arctic_vs_WT −0.13 at 5mo, −0.31 at 7mo, −0.25 at 10mo) is 'partially restored by C5aR1 knockout', the statement cites C5aR1KO_vs_WT (+0.31 at 2mo, +0.29 at 10mo), which is the non-Arctic baseline knockout contrast lacking the APP transgene. In the actual rescue contrast (ArcticC5aR1KO_vs_Arctic), Cx3cr1 is −0.13 at 5mo and only +0.09 at 7mo and 10mo, showing essentially no restoration during the 5–10mo disease phase.",
+   "in_paper_where": "CX3CR1-GFP heterozygous knock-in mice are used to sort microglia (Methods, Fig. 3), but Cx3cr1 transcript changes across ages are not reported as a finding."
+  },
+  {
+   "n": 8,
+   "mark": "Especially good",
+   "reasons": [
+    "N",
+    "E"
+   ],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Both Tlr2 (Arctic_vs_WT +0.44 at 5mo, +0.62 at 7mo, +0.30 at 10mo) and Cd14 (+0.38 at 2mo, +1.02 at 5mo, +0.66 at 7mo, +0.68 at 10mo) are relevant and induced in Arctic microglia. Pairing Tlr2 (reported in Fig. 6) with its physical co-receptor Cd14 (present in the uploaded data but omitted from the paper) and citing direct evidence that the CD14–TLR2–TLR4 complex initiates fibrillar-Aβ phagocytosis [8, 9] provides a strong mechanistic connection.",
+   "in_paper_where": "Tlr2 is reported in Results/Discussion and Fig. 6a–b as a Cluster 2 phagocytosis-promoting receptor, whereas Cd14 is not mentioned in the paper."
+  }
+ ]
+}

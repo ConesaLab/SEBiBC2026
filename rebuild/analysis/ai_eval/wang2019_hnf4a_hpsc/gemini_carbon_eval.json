@@ -1,0 +1,152 @@
+{
+  "dataset": "wang2019_hnf4a_hpsc",
+  "evaluator": "Gemini 4 Carbon",
+  "date": "2026-11-12",
+  "statements": [
+    {
+      "n": 1,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "X"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "Although the uploaded values match exactly (MTTP Gene expression -6.46/+0.31, Proteomics -8.50/-0.43; HNF1A Gene expression -0.39/-0.10, relevant=false), the statement frames DBDmut_vs_WT around HNF1A because the walker misassigned HNF1A as the perturbed anchor instead of CRISPR-edited HNF4A. Worse, declaring HNF1A's own transcript 'unchanged' from an insensitive microarray probe is directly refuted by Wang et al.'s qRT-PCR in Fig. 2C, which proves HNF4A DBD Mut failed to transactivate HNF1A mRNA (and SUMO Mut significantly reduced it). Refs [1, 2] establish HNF4A-dependent Mttp/Apob expression and MTP function without mentioning HNF1A.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 2,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "K",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "APOB (relevant=true in both layers) collapses specifically in DBDmut_vs_WT at both mRNA (-5.28, 100th percentile) and protein (-7.09) levels, whereas SUMOmut_vs_WT shows no suppression (+0.67 mRNA, -0.33 protein). Ref [1] directly demonstrates that hepatic HNF4A loss abolishes Apob and Mttp expression, consistent with DBD Mut failing hepatoblast specification while SUMO Mut retains nuclear DNA-binding HNF4A at day 9. Wang et al. report lipoprotein/cholesterol pathway loss via APOA1/APOA2/APOA4 without naming APOB.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 3,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "CDH1 (relevant=true in both layers, distinct from alias-mapped FZR1) decreases across both mutants in Gene expression (DBDmut -0.46, SUMOmut -1.37) and strongly in Proteomics (DBDmut -2.92, SUMOmut -3.16), though the DBDmut mRNA shift is sub-2-fold so its E-cadherin loss is largely post-transcriptional. Positive transcriptional regulation of E-cadherin by HNF4A is well established in hepatic epithelia, and ref [3] supports HNF4A activating CDH1 (albeit in human renal cell carcinoma). Wang et al. note shared cell-adhesion-molecule enrichment (Fig. 6A) without mentioning CDH1.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 4,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "ITGB5 drops ~4-fold in Proteomics in both mutants (DBDmut -1.87, SUMOmut -2.02; relevant=true) while falling short of differential expression in Gene expression (-0.53, -0.57; relevant=false), whereas PRKCE mRNA drops sharply only in DBDmut_vs_WT (-2.28, 99.3rd percentile vs SUMOmut -0.12; unmeasured in Proteomics). Ref [4] shows PKC-epsilon binds integrin beta chains via RACK1 to promote focal adhesion and spreading, though tested in human glioma cells rather than hepatic progenitors. Neither gene is discussed in Wang et al. despite focal adhesion enrichment.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 5,
+      "mark": "Especially good",
+      "reasons": [
+        "N"
+      ],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "DAB2 exhibits a 12-fold post-transcriptional loss in DBDmut_vs_WT Proteomics (-3.61, relevant=true vs SUMOmut -0.39) while its transcript is not differentially expressed (DBDmut -0.45, SUMOmut +0.94; relevant=false). Ref [5] establishes DAB2 as a cargo-selective clathrin adaptor recognizing FXNPXY motifs on LDL-receptor family members (and ref [6] links DAB2 to fibrinogen uptake). Connecting this unmentioned protein-only DAB2 collapse to the simultaneous loss of LDLR (-1.40), LRP2 (-1.77), and FGA (-5.08/-7.34) adds a genuine cross-layer mechanism to the paper's top DBDmut 'sterol import' signature.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 6,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "K",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "PRKCSH, GANAB, and CALR are all flagged relevant=true in Proteomics with coherent ~2-fold reductions in DBDmut_vs_WT (-0.99, -0.93, -0.87) and mild shifts in SUMOmut_vs_WT (-0.38, -0.31, -0.23), alongside PRKCSH mRNA loss (-1.48/-1.20) and unwalked ER glycosylation genes MOGS (-1.12) and DDOST (-1.10). Ref [7] directly supports glucosidase II (GANAB/PRKCSH) and calreticulin (CALR) operating together in the ER calnexin/calreticulin N-glycoprotein folding cycle, which fails to ramp up when DBDmut cells fail secretory hepatoblast specification.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 7,
+      "mark": "Does not make sense",
+      "reasons": [
+        "G",
+        "C"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "Generated on a redundant revisit of MTTP (-6.46 mRNA, -8.50 protein in supporting prose), the statement itself contains zero observation from Wang et al.'s dataset and merely restates textbook/literature facts already covered in S1-S2. Moreover, extrapolating mature MTTP-mutant iPSC-hepatocyte intracellular lipid accumulation from ref [8] (with [11]) does not transfer cleanly to day-9 HNF4A DBD Mut cells, which failed hepatoblast commitment altogether (AFP/CEBPA-negative, ectoderm-shifted) and already silenced APOB transcription (-5.28) and sterol/ketogenic enzymes.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 8,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B",
+        "X"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "While the microarray values match (HNF1A -0.39/-0.10, relevant=false; APOA4 -4.77, APOA1 -2.75, APOB -5.28, MTTP -6.46 in DBDmut_vs_WT, with APOA4 also -1.95 in SUMOmut_vs_WT), inferring a 'DBD-specific loss of HNF1A transactivation rather than a change in HNF1A abundance' misidentifies the CRISPR-edited gene: DBDmut deletes exons 2-3 of HNF4A, leaving HNF1A wild-type. Furthermore, Wang et al.'s own qRT-PCR (Fig. 2C) proves HNF1A mRNA failed to be transactivated in DBD Mut (showing the flat microarray probe is a background-floor artefact), and ref [10] concerns HNF1A POU-domain cancer mutations inapplicable to an HNF4A edit.",
+      "in_paper_where": "Results, 'Transcriptomic Analysis of WT and HNF4a-Edited Hepatic Progenitor Stage Cells', Fig. 4D-E (APOA1, APOA4 down); contradicted on HNF1a mRNA by Results & Fig. 2C."
+    }
+  ],
+  "overall": {
+    "score_1_to_5": 3,
+    "comment": "Every numeric fold-change quoted across S1-S8 accurately matches the uploaded microarray and proteomics data, and five of eight statements are sound, highlighted by a sharp cross-layer catch of DAB2's 12-fold post-transcriptional loss linked to LDLR/LRP2 endocytosis (S5) plus valid multi-omic readings on APOB, CDH1, ITGB5/PRKCE, and ER glucosidase II/CALR. Relative to the authors' three main conclusions (Conclusion 1 being non-omics differentiation phenotype), the report partly recovers Conclusion 2's cholesterol/lipoprotein and adhesion/ECM dysregulation, but completely misses Conclusion 3's signature DBDmut loss of mitochondrial respiratory-chain Complex I-V proteins (as well as shared PC/PCK2 pyruvate-cycling and SUMOmut XPO5 losses). Its critical recurring failure comes from anchoring the graph walk on CollecTRI-inferred HNF1A instead of the edited HNF4A gene, leading S1 and S8 to trust an insensitive microarray probe (-0.39/-0.10), contradict Fig. 2C's qRT-PCR loss of HNF1A mRNA, misattribute HNF4A's DBD deletion to impaired HNF1A transactivation, and emit redundant MTTP literature filler in S7."
+  }
+}

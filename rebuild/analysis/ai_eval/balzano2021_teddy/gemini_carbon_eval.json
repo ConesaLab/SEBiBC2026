@@ -1,0 +1,281 @@
+{
+  "dataset": "balzano2021_teddy",
+  "evaluator": "Gemini 4 Carbon",
+  "date": "2026-11-12",
+  "statements": [
+    {
+      "n": 1,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "In the uploaded blood microarray data, SALL1 (+0.07 at 6mo), SALL4 (+0.08 at 3mo), NANOG (+0.06 at 9mo, -0.04 at 3mo), and SOX2 (-0.05 at 6mo) move at isolated windows in discordant directions while POU5F1 (OCT4) itself is not relevant and flat (-0.02 to +0.01). Cited reference [1] (PMID 36701726) measures day-5 ex vivo cultured leukocyte-derived cells rather than unstimulated peripheral blood in vivo and does not examine SALL1/SALL4. Mature circulating leukocytes do not express an active OCT4/SOX2/NANOG pluripotency network, and blood microarray signals for OCT4/NANOG classically reflect retropseudogene cross-hybridization.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 2,
+      "mark": "Does not make sense",
+      "reasons": [
+        "B",
+        "D"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "As cited references [2, 3] state, peroxisomal ACOT4 hydrolyzes acyl-CoAs into free fatty acids plus CoASH, so reduced ACOT4 thioester hydrolysis decreases rather than increases free fatty acid generation—inverting the enzymatic reaction direction. Moreover, while leukocyte ACOT4 mRNA is negative across 12mo–0mo (-0.07, -0.12, -0.01, -0.09, -0.04), plasma oleic, stearic, and palmitic acids are negative at 12mo (-0.30, -0.05, -0.05) and 0mo (-0.09, -0.08, -0.03) and reach only near-median values (+0.06 to +0.10 vs metabolomics median 0.087) at 6mo when ACOT4 is nearly zero (-0.01). The published paper reports fatty-acid class upregulation (Fig. 3b) without invoking ACOT4.",
+      "in_paper_where": "Results, 'Enrichment and partial correlation analysis of the IA progression signature'; Fig. 3b."
+    },
+    {
+      "n": 3,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "ACOT2 mRNA shows only a modest single-window +0.045 bump at 9mo (~75th percentile) and is near zero elsewhere (-0.007 at 12mo and 6mo), whereas its highlighted C16:0 product hexadecanoic acid is +0.015 at 9mo and +0.059 at 6mo—both below the metabolomics median (0.092 and 0.087). Cited mouse studies [4, 5] examine oxidative-organ and hepatic mitochondria (where Acot2 promotes intracellular fatty-acid oxidation rather than plasma FFA export) and do not support a tiny leukocyte mRNA shift driving systemic plasma fatty acids. The paper reports general fatty-acid class enrichment (Fig. 3b) but does not mention ACOT2.",
+      "in_paper_where": "Results, 'Enrichment and partial correlation analysis of the IA progression signature'; Fig. 3b."
+    },
+    {
+      "n": 4,
+      "mark": "Does not make sense",
+      "reasons": [
+        "X",
+        "G",
+        "D",
+        "C"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "does not support",
+        "biology": "doubtful"
+      },
+      "justification": "This statement misreads Case_vs_Control_12mo_before_SC (+0.17 for HDAC11, -0.13 for HDAC8) as an unperturbed 'baseline', when all columns are case-minus-control contrasts and 12mo before seroconversion is the paper's most predictive disease window (88% accuracy). It also amounts to generic pathway-topology narration of the KEGG Alcoholism histone H2B hub in a pediatric T1D cohort, calls oscillatory HIST1H2BI (+0.02, +0.05, -0.06, +0.02, +0.01) 'mild positive' despite a larger -0.06 dip at 6mo, and cites an unrelated aged human buttock-skin study [6].",
+      "in_paper_where": ""
+    },
+    {
+      "n": 5,
+      "mark": "Does not make sense",
+      "reasons": [
+        "X",
+        "D"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "Although reference [7] validly establishes that HDAC11 represses IL-10 in antigen-presenting cells and the TEDDY paper discusses low IL10 and impaired immune tolerance (Fig. 6), this statement mislabels the Case_vs_Control_12mo_before_SC contrast (+0.17) as 'baseline-positive' rather than an early case-vs-control difference. Furthermore, HDAC11 is explicitly flagged not relevant (non-VIP) and is flat from 9mo to 0mo (+0.02, +0.01, -0.04, +0.01), failing to track IL10 (-0.05 at 9mo and -0.04 at 3mo).",
+      "in_paper_where": "Results, 'TNFα activation by ROS accumulation links metabolic imbalance to the observed immune response marks'; Fig. 6."
+    },
+    {
+      "n": 6,
+      "mark": "Does not make sense",
+      "reasons": [
+        "X",
+        "D",
+        "C"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "The statement misreads the Case_vs_Control_12mo_before_SC column (-0.13) as 'baseline-negative' rather than a 12-month pre-seroconversion case-vs-control difference, and builds an interferon-axis claim around a feature explicitly flagged not relevant. In the uploaded table, DDX58/RIG-I (-0.16 at 12mo, +0.13 at 9mo), IFNB1 (-0.02 to +0.04), and ISG15 (+0.28 at 9mo and 0mo) are all non-VIP and do not show weakened interferon signaling tracking HDAC8, while reference [8] is an in vitro HEK293 viral-challenge study.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 7,
+      "mark": "Does not make sense",
+      "reasons": [
+        "C",
+        "D"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "doubtful"
+      },
+      "justification": "While APOC3 is flagged relevant with values rising from -0.0054 (12mo) to +0.047 (3mo, ~75th percentile), APOC3 is hepatically/intestinally secreted rather than a leukocyte gene, and plasma triglycerides in the same uploaded dataset are consistently down across all five windows (-0.09 to -0.20), opposite to elevated APOC3 inhibition of triglyceride clearance. Moreover, cited reference [9] links liver-derived serum APOC3 protein to coronary artery calcium and insulin resistance in adults with established T1D, not whole-blood mRNA before pediatric islet autoantibody seroconversion.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 8,
+      "mark": "Does not make sense",
+      "reasons": [
+        "X",
+        "G",
+        "D"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "The statement itself merely recites four walked node profiles without stating a biological mechanism, and mislabels PLB1's Case_vs_Control_12mo_before_SC value (-0.20) as 'baseline-negative'. Even in the supporting HDL esterification prose, APOA1 and LCAT are liver-derived plasma proteins rather than leukocyte transcripts, reduced LCAT activity spares rather than depletes phosphatidylcholine substrate, and phosphatidylcholine's near-median dips (-0.08 at 9mo, -0.09 at 3mo vs median 0.092/0.080) recur at 3mo when LCAT is +0.01 while plasma cholesteryl ester is unchanged (-0.04 to 0.00). The paper reports lower APOA1 and phosphatidylcholines (Figs. 3b, 4a, 5) without LCAT or PLB1.",
+      "in_paper_where": "Results, 'Enrichment and partial correlation analysis of the IA progression signature' and 'Lipid metabolism irregularities are linked to decreased nutrient absorption, upregulation of glycolysis, and TCA cycle activation in TEDDY IA subjects'; Figs. 3b, 4a, 5."
+    },
+    {
+      "n": 9,
+      "mark": "Does not make sense",
+      "reasons": [
+        "X",
+        "G"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "Although BTD mRNA indeed rises to +0.14 (>99th percentile) at 0mo_at_SC from +0.002 to +0.041 across 12mo–3mo while non-relevant HLCS stays between -0.04 and +0.01, the statement misframes 12mo_before_SC as an unperturbed 'baseline' ('appearing at the time of seroconversion rather than at baseline') in a longitudinal case-vs-control design where 12mo is the primary disease-predictive window. In addition, the statement text merely narrates the numbers of two adjacent KEGG biotin-cycle nodes without stating any biological function or interpretation.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 10,
+      "mark": "Does not make sense",
+      "reasons": [
+        "G",
+        "D"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "The quoted values match KARS/KARS1 (+0.09 at 12mo, -0.03 at 9mo, +0.03 at 6mo, +0.10 at 3mo, +0.06 at 0mo) and L-Lysine (-0.0013 at 0mo), but calling KARS1 a 'sustained late positive signal' ignores that its 12mo elevation (+0.090) is virtually identical to 3mo (+0.098) with a 9mo dip in between while L-Lysine swings from -0.17 (9mo) to +0.13 (3mo). More importantly, the statement text provides only a bare numerical readout of two KEGG neighbors with zero biological mechanism, and supporting reference [14] is a Mendelian KARS leukodystrophy abstract.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 11,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "X",
+        "G"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "All three C1q subunit genes—C1QA, C1QB, and C1QC—are flagged not relevant (non-VIP) in the uploaded table, yet the statement builds its primary trajectory claim on C1QB (-0.07 to +0.11) and C1QC (-0.01 to +0.06) while selectively labeling only C1R as '(relevant)'. It also claims C1QA is 'consistently positive from baseline' despite dropping to +0.0012 (zero) at 6mo and misreads the 12mo case-vs-control contrast as 'baseline', while offering only raw node trajectory descriptions without a biological claim in the statement text.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 12,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "B",
+        "C"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "Calling GALR3 'constitutively up' and 'sustained receptor upregulation' over-interprets noise-level values (+0.013, +0.042, +0.011, +0.010, +0.028) that sit below the transcriptome median (0.021–0.027) at three of five windows and below the 75th percentile everywhere. Biologically, a transient reduction of the agonist ligand GAL (-0.06 at 6mo, near zero elsewhere) coupled with noise-sized GALR3 levels would reduce rather than sustain 'tonic galanin/GALR3 tone', and cited mouse psoriasis skin [17] and rat thymocyte apoptosis [18] studies do not establish pro-inflammatory blood signaling before T1D.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 13,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "CARD6 is VIP-relevant (mapped cleanly without alias collision) and shows strong early case-vs-control upregulation at 12mo (+0.11, ~94th percentile) and 9mo (+0.16, >99th percentile), matching the TEDDY study's peak predictive window. Cited reference [19] (PMID 12775719) directly demonstrates in human cells that CARD6 binds NOD1 and RIPK2 (Cardiak/RICK) and selectively suppresses NF-κB activation through these adaptors, appropriately refining the unsigned/activating KEGG edge. Inferring modulation of NOD/RIPK2 innate immune signaling in pre-seroconversion leukocytes is well-grounded and absent from the published paper.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 14,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "B"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "This statement commits a gene-symbol alias collision: the relevant -0.08 value at 6mo comes from uploaded row 'APC2' (Adenomatous Polyposis Coli 2, mapped onto ANAPC2;APC2;APOC2;SLC25A23 via a legacy alias), whereas the true 'APOC2' row in the same table is not relevant and nearly flat at 6mo (-0.017; +0.10 at 9mo). Biologically, reduced LPL-mediated triglyceride clearance would raise plasma triglycerides, contradicting the dataset's persistent plasma triglyceride reduction (-0.09 to -0.20 across all windows, -0.13 at 6mo), and CREB3L3 transcriptionally activates rather than opposes APOC2 in liver/intestine.",
+      "in_paper_where": ""
+    }
+  ],
+  "overall": {
+    "score_1_to_5": 2,
+    "comment": "Quoted numbers matched the uploaded tables across all 14 statements, but citations frequently failed to transfer across tissues, species, or disease stages (e.g., cultured day-5 leukocytes, aged buttock skin, adult T1D coronary calcification, and Mendelian leukodystrophy). Of the paper's three main conclusions, the AI report inverted the first conclusion by misreading the peak-predictive 12-month case-vs-control contrast as an unperturbed 'baseline' (S4–S6, S8–S9, S11), touched only fragments of the second conclusion's lipid changes (APOA1, phosphatidylcholine, fatty acids) while missing PPARα, glycolysis/TCA/OXPHOS upregulation, and ROS accumulation, and largely missed the third conclusion's arachidonate, TNFα/FOXO1, antigen-presentation, ECM, and cytotoxic T/NK programs aside from noting IL-10 via an irrelevant HDAC11 probe (S5). Only 1 of 14 statements made sense (S13, linking top-percentile VIP gene CARD6 to NOD1/RIPK2 NF-κB modulation), whereas the remaining 13 failed due to design misreads, inverted enzymatic/metabolic directions (ACOT4 in S2, triglyceride clearance in S14), an APC2/APOC2 symbol-alias collision (S14), over-interpreting sub-median/non-VIP noise, and bare graph-node narration."
+  }
+}

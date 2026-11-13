@@ -1,0 +1,159 @@
+{
+  "paper_letter": "A",
+  "paper": "Hernandez 2017",
+  "jobID": "7NHQTK7rWz",
+  "pmcid": "PMC5604420",
+  "doi": "10.1186/s13024-017-0210-z",
+  "counts": {
+    "Makes sense": 6,
+    "Does not make sense": 1,
+    "Especially good": 1,
+    "Can't judge": 0
+  },
+  "reason_code_counts": {
+    "D": 1,
+    "C": 0,
+    "B": 0,
+    "X": 1,
+    "G": 0,
+    "N": 1,
+    "E": 1,
+    "A": 0
+  },
+  "statements": [
+    {
+      "id": "S1",
+      "type": "association",
+      "text": "Ccl6 is induced by Arctic APP in microglia (Arctic_vs_WT +1.32 at 5mo, +1.19 at 7mo, +0.90 at 10mo) and this induction is not reversed by C5aR1 knockout (ArcticC5aR1KO_vs_Arctic +0.08 to +0.42).",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS. Ccl6 (ENSMUSG00000018927, relevant=True) has PaintOmics job log2FC Arctic_vs_WT = [+0.1721, +1.3165, +1.1931, +0.8961] (+0.17, +1.32, +1.19, +0.90 at 2, 5, 7, 10mo) and ArcticC5aR1KO_vs_Arctic = [+0.2727, +0.0803, +0.1229, +0.4207] (+0.08 to +0.42 at 5–10mo, +0.27 at 2mo). Raw GSE93824 TPMs confirm induction from 5mo onward (WT 47.2, 51.9, 63.2, 63.0 vs Arctic 54.9, 97.6, 150.6, 130.1) with no reversal in ArcC5aR1KO (73.2, 138.1, 180.1, 177.7).",
+        "design": "PASS. Correctly separates the Arctic APP disease contrast (Arctic_vs_WT) from the C5aR1 knockout rescue contrast on the Arctic background (ArcticC5aR1KO_vs_Arctic) across matching adult microglial timepoints.",
+        "citation": "PASS (with minor limitation). Prose cites [1] (PMID 16978723, Ito et al. 2006, primary mouse microglia and Ra2 cells) accurately for Aβ1-42 induction of CCL7, CCL2, CCL3, CCL4, and CXCL2 without falsely claiming [1] tested Ccl6; [2] (PMID 28923083) is Hernandez et al. 2017 itself, openly framed as 'in the same Arctic model used here' and accurately quoting the abstract (per rubric §6, self-citation is not a falsification error).",
+        "biology": "PASS. Ccl6 is a murine plaque-associated/DAM-cluster chemokine (assigned to maSigPro Cluster 2 in MOESM8, elevated in both Arctic and Arctic/C5aR1KO from 5–10mo rather than the C5aR1-sensitive inflammatory Cluster 4). Statement does not assert the spurious Reactome edge App->Ccl6 (R-MMU-373076)."
+      },
+      "summary_reason": "All reported fold changes, contrast interpretations, and biological context are accurate. External citation [1] covers related Aβ-induced mouse microglial chemokines rather than Ccl6 itself, and [2] is a transparent self-citation of the source paper; neither misrepresents a reference. Absent from Results/Discussion/Figures (only in MOESM8 Cluster 2 table).",
+      "evidence": "job_data.json ENSMUSG00000018927; GSE93824 TPMs (Arc 5–10mo 97.6–150.6 vs WT 51.9–63.2, ArcKO 138.1–180.1); MOESM8 Cluster 2 row 272; paper_text.txt has 0 Ccl6 hits; PMID 16978723 & PMID 28923083 abstracts."
+    },
+    {
+      "id": "S2",
+      "type": "association",
+      "text": "Cxcl2 is induced by Arctic APP with age (Arctic_vs_WT +0.21 at 2mo to +1.20 at 7mo) and is strongly reversed by C5aR1 knockout at every age (ArcticC5aR1KO_vs_Arctic −0.96 to −0.66; C5aR1KO_vs_WT −0.95 at 2mo), identifying it as a C5aR1-dependent pro-inflammatory chemokine.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "yes",
+      "checks": {
+        "data": "PASS. Cxcl2 (ENSMUSG00000058427, relevant=True) has job log2FC Arctic_vs_WT = [+0.2123, +0.9248, +1.1964, +0.9185] (+0.21, +0.92, +1.20, +0.92), ArcticC5aR1KO_vs_Arctic = [-0.9609, -0.7978, -0.7975, -0.6565] (-0.96 to -0.66), and C5aR1KO_vs_WT = [-0.9521, -0.1933, -0.3800, -0.7113] (-0.95 at 2mo). GSE93824 TPMs match (WT 117.1–178.1, Arc 260.5–300.9 at 5–10mo, ArcKO 185.3–198.3 at 5–10mo, KO 64.6 at 2mo).",
+        "design": "PASS (minor nuance at 2mo). Correctly uses ArcticC5aR1KO_vs_Arctic across all ages and explicitly labels C5aR1KO_vs_WT (-0.95 at 2mo) separately. At 2mo Arctic_vs_WT is only +0.21 (minimal induction), so the -0.96 drop in ArcticC5aR1KO_vs_Arctic reflects constitutive/basal C5aR1 dependence (consistent with C5aR1KO_vs_WT -0.95), whereas 5–10mo represent true reversal of Arctic induction.",
+        "citation": "PASS. [1] (PMID 16978723, Ito et al. 2006) directly demonstrates Aβ1-42 induction of CXCL2 mRNA in primary mouse microglia and Ra2 cells. [2] (PMID 28923083) is circular self-citation of Hernandez 2017 itself ('consistent with the reversal seen here'), but accurately quotes the abstract and matches the study's Fig 5 findings.",
+        "biology": "PASS. Cxcl2 is a canonical pro-inflammatory microglial chemokine in Hernandez 2017 Cluster 4 (NF-κB module, Fig 5a–c) whose C5aR1-dependent reduction was validated by qRT-PCR."
+      },
+      "summary_reason": "Accurate expression values, correct rescue contrast, direct validation in Hernandez 2017 Fig 5a–c (Cluster 4), and directly supported by [1] for Aβ1-42-driven Cxcl2 induction in mouse microglia (with minor caveat of circular self-citation [2] in prose and basal 2mo C5aR1 dependence).",
+      "evidence": "job_data.json ENSMUSG00000058427; GSE93824 TPMs; Hernandez 2017 Fig 5a heatmap, Fig 5b NF-κB schematic, Fig 5c RT-PCR (5mo Arctic 4.4x vs WT, ArcKO -23% vs Arctic p<0.001; 10mo ArcKO reduced p<0.05); PMID 16978723 abstract."
+    },
+    {
+      "id": "S3",
+      "type": "association",
+      "text": "Vegfa is induced late by Arctic APP (Arctic_vs_WT +0.57 at 10mo) and strongly suppressed by C5aR1 knockout at every age (ArcticC5aR1KO_vs_Arctic −1.43 to −0.83; C5aR1KO_vs_WT −2.06 at 2mo), a C5aR1-dependent angiogenic factor.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS. Vegfa (ENSMUSG00000023951, relevant=True) has job log2FC Arctic_vs_WT = [-0.1611, -0.0400, +0.2763, +0.5671] (+0.28 at 7mo, +0.57 at 10mo), ArcticC5aR1KO_vs_Arctic = [-1.4276, -1.2306, -1.1369, -0.8297] (-1.43 to -0.83), and C5aR1KO_vs_WT = [-2.0551, -1.3091, -1.0082, -0.4311] (-2.06 at 2mo). Raw GSE93824 TPMs match (WT 54.1, 95.8, 61.3, 43.7; Arc 49.5, 68.5, 79.0, 72.1; KO 14.3–37.2; ArcKO 20.4–41.6).",
+        "design": "PASS (minor prose wording nuance). The claim text itself accurately states 'strongly suppressed by C5aR1 knockout at every age' and reports C5aR1KO_vs_WT (-2.06 at 2mo), reflecting strong constitutive C5aR1 dependence already at 2–5mo before the late 7–10mo Arctic rise. Prose loosely phrases this as 'late Arctic_vs_WT rise ... strongly reversed by C5aR1 knockout at every age', though reversal strictly applies at 7–10mo.",
+        "citation": "PASS. [4] (PMID 41967873 / PMC13429304, 2026 Brain Pathology review) is verbatim accurate on VEGF-A/VEGFR2 disruption via elevated sVEGFR1 in AD, and prose explicitly qualifies the organism difference ('In human brain...').",
+        "biology": "PASS. Vegfa is an angiogenic factor assigned to Hernandez 2017 Cluster 4 (Fig 5a–c) with strong C5aR1-dependent expression; note Hernandez 2017 Fig 5c qRT-PCR confirmed -46% reduction in 5mo Arctic/C5aR1KO vs Arctic (p<0.01) while Arctic vs WT was n.s. at 5mo and 10mo and the paper does not discuss angiogenesis."
+      },
+      "summary_reason": "All numeric values and contrasts in the claim are accurate and C5aR1KO suppression is confirmed in Hernandez 2017 Fig 5a–c (Cluster 4), with [4] accurately quoted and organism-qualified. Marked 'partly' in paper because Hernandez 2017 shows the 5mo C5aR1KO reduction by qRT-PCR (-46%) but found Arctic vs WT n.s. by RT-PCR and did not discuss Vegfa's angiogenic role.",
+      "evidence": "job_data.json ENSMUSG00000023951; GSE93824 TPMs; Hernandez 2017 Fig 5a/b/c (5mo ArcKO -46% vs Arc **, Arc vs WT n.s.); MOESM8 Cluster 4 row 59; PMC13429304 abstract."
+    },
+    {
+      "id": "S4",
+      "type": "association",
+      "text": "Axl shows an early Arctic dip (Arctic_vs_WT −1.06 at 2mo) followed by strong induction at 5–7mo (+2.06, +1.96) that C5aR1 knockout does not block (ArcticC5aR1KO_vs_Arctic −0.14, −0.16 at 5–7mo), so C5aR1 loss normalises the early phase but not the mid-life DAM induction.",
+      "mark": "Especially good",
+      "reason_codes": [
+        "N",
+        "E"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS. Axl (ENSMUSG00000002602, relevant=True) has job log2FC Arctic_vs_WT = [-1.0553, +2.0569, +1.9626, +0.6213] (-1.06 at 2mo, +2.06 at 5mo, +1.96 at 7mo, +0.62 at 10mo) and ArcticC5aR1KO_vs_Arctic = [+1.7718, -0.1365, -0.1610, +0.3194] (+1.77 at 2mo, -0.14 at 5mo, -0.16 at 7mo). GSE93824 TPMs confirm the biphasic pattern (WT 20.6, 23.6, 25.4, 56.9; Arc 12.2, 74.6, 106.6, 98.0; ArcKO 41.3, 91.8, 103.0, 113.4; KO at 2mo 21.0, C5aR1KO_vs_WT_2mo -0.09).",
+        "design": "PASS. Cleanly separates the early 2mo Arctic deficit and its C5aR1KO rescue (+1.77, while C5aR1KO_vs_WT_2mo is near zero at -0.09) from the mid-life 5–7mo plaque-associated DAM surge (+2.06, +1.96) that persists unblocked in ArcticC5aR1KO (-0.14, -0.16).",
+        "citation": "PASS. [5] (PMID 28434692, Yin et al. 2017, Neurobiol Aging) matches verbatim: Axl is upregulated in Aβ plaque-associated MHCII+ microglia isolated from 5XFAD mice and AXL is elevated in laser-captured human EOAD vs LOAD plaques. Exact organism/tissue alignment.",
+        "biology": "PASS. Axl is a canonical TAM receptor tyrosine kinase and DAM marker upregulated in plaque-engaging microglia. Although Hernandez 2017 places Axl in MOESM8 Cluster 2, the paper never mentions Axl or the DAM signature nor distinguishes the C5aR1-sensitive 2mo repression from the C5aR1-independent 5–7mo DAM induction."
+      },
+      "summary_reason": "100% accurate on numbers, contrast logic, biology, and citation [5], while adding a genuinely novel insight absent from Hernandez 2017 (N, E): uncovers Axl (buried in MOESM8 Cluster 2) as a plaque-associated DAM/TAM marker and resolves its biphasic C5aR1 dependence—early 2mo Arctic downregulation rescued by C5aR1KO versus C5aR1-independent mid-life DAM induction at 5–7mo.",
+      "evidence": "job_data.json ENSMUSG00000002602; GSE93824 TPMs (2mo WT 20.6, Arc 12.2, ArcKO 41.3; 5–7mo Arc 74.6/106.6 vs ArcKO 91.8/103.0); MOESM8 Cluster 2 row 35; 0 mentions in Hernandez 2017 text/figs; PMID 28434692 abstract."
+    },
+    {
+      "id": "S5",
+      "type": "mechanism",
+      "text": "Hck shows a late Arctic dip (Arctic_vs_WT −0.36 at 10mo) and mild C5aR1KO-up at 2mo (ArcticC5aR1KO_vs_Arctic +0.29), a mild modulation of a microglial Src-family kinase.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS. Hck (ENSMUSG00000003283, relevant=True) has job log2FC Arctic_vs_WT = [-0.2062, +0.0191, +0.0493, -0.3631] (-0.36 at 10mo) and ArcticC5aR1KO_vs_Arctic = [+0.2931, +0.2786, +0.1327, -0.1390] (+0.29 at 2mo). Raw GSE93824 TPMs match (WT 58.9, 77.8, 78.4, 77.7; Arc 49.3, 58.9, 83.2, 65.7; KO 74.9, 65.0, 98.9, 65.8; AKO 71.9, 94.8, 98.6, 61.9).",
+        "design": "PASS. Correctly reads Arctic_vs_WT at 10mo and ArcticC5aR1KO_vs_Arctic at 2mo without overclaiming (explicitly characterizes both as 'mild modulation'; note C5aR1KO_vs_WT_10mo is similarly -0.34).",
+        "citation": "PASS. [6] (PMID 30277607, Lim et al. 2018, Glia) accurately states Hck regulates myeloid phagocytosis and Hck-deficient J20 AD mice exhibit exacerbated Aβ plaque burden and reduced microglial phagocytosis (matching mouse AD microglia context, even though walk metadata labeled scope 'in vitro').",
+        "biology": "PASS. Hck is a myeloid Src-family kinase required for Aβ phagocytosis [6], appropriately hedged here ('mild modulation ... would be consistent with declining microglial Aβ clearance at the latest age'). Although the pipeline tagged S5 as tier 'mechanism' via leg 17 (Was->Hck, OmniPath BcellreceptorBCR, where Was is not relevant), the statement text itself does not assert any Was/BCR causal mechanism. Assigned to MOESM8 Cluster 5 but absent from paper text/figures."
+      },
+      "summary_reason": "Numerically accurate and appropriately hedged ('mild modulation'), with accurate AD mouse microglial support from [6] and without asserting the spurious BCR/Was walk leg in its text. Not mentioned in Hernandez 2017 text/figures (only in MOESM8 Cluster 5).",
+      "evidence": "job_data.json ENSMUSG00000003283; GSE93824 TPMs; MOESM8 Cluster 5 row 66; 0 mentions in Hernandez 2017 text/figs; PMID 30277607 abstract; walk leg 17 metadata."
+    },
+    {
+      "id": "S6",
+      "type": "association",
+      "text": "Stat5a is suppressed by C5aR1 knockout (ArcticC5aR1KO_vs_Arctic −1.09 at 2mo, −0.96 at 7mo; C5aR1KO_vs_WT −1.50 at 2mo), a C5aR1-dependent STAT5 transcription factor.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS. Stat5a (ENSMUSG00000004043, relevant=True) has job log2FC Arctic_vs_WT = [-0.2570, -0.4576, -0.0256, -0.2217], ArcticC5aR1KO_vs_Arctic = [-1.0879, -0.6246, -0.9571, +0.1260] (-1.09 at 2mo, -0.96 at 7mo), and C5aR1KO_vs_WT = [-1.4996, -0.0574, -0.8486, +0.1250] (-1.50 at 2mo). Raw GSE93824 TPMs strongly corroborate the 2mo and 7mo C5aR1KO drop (2mo WT 99.9, Arc 81.4 vs KO 38.7, AKO 45.1; 7mo WT 95.3, Arc 94.1 vs KO 56.9, AKO 51.4) and rebound by 10mo (88.3–110.4 across all groups).",
+        "design": "PASS. Correctly distinguishes both knockout contrasts (ArcticC5aR1KO_vs_Arctic and basal C5aR1KO_vs_WT) with exact ages (2mo and 7mo), avoiding false claims about 10mo where expression recovers (+0.13, +0.12).",
+        "citation": "PASS. [7] (PMID 10383053, Liva et al. 1999, Glia) matches abstract verbatim, and prose explicitly qualifies the cell models ('In primary rat microglia and BV-2 cells, GM-CSF induced Jak2, STAT5A and STAT5B in BV-2 cells...').",
+        "biology": "PASS. Stat5a is a C5aR1-dependent STAT5 transcription factor in microglia and appears in MOESM8 Cluster 1 as well as MOESM6 Cluster 1 GO:0097011 ('cellular response to granulocyte macrophage colony-stimulating factor stimulus'), though unmentioned in Hernandez 2017 main text/figures."
+      },
+      "summary_reason": "Exact log2FCs corroborated by replicate TPMs at 2mo and 7mo, accurate contrast separation demonstrating constitutive and Arctic-background C5aR1 dependence, and properly organism-qualified citation [7]. Absent from Hernandez 2017 main text/figures (present only in MOESM8 Cluster 1 and MOESM6 GO table).",
+      "evidence": "job_data.json ENSMUSG00000004043; GSE93824 TPMs; MOESM8 Cluster 1 row 123 & MOESM6 Cluster 1 GO:0097011; 0 mentions in Hernandez 2017 text/figs; PMID 10383053 abstract."
+    },
+    {
+      "id": "S7",
+      "type": "association",
+      "text": "Cx3cr1 declines with age under Arctic APP (Arctic_vs_WT −0.06 at 2mo to −0.31 at 7mo) and is partially restored by C5aR1 knockout (C5aR1KO_vs_WT +0.31 at 2mo, +0.29 at 10mo).",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X",
+        "D"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "FAIL (D). In PaintOmics job_data.json, Cx3cr1 (ENSMUSG00000052336) has Arctic_vs_WT = [-0.0583, -0.1307, -0.3130, -0.2538] (very small shifts; at 10mo raw GSE93824 TPMs are WT 472.0 vs Arc 467.4) and crucially ArcticC5aR1KO_vs_Arctic = [+0.1877, -0.1317, +0.0946, +0.0908]—negative at 5mo (-0.13) and near zero at 7–10mo (+0.09, +0.09), contradicting 'partially restored by C5aR1 knockout'. Hernandez 2017 explicitly assigns Cx3cr1 to Cluster 3 (MOESM8), stating Cluster 3 had NO differences between Arctic and Arctic/C5aR1KO and instead reflected C5aR1KO baseline elevation.",
+        "design": "FAIL (X). Uses C5aR1KO_vs_WT (+0.31 at 2mo, +0.29 at 10mo)—which compares C5aR1KO without Arctic APP against WT without Arctic APP—to claim that Cx3cr1 'is partially restored by C5aR1 knockout'. A difference between non-transgenic C5aR1KO and WT is a genotype baseline effect (per design_card and Cluster 3 in Results), NOT a rescue of Arctic APP. Moreover, all RNA-seq genotypes are heterozygous CX3CR1+/GFP reporter knock-in mice.",
+        "citation": "PASS. [3] (PMID 41424797 / PMC12711710, 2025 Frontiers in Pharmacology review) is accurately quoted from its abstract for microglial CX3CR1–neuronal CX3CL1 interaction.",
+        "biology": "PASS (in general, CX3CR1 is a homeostatic microglial marker, though misapplied to this dataset's genotype contrasts)."
+      },
+      "summary_reason": "Design (X) and Data (D) error: cites the non-Arctic baseline contrast C5aR1KO_vs_WT (+0.31 at 2mo, +0.29 at 10mo) as evidence that C5aR1 knockout 'partially restores' Cx3cr1 under Arctic APP, whereas the actual rescue contrast ArcticC5aR1KO_vs_Arctic is negative at 5mo (-0.13) and flat at 7–10mo (+0.09, +0.09), and Hernandez 2017 Results explicitly state Cluster 3 (containing Cx3cr1) had no Arctic vs Arctic/C5aR1KO difference.",
+      "evidence": "job_data.json ENSMUSG00000052336 (ArcticC5aR1KO_vs_Arctic [+0.19, -0.13, +0.09, +0.09] vs C5aR1KO_vs_WT [+0.31, +0.02, +0.17, +0.29]); MOESM8 Cluster 3 row 220; Hernandez 2017 Results explicitly states Cluster 3 & 5 did not differ between Arctic and Arctic/C5aR1KO and C5aR1KO was upregulated vs other genotypes; Methods & MOESM3 confirm CX3CR1+/GFP heterozygosity."
+    },
+    {
+      "id": "S8",
+      "type": "association",
+      "text": "Tlr2 and Cd14 are induced by the Arctic transgene in a mid-late pattern, and both encode components of the microglial fibrillar-Aβ receptor complex that initiates phagocytosis.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS. Both are relevant=True in job_data.json: Tlr2 (ENSMUSG00000027995) has Arctic_vs_WT = [+0.0585, +0.4404, +0.6188, +0.2990] (+0.44 at 5mo, +0.62 at 7mo) and C5aR1KO_vs_WT = [+0.2156, +0.0855, +0.4221, -0.2119] (+0.42 at 7mo); Cd14 (ENSMUSG00000051439) has Arctic_vs_WT = [+0.3823, +1.0227, +0.6558, +0.6791] (+0.38 at 2mo, +1.02 at 5mo) and C5aR1KO_vs_WT_2mo = +0.3445. GSE93824 TPMs match mid-late induction (Tlr2 Arc 182.8, 168.6 vs WT 114.6, 121.9 at 7–10mo; Cd14 Arc 279.5, 288.2, 412.8 vs WT 175.1, 178.2, 228.4 at 5–10mo).",
+        "design": "PASS. Claim strictly addresses Arctic_vs_WT mid-late induction and functional complex biology, matching the data. Note prose mentions positive C5aR1KO_vs_WT values (+0.42 for Tlr2 at 7mo, +0.34 for Cd14 at 2mo) without noting Cd14's negative C5aR1KO contrasts at 10mo (C5aR1KO_vs_WT -0.68; ArcticC5aR1KO_vs_Arctic -0.40) or the fact that Hernandez 2017 splits them into Cluster 2 (Tlr2) vs Cluster 4 (Cd14), which is an omission rather than a factual error.",
+        "citation": "PASS. [8] (PMID 19776284, Reed-Geaghan et al. 2009) directly establishes in mouse microglia that CD14, TLR4, and TLR2 act together to bind fibrillar Aβ and trigger Src-Vav-Rac signaling, ROS, phagocytosis, and IκBα phosphorylation; [9] (PMID 18509040, Richard et al. 2008) shows TLR2 deficiency accelerates cognitive decline and increases Aβ1-42 in APP transgenic mice.",
+        "biology": "PASS. Replaces the irrelevant KEGG bacterial pathway walk legs (mmu05145 Toxoplasmosis, mmu05134 Legionellosis) with accurate AD microglial biology. In Hernandez 2017, Tlr2 is featured in Cluster 2 (Fig 6a/b phagosome schematic, Results, Discussion), whereas Cd14 only appears in the Fig 5a Cluster 4 heatmap without connecting both to the fAβ phagocytic receptor complex."
+      },
+      "summary_reason": "Accurate Arctic mid-late induction data and exact literature support from [8] and [9] in matching mouse microglia/AD models for the CD14–TLR2–TLR4 fibrillar-Aβ phagocytic receptor complex. Marked 'partly' in paper because Tlr2's late induction/phagocytosis role is explicitly discussed (Fig 6, Discussion) and Cd14 appears in the Fig 5a heatmap, whereas pairing them as co-components of the fAβ receptor complex is not stated.",
+      "evidence": "job_data.json ENSMUSG00000027995 & ENSMUSG00000051439; GSE93824 TPMs; Hernandez 2017 Fig 6a/b & Discussion (Tlr2, Cluster 2) and Fig 5a (Cd14, Cluster 4); PMID 19776284 & PMID 18509040 abstracts."
+    }
+  ]
+}

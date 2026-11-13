@@ -1,0 +1,254 @@
+{
+  "dataset": "fabregas2018_brl3_drought",
+  "evaluator": "Gemini 4 Carbon",
+  "date": "2026-11-12",
+  "statements": [
+    {
+      "n": 1,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "B",
+        "X"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "Quoted values match the uploaded table, but the statement misidentifies AT4G36220 (FAH1/CYP84A1, ferulate 5-hydroxylase) as CYP84A4 (which is AT5G04330, an arabidopyrone synthase with relevant=false: +0.22/-0.34/-0.17/-0.73). It also mixes between-genotype drought contrasts (BRL3ox_vs_WT_drought_d5: FAH1 -1.64, 4CL5 -0.80) directly against within-genotype WT drought induction (Drought_d5_vs_watered_WT: +0.46, +0.86), masking that 4CL5 is slightly up in Drought_d5_vs_watered_BRL3ox (+0.33) while CCR2 remains lower than WT under drought (BRL3ox_vs_WT_drought_d5 -0.47). Moreover, inferring reinforced root lignification from a tiny +0.21 interaction on CAD9 (+1.60 vs +1.39 WT; melon seedling Ref [2]) contradicts repression of bona fide monolignol ATCAD4 (AT3G19450, relevant=true, -0.81 under drought).",
+      "in_paper_where": ""
+    },
+    {
+      "n": 2,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B",
+        "G"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "While the paper reports root trehalose/sucrose osmoprotectant priming and SUS3 regulation, S2 falsely claims A/N-InvC is repressed by BRL3ox under drought: BRL3ox_vs_WT_drought_d5 is noise-level (-0.28), its -0.74 repression is at watered baseline, and drought induces it +0.79 in BRL3ox vs +0.33 in WT. Calling TRE1 'the hub of the neighbourhood' is pure KEGG-topology filler on an unchanged gene (relevant=false, -0.15 watered, -0.42 drought), paired with Ref [3] on guard-cell stomatal closure in stomata-free roots. Furthermore, trehalose drought accumulation is not 'lost' (+0.60 atop a +1.60 watered baseline, remaining +0.35 above WT at day 5 and accumulating exponentially in Fig. 4h), and SUS3 predominantly cleaves rather than synthesizes sucrose in sink roots.",
+      "in_paper_where": "Results, 'BRL3ox plants accumulate osmoprotectant metabolites' (Fig. 4b, d, h); Discussion."
+    },
+    {
+      "n": 3,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "wrong"
+      },
+      "justification": "Calling D-Glucose 'essentially unaffected by BRL3ox' (-0.28 watered, -0.37 drought_d5; +2.30 WT vs +2.21 BRL3ox drought) ignores why d-glucose is flagged relevant=true: Fàbregas et al. show root glucose is significantly reduced in BRL3ox at day 0 (Fig. 4b) and switches from linear (WT) to exponential (BRL3ox) accumulation across days 0-6 (Fig. 4j). Although HKL1 (AT1G50460) is genuinely repressed by BRL3ox (-0.72 watered, -0.90 drought) and noted in the Discussion, the supporting prose cites ectopic catalytic AtHXK1 expression in transgenic tobacco leaf guard cells (Ref [5]; canonical HXK1 AT4G29130 is relevant=false at -0.23/-0.26) to hypothesize redirecting root sugar signalling away from stomatal control in stomata-lacking roots.",
+      "in_paper_where": "Results, 'BRL3ox plants accumulate osmoprotectant metabolites' (Fig. 4b, j); Discussion."
+    },
+    {
+      "n": 4,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "doubtful"
+      },
+      "justification": "BGLU24 (AT5G28510) indeed flips from BRL3ox_vs_WT_watered (-1.71) to BRL3ox_vs_WT_drought_d5 (+0.70, with drought induction +5.21 vs +2.80 WT), whereas calling AT1G30870 (PER7 peroxidase) 'mildly induced' at baseline over-interprets sub-threshold noise (+0.27, below the p75 quantile of 0.33) before its drought repression (-0.75 vs WT, -0.95 drought in BRL3ox). Worse, the report links BGLU24 to ABA-glucose ester hydrolysis solely via Ref [6] on leaf ER-localized BGLU18, whereas BGLU24 lacks demonstrated ABA-GE hydrolase activity and the bona fide ABA-GE hydrolases in the uploaded root dataset are uninduced by BRL3ox (BGLU18 AT1G52400 relevant=false, -1.25/-1.17; BGLU33 AT2G32860 relevant=false, +0.13/+0.28).",
+      "in_paper_where": ""
+    },
+    {
+      "n": 5,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "All values and relevance flags match the uploaded root transcriptome: PYL4 (-0.68 watered, -0.94 drought) and PYL5 (-1.33 watered, -1.21 drought) are significantly repressed while clade-A PP2C HAI3 (+1.75 watered, +2.16 drought) is strongly induced in BRL3ox vs WT, a pattern reinforced across additional family members (PYL6 -2.19, HAI1 +1.63, ABI1 +0.90, ABI2 +1.01). Correctly reading this receptor-down/PP2C-up state as a constitutive baseline configuration aligns with the paper's basal ABA-response GO enrichment (Fig. 5a, Suppl. Fig. 8) while adding specific PYL4/PYL5-HAI3 regulatory pairing grounded in Arabidopsis literature (Refs [7, 8]).",
+      "in_paper_where": "Results, 'Transcriptional control of metabolite production in BRL3ox' (Fig. 5a, c; Supplementary Fig. 8)."
+    },
+    {
+      "n": 6,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "Although the quoted log2FCs match (SNRK2.7 +0.67/+0.77 and -0.52/-0.42; SNRK2.9 +0.37/+0.75 and -0.67/-0.29; ABF2 +0.71/+0.49 and +0.81/+0.59), SNRK2.9's +0.37 watered shift is below the 1.5-fold DE cutoff and the statement falsely places ABF2 as 'the downstream bZIP transcription factor' of SNRK2.7 and SNRK2.9. In Arabidopsis, SNRK2.9 (SRK2J, Subclass I) is ABA-unresponsive and SNRK2.7 (SRK2F, Subclass II) is not a primary ABF activator; as cited Ref [10] verbatim states, AREB/ABFs act downstream of Subclass III SRK2D/E/I (SnRK2.2/2.6/2.3), which are relevant=false here (with SnRK2.6/OST1 drought-induced +1.30/+1.55 rather than repressed).",
+      "in_paper_where": ""
+    },
+    {
+      "n": 7,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "MAPKKK18 (AT1G05100, relevant=true) is strongly repressed in BRL3ox_vs_WT_watered (-1.39) but resolves in BRL3ox_vs_WT_drought_d5 (-0.19) via steeper drought induction in BRL3ox (+2.42 vs +1.22 WT), whereas its downstream MAP2K MKK3 (AT5G40440, relevant=false) is completely flat (+0.19/+0.19, -0.06/-0.06). The supporting prose properly qualifies that lack of propagation into MKK3 is at the transcript level and accurately cites Ref [11] on Arabidopsis MAPKKK17/18-MKK3 ABA/drought signalling and ubiquitin-proteasome control of MAPKKK18 stability.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 8,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "Checking all lipoxygenases in the uploaded table (LOX1/3/4/5/6) confirms LOX3 (AT1G17420, relevant=true) exhibits the largest genotype-by-drought reversal (+2.20 interaction): strongly repressed at watered baseline (-2.63) yet nearly neutral vs WT under drought (-0.44), driven by +2.74 drought induction in BRL3ox vs +0.55 in WT. This extends the paper's observation of basal JA biosynthesis repression in BRL3ox roots (Supplementary Fig. 8) to a specific 13-lipoxygenase release under drought, with Ref [12] confirming LOX3 as a genuine Arabidopsis JA-precursor 13-LOX (studied in wound growth restriction).",
+      "in_paper_where": "Results, 'Transcriptional control of metabolite production in BRL3ox' (Supplementary Fig. 8)."
+    },
+    {
+      "n": 9,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "S9 explains baseline root trehalose elevation (+1.60 watered) through non-significant background fluctuations in TRE1 (-0.15 watered, -0.42 drought; relevant=false) and TPS7 (-0.98 watered, +1.18 BRL3ox drought), even though TPS7 is repressed at baseline (still -0.45 in BRL3ox_vs_WT_drought_d5) and encodes a catalytically inactive Class II TPS in Arabidopsis. It also misapplies Ref [1]'s statement on upregulated vascular trehalose enzymes—which in Fàbregas et al. (Fig. 6d) explicitly refers to catalytic trehalose-6-phosphate phosphatases (e.g., TPPB +1.26/+1.27, TPPH +0.78/+0.83, TPPF +1.30 drought) omitted by S9—while citing Morus alba TPS family homology (Ref [15]).",
+      "in_paper_where": "Results, 'BRL3ox plants accumulate osmoprotectant metabolites' and 'Transcriptional control of metabolite production in BRL3ox' (Fig. 4b, d, h; Fig. 6d); Discussion."
+    },
+    {
+      "n": 10,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "K",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "SUS3 (AT4G02280, relevant=true) is indeed the most strongly drought-induced gene across the sucrose module (+3.23 WT, +3.73 BRL3ox) and is significantly elevated in BRL3ox_vs_WT_drought_d5 (+0.79), while root sucrose (relevant=true) is pre-accumulated at baseline (+1.45) and shows a smaller day-5 fold gain in BRL3ox (+0.44 vs +1.35 WT) while remaining +0.54 above WT under drought. Fàbregas et al. (Ref [1]) directly report root sucrose priming and name SUS3 among BRL3ox-regulated enzymes, while Ref [17] provides general Arabidopsis osmotic background on leaf Sus1.",
+      "in_paper_where": "Results, 'BRL3ox plants accumulate osmoprotectant metabolites' (Fig. 4b, d, h) and 'Transcriptional control of metabolite production in BRL3ox' (Supplementary Fig. 11); Discussion."
+    },
+    {
+      "n": 11,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C",
+        "B",
+        "X"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "Wiring LOX5->LOX4->AOS->AOC1->OPR3->OPCL1 as a sequential chain is biochemically wrong because LOX5 is a 9-lipoxygenase rather than a 13-LOX JA-pathway step upstream of LOX4; moreover, LOX5 is uninduced by drought in BRL3ox (-0.06; -0.95 vs WT) and AOS (AT5G42650) is relevant=false (-0.63/-0.36/+0.32/+0.59). Comparing between-genotype BRL3ox_vs_WT_watered (-1.93, -3.46, -1.75) directly against within-genotype Drought_d5_vs_watered_BRL3ox (+2.37, +2.79, +2.01) as 'drought flips it' misreads the design, hiding that AOC1 (-2.35) and OPR3 (-0.99) remain strongly repressed in BRL3ox_vs_WT_drought_d5. Finally, cited Ref [13] verbatim shows that only LOX6—not LOX4 or LOX5—is essential for drought-induced JA synthesis in Arabidopsis roots.",
+      "in_paper_where": "Results, 'Transcriptional control of metabolite production in BRL3ox' (Supplementary Fig. 8)."
+    },
+    {
+      "n": 12,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "G"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "TPS1 (AT1G78580) is flagged relevant=false across the dataset, and every quoted log2FC (-0.11 watered, +0.28 drought_d5, +0.10 WT drought, +0.50 BRL3ox drought) lies below the dataset's p75 empirical quantiles and the study's 1.5-fold (|log2FC| > 0.585) significance threshold. Treating sub-threshold noise on a non-significant gene as 'BRL3ox-up' and 'drought-induced' and appending generic textbook T6P/sucrose notes from a warm-temperature thermotolerance study (Ref [16], where higher TPS1 actually lowers sucrose) provides no valid insight into this experiment.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 13,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "B"
+      ],
+      "in_paper": "partly",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "wrong"
+      },
+      "justification": "Although baseline A/N-InvC repression (-0.74) coincides with baseline sucrose elevation (+1.45), A/N-InvC is induced more strongly by drought in BRL3ox (+0.79) than in WT (+0.33, narrowing BRL3ox_vs_WT_drought_d5 to -0.28), contradicting a drought shift away from cleavage. Biochemically, invoking SUS3 regulation (Ref [1]) as shifting roots 'from cleavage toward synthesis/accumulation' is backwards because sucrose synthase in heterotrophic sink roots predominantly cleaves unloaded phloem sucrose into UDP-glucose and fructose, while canonical sucrose-phosphate synthases (SPS1F-4F) are all relevant=false and SPP1 is repressed under drought (-0.71).",
+      "in_paper_where": "Results, 'BRL3ox plants accumulate osmoprotectant metabolites' (Fig. 4b, d, h); Discussion."
+    }
+  ],
+  "overall": {
+    "score_1_to_5": 2,
+    "comment": "Every explicit numeric log2FC quoted across S1-S13 matches the uploaded tables, but literature citations frequently fail to transfer across paralogs, subfamilies, or tissues (e.g., citing leaf guard-cell stomatal studies [3, 5] for stomata-free roots, leaf BGLU18 [6] for BGLU24, Subclass III SnRK2s [10] for SNRK2.7/2.9, and root LOX6 [13] for a LOX5/LOX4 chain). Relative to Fàbregas et al.'s three main conclusions, the report partly recovers root sucrose/trehalose osmoprotectant priming and PaintOmics sucrose-pathway deregulation (S10) as well as basal ABA/JA transcriptional rewiring (S5, S8), but completely misses proline and raffinose/GolS2/RFO accumulation, omits the causal vascular TPP phosphatases while misattributing trehalose changes to TRE1/TPS7 (S2, S9), and misses phloem/pericycle spatial enrichment altogether. Only 4 of 13 statements make sense (S5, S7, S8, S10), whereas 9 fail due to KEGG ortholog-box paralog conflation, mixing between-genotype and within-genotype contrasts (S1, S11), over-interpreting relevant=false noise (S2, S9, S12), and inverting sink-root sucrose biochemistry (S2, S13)."
+  }
+}

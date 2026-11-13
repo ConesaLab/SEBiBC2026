@@ -1,0 +1,298 @@
+{
+ "dataset": "jimenez2021_hbmec_lbp",
+ "evaluator": "Gemini 4 Hydrogen (XHigh)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Data values, KEGG hsa04657 edge e1 (FOSB -> IL6), experimental contrast, and Ref 1 neuroinflammatory BBB context are accurate; FOSB itself is not mentioned in Paper C and is only significantly induced under live pneumococcus.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Accurate data (+0.05 vs +3.21 TNFSF13B; NFKB2/RELB DEGs), rewritten prose fixed the e3 baseline error, and Paper C Table 3 R-HSA-5676594 indeed places TNFSF13B in the Lbp-activated non-canonical NF-kappaB pathway; unlike S6, S2 avoids claiming autocrine BAFF->NFKB2 feeding in BAFFR-negative hBMECs.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B",
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Grounded leg e8 fabricates dual-axis relevance for unperturbed PGGT1B (-0.10/+0.03, r=0) and reverses upstream prenylation biology (PGGT1B->GBP2), while Ref 3 links GBP5 to NLRP3 inflammasome assembly in M1 macrophages despite NLRP3 being undetected in these hBMECs.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "C",
+    "B"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Grounded leg e10 falsely labels non-significant CASP4 (r=0) relevant on both axes, Ref 4 (Gram-negative bacteria/LPS in mouse macrophages) is misapplied to LPS-lacking Gram-positive S. pneumoniae, and GBP2/5 peak in Lbp where IL1B is uninduced (-0.20).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "wrong"
+   },
+   "justification": "Although the short claim is plausible, the prose falsely asserts IL1B is relevant on the Lbp axis (-0.20, p=0.819) and relies on leg e11 (hsa05131 Shigellosis) and the 'GBP5/GBP2-CASP4-IL1B non-canonical inflammasome arm', repeating S4's Gram-negative LPS biology error.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Reversed causal direction and receptor-less autocrine signaling: S6 claims TNFSF13B mRNA feeds NFKB2/RELB in hBMECs, even though all three BAFF receptors (TNFRSF13C/13B/17) are absent, MAP3K14/NIK is flat, NFKB2/RELB rise under Spn despite flat TNFSF13B (+0.05), and Ref 5 tests soluble BAFF in human lymphocytes.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Numbers, symmetric interpretation, Ref 6 citation (scoped to HeLa cells), and canonical NF-kappaB biology are all accurate and align with Paper C's Results and Discussion.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Inferring from IFNB1 alone (+1.60 Spn vs 0.00 Lbp) that 'the type I interferon response is specific to the live-bacteria stimulus' contradicts the dataset and Paper C Table 3, where Reactome Interferon alpha/beta signaling (R-HSA-909733, FDR 4.54e-04) and type I ISGs (MX2, OAS1, IFIT1-3, CXCL10/11) are strongly induced by Lbp.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 9,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Overstates S. pneumoniae IL15RA (+0.89, p=0.211, not a DEG in Dataset 1.3) as 'induced on both axes' / 'relevant, up in both treatments' when only the Lbp arm (+1.18, p=2.19e-05) is differentially expressed.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 10,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Grounded legs e26-e28 hallucinate induction for unmeasured C1QA, C1QB, and C1QC (r=None, absent from dataset) to claim induction 'with the C1 complex genes', and SERPING1 is significantly induced only under Lbp (+1.16), not S. pneumoniae (+0.39, p=0.619).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 11,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All gene metrics are dual-arm DEGs, Ref 10 (Jun 2021) is faithfully cited with an explicit tissue/species caveat, and NFKB2 crosstalk amplifying latent RelA dimers is a coherent mechanistic hypothesis extending Paper C's NF-kappaB findings.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 12,
+   "mark": "Does not make sense",
+   "reasons": [
+    "C",
+    "D",
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Gross acronym/literature error confusing pneumococcal laminin-binding protein (Lbp) with Gram-negative lactoferrin-binding protein B (LbpB, Ref 11), plus data fabrication on unmeasured complement genes (C1QA/B/C/C4A_2) in legs e26-e29 and false claim that only IL1B is higher under whole pneumococci.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 13,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Falsely asserts CEBPB is induced in both arms (+0.47/+1.10); in fact S. pneumoniae CEBPB (+0.47, p=0.529) is non-significant and not a DEG, and CXCL1/8/6 all peak higher under whole pneumococci than Lbp.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 14,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "wrong"
+   },
+   "justification": "Biologically conflates post-translational NLRP3/ASC/caspase-1 proteolytic processing of pro-IL-1beta protein (signal 2 in Refs 13-14 myeloid cells) with transcriptional IL1B mRNA induction (signal 1) in hBMECs where NLRP3 itself is undetected in the RNA-seq and CASP1/PYCARD/GSDMD are unperturbed (and erroneously attributes 'inflammasome machinery' to the bacterium while contradicting S4/S5).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 15,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Accurate expression values and significance across IFIT1/2/3, CXCL10, CXCL11, and uninduced IRF9 (-0.20/-0.50); Ref 15 faithfully supports post-translational ISGF3 assembly on ISG promoters, matching KEGG hsa05160 and hsa04620 ISGF3->CXCL10 edges.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 16,
+   "mark": "Especially good",
+   "reasons": [
+    "N",
+    "E",
+    "A"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Fully accurate data and biology providing a novel (N), mechanistic (E), and actionable (A) insight missed by Paper C: authors discussed neutrophil chemokines (CXCL1/2/3/5/6/8) and generic ICAM-1/MHC-II lymphocyte interactions but completely overlooked Lbp's strong induction of CXCL10 (+3.17) and Lbp-exclusive CXCL11 (+3.59) targeting CXCR3+ CD4+/CD8+ T cells.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "Five statements make sense (S1, S2, S7, S11, S15 on IL6, NFKB2/RELB, and ISGF3/IFIT), one is especially good (S16 identifies Lbp-driven CXCL10/CXCL11 recruitment of CXCR3+ T cells missed by the paper), and ten do not make sense: walk legs fabricate relevance for unmeasured/non-DEG PGGT1B, CASP4, C1QA/B/C, and C4A (S3, S4, S10, S12), non-DEGs IL1B(Lbp)/IL15RA/SERPING1/CEBPB(Spn) are called induced (S5, S9, S10, S13), S8 contradicts Table 3 Lbp type-I IFN enrichment, S4/S5 apply Gram-negative LPS/CASP4 to S. pneumoniae, S6 inverts BAFF->NFKB2 without BAFF receptors, S14 conflates NLRP3 cleavage with IL1B mRNA, and S12 confuses laminin-binding Lbp with lactoferrin-binding LbpB."
+ }
+}

@@ -1,0 +1,261 @@
+{
+ "dataset": "balzano2021_teddy",
+ "evaluator": "Claude Opus 5.5",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B",
+    "C"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "doubtful"
+   },
+   "justification": "The four values match, but the 'SALL1→SALL4→SOX2→NANOG wave' is not in time order: NANOG peaks first (+0.06, 9mo), SALL4 last (+0.08, 3mo). Shifts of 0.05-0.08 in genes barely expressed in blood look like noise. The cited paper shows OCT4/NANOG/SOX2 rising after 4-7 days of culture, not in circulating leukocytes.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "wrong"
+   },
+   "justification": "Values match (ACOT4 relevant, -0.07 to -0.12). But the mechanism is reversed: ACOTs turn acyl-CoA into free fatty acid, so less ACOT4 predicts fewer, not more, free fatty acids. The fatty-acid 'rise' is only mid-window (6mo); at 12mo, with ACOT4 down, oleate is -0.30.",
+   "in_paper_where": "Results, 'Enrichment and partial correlation analysis' and Fig. 3b: fatty acids up in cases (no ACOT mentioned)."
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "ACOT2 values match, but +0.04 at one window is noise level, and it is not the only ACOT with a 9mo bump (ACOT9 +0.06, ACOT6 +0.04). Fatty acids peak at 6mo, when ACOT2 is -0.01. The cited mouse work says Acot2 raises fatty-acid oxidation; S2 explains the same rise by the opposite mechanism.",
+   "in_paper_where": "Results, 'Enrichment and partial correlation analysis' and Fig. 3b: fatty acids up in cases (no ACOT mentioned)."
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "C"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "does not support",
+    "biology": "doubtful"
+   },
+   "justification": "Values and relevance flags match (HDAC10 is the only relevant HDAC). But calling the HDAC changes 'baseline differences rather than a coordinated response' misreads the design: 12mo is a case-control difference, the paper's most predictive window. The aged-skin citation (HDAC10 and HDAC11 both down) neither supports that nor fits HDAC11 up, HDAC10 down here.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "HDAC11 +0.17 at 12mo, not relevant: correct. The cited HDAC11-represses-IL-10 link is sound and would fit the paper's IL10-down finding (IL10 negative in all windows here). But 'a baseline difference, not a response' misreads the design: 12mo is a case-control difference, the paper's most predictive window.",
+   "in_paper_where": "Results, 'TNFα activation by ROS accumulation...': IL10 and TGFβ down, higher APC activity (Fig. 6); HDAC11 not mentioned."
+  },
+  {
+   "n": 6,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "G"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "HDAC8 -0.13 at 12mo, not relevant: correct, and the HEK293 RIG-I citation is accurate. But the 12mo case-control value is again dismissed as 'baseline', and 'consistent with the pre-seroconversion window' says nothing; if anything, a stronger, not weaker, interferon signature is reported before islet autoimmunity.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "APOC3 values match (relevant, +0.05 at 3mo). The citation is about coronary calcium and insulin resistance in adults with established type 1 diabetes, not about risk of the disease or pre-autoimmunity, so the 'thus' does not follow. Higher APOC3 would raise triglycerides, yet triglycerides are lower in cases at every window.",
+   "in_paper_where": "Abstract; Results, 'Lipid metabolism irregularities...' (lipid abnormalities before IA; APOC3 not mentioned)."
+  },
+  {
+   "n": 8,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All values and flags match. APOA1 (LCAT's activator), LCAT and its substrate phosphatidylcholine all down, with cholesteryl esters slightly lower in cases (-0.02 to -0.04), make reduced HDL cholesterol esterification a fair hypothesis extending the paper's APOA1/HDL discussion. Caveats: LCAT is a liver enzyme; 'transient' fits LCAT only.",
+   "in_paper_where": "Results, 'Lipid metabolism irregularities...': APOA1 down, structural lipids down, HDL phospholipid hydrolysis; Figs 3b, 5. LCAT not mentioned."
+  },
+  {
+   "n": 9,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values match: BTD (relevant) near zero until +0.14 at 0mo, close to the top 1% of gene differences; HLCS not relevant and flat. Citations correctly describe the biotin cycle and biotin's effect on dendritic cells, and the statement admits the direction is unknown. Cautious and data-grounded, but thin; not in the paper.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 10,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "low",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "KARS values match (relevant). The 'late' framing is selective: 12mo (+0.09) equals 3mo (+0.10). LysRS's non-canonical immune role is real, though cited from a background sentence of a leukodystrophy abstract. As a hedged link to the paper's late immune activation it is acceptable, but weak.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 11,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values match, but C1QB and C1QC are not relevant (unstated), while C1QA, also not relevant, is set aside as 'up from baseline, a sustained shift rather than a response'. That misreads the design: 12mo is a case-control difference. All three co-regulated C1q chains are up at 0mo (+0.08, +0.11, +0.06).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 12,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "G"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "Values and flags match, but GALR3 shifts of +0.01 to +0.04 in a neural receptor barely expressed in blood are noise level. 'Pro-inflammatory in immune settings' rests on one mouse psoriasis model; the rat thymocyte paper shows apoptosis. A ligand dip does not support 'tonic' signalling, and nothing links to islet autoimmunity.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 13,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values match: CARD6 relevant, +0.11 and +0.16 early (also +0.13 at 3mo); RIPK2 not relevant, though -0.08 to +0.08 is not quite flat. The citation does show CARD6 binding NOD1 and RIPK2 and suppressing their NF-κB signalling. A hedged, reasonable innate-immune link the paper did not make.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 14,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "The 'APC2' row is another gene (APC regulator of WNT signalling 2); the real APOC2 row is not relevant and is -0.02 at 6mo, +0.10 at 9mo. 'Indicates reduced LPL-mediated clearance' is stated as fact from blood mRNA and predicts higher triglycerides, yet triglycerides are lower in cases at every window.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "Every quoted value matches the uploaded files, and S8 (APOA1-LCAT-phosphatidylcholine) touches the paper's lipid conclusion. But the walk drifts through generic neighbourhoods (pluripotency, histones, galanin), repeatedly dismisses 12-month case-control differences as 'baseline' although that is the paper's most predictive window, gives contradictory fatty-acid mechanisms (S2 vs S3) and maps APC2 onto APOC2. It does not reach the paper's ROS/energy-metabolism or immune-activation conclusions."
+ }
+}

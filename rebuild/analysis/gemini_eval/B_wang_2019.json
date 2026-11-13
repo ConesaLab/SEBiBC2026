@@ -1,0 +1,167 @@
+{
+  "paper_letter": "B",
+  "paper": "Wang 2019",
+  "jobID": "Y6n7275a0Z",
+  "pmcid": "PMC6556878",
+  "doi": "10.1016/j.isci.2019.05.028",
+  "counts": {
+    "Makes sense": 2,
+    "Does not make sense": 5,
+    "Especially good": 1,
+    "Can't judge": 0
+  },
+  "reason_code_counts": {
+    "D": 4,
+    "C": 1,
+    "B": 0,
+    "X": 1,
+    "G": 1,
+    "N": 1,
+    "E": 0,
+    "A": 0
+  },
+  "statements": [
+    {
+      "id": "S1",
+      "type": "mechanism",
+      "text": "In DBDmut_vs_WT, the HNF1A target MTTP collapses at both transcript and protein level (Gene expression −6.46, Proteomics −8.50), while SUMOmut_vs_WT is near zero (+0.31/−0.43); HNF1A's own transcript is not relevant (unchanged, −0.39/−0.10).",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "D"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "FAIL (D) on HNF1A: MTTP values are exact across mmc2.xlsx (DBD Mut vs WT FC=-88.03, log2=-6.46, p=3.81e-11; SUMO Mut vs WT FC=1.24, log2=+0.31, p=0.131), mmc4.xlsx (DBD ratio=0.002762, log2=-8.50, Sig. Down='+'; SUMO ratio=0.7399, log2=-0.43, Sig. Down=''), and PaintOmics node g:4547 (GE relevant -6.46/+0.31; Prot relevant -8.50/-0.43). Although the Affymetrix microarray Table S1 (mmc2.xlsx) and PaintOmics node g:6927 record HNF1A as not relevant (DBD FC=-1.31, log2=-0.39, p=0.0892; SUMO FC=-1.07, log2=-0.10, p=0.708; absent from proteomics), asserting that 'HNF1A's own transcript is ... (unchanged, −0.39/−0.10)' (and prose: 'rather than a loss of the HNF1A transcript itself') directly contradicts Wang 2019 Figure 2C TaqMan qPCR (Hs00167041_m1, n=3), where HNF1A mRNA collapses to near-zero in DBD Mut (p < 0.0001) and is significantly reduced in SUMO Mut (p < 0.05).",
+        "design": "PASS with caveat: Contrast DBDmut_vs_WT vs SUMOmut_vs_WT and human hPSC-derived hepatic progenitor context are preserved, and S1 prose correctly attributes the phenotype to the HNF4A DBD mutant disrupting HNF4A DNA-binding-dependent transactivation (though S1's short claim frames MTTP as 'the HNF1A target' due to PaintOmics choosing HNF1A as its walk anchor).",
+        "citation": "PASS: [1] Hayhurst et al. 2001 (PMID 11158324, Mol Cell Biol) shows mouse hepatic Hnf4a knockout accumulates hepatic lipid and reduces serum cholesterol/triglycerides via decreased Apob and Mttp expression (VLDL disruption); [2] Gordon & Jamil 2000 (PMID 10856714, BBA) reviews MTP/MTTP requirement for nascent apoB lipidation, folding, and VLDL/chylomicron assembly. Both are qualified appropriately as mouse/mixed liver in prose.",
+        "biology": "PASS on MTTP/HNF4A-HNF1A co-regulation, FAIL on HNF1A invariance: MTTP is a canonical HNF4A/HNF1A target, but claiming the DBD-mutant collapse occurs without loss of HNF1A transcript conflicts with Wang 2019's demonstrated HNF4A -> HNF1A transcriptional failure."
+      },
+      "summary_reason": "MTTP microarray and proteomics values match exactly, but asserting HNF1A's own transcript is 'unchanged' ('rather than a loss of the HNF1A transcript itself') directly contradicts Wang 2019 Figure 2C qPCR showing severe HNF1A mRNA loss in DBD Mut (p < 0.0001) and reduction in SUMO Mut (p < 0.05).",
+      "evidence": "mmc2.xlsx MTTP: DBD -88.03 (log2 -6.4599, p=3.81e-11), SUMO +1.24 (log2 +0.3103, p=0.131); HNF1A: DBD -1.31 (log2 -0.3896, p=0.0892), SUMO -1.07 (log2 -0.0976, p=0.708). mmc4.xlsx MTTP: DBD 0.002762 (log2 -8.5001, Sig. Down='+'), SUMO 0.7399 (log2 -0.4346, ''); HNF1A absent. Wang 2019 Figure 2C & Results: TaqMan qPCR (Hs00167041_m1) demonstrates near-complete loss of HNF1A mRNA in DBD Mut (**** p < 0.0001) and reduction in SUMO Mut (* p < 0.05); 'HNF4α in the DBD Mut cells failed to transactivate HNF1α and AFP gene expression.' MTTP is not discussed in Wang 2019 Results/Discussion (only Fig S4 and Tables S1/S3)."
+    },
+    {
+      "id": "S2",
+      "type": "mechanism",
+      "text": "In DBDmut_vs_WT, APOB falls at transcript and protein level (−5.28/−7.09) while SUMOmut is near zero (+0.67/−0.33); the core VLDL scaffold protein collapses on the DBD axis only.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS on statement S2 (minor caveat in backing prose): APOB values match mmc2.xlsx (DBD Mut vs WT FC=-38.75, log2=-5.2761, p=1.17e-9; SUMO Mut vs WT FC=+1.59, log2=+0.6690, p=0.00736, <2-fold cutoff not DEG), mmc4.xlsx (DBD ratio=0.007323, log2=-7.0934, Sig. Down='+'; SUMO ratio=0.7961, log2=-0.3290, Sig. Down=''), and PaintOmics node g:338 (GE relevant -5.28/+0.67; Prot relevant -7.09/-0.33). Note that S2's short claim contains no HNF1A claim; only S2's expanded walk prose appends the microarray-based remark 'HNF1A's own transcript not relevant (unchanged, −0.39/−0.10)' (and mentions APOA4 as part of a DBDmut-dominant pattern, where APOA4 is indeed deeper in DBD -4.77/-8.70 though also significantly down in SUMO -1.95/-1.97).",
+        "design": "PASS: Accurately contrasts DBDmut_vs_WT against SUMOmut_vs_WT; prose's main mechanistic interpretation correctly attributes the APOB/MTTP collapse to losing HNF4A DNA-binding-dependent transactivation.",
+        "citation": "PASS: [1] Hayhurst et al. 2001 (PMID 11158324) is accurately cited in prose (qualified as 'In mouse Liver') for hepatic Hnf4a knockout decreasing Apob and Mttp expression and disrupting VLDL secretion.",
+        "biology": "PASS: APOB is the essential structural scaffold protein of VLDL particles, and its transcriptional and proteomic collapse specifically upon HNF4A DBD deletion aligns with established hepatic HNF4A biology."
+      },
+      "summary_reason": "All APOB fold changes, omic layers, axis specificity (DBD-only collapse), and citation [1] in statement S2 are accurate (with a minor caveat only in the expanded prose repeating the microarray-based HNF1A unchanged note).",
+      "evidence": "mmc2.xlsx APOB: DBD -38.75 (log2 -5.2761, p=1.17e-9), SUMO +1.59 (log2 +0.6690, p=0.00736 <2-fold). mmc4.xlsx APOB: DBD 0.007323 (log2 -7.0934, Sig. Down='+'), SUMO 0.7961 (log2 -0.3290, ''). Walk node g:338 matches (-5.28/+0.67 GE; -7.09/-0.33 Prot). While Results/Discussion discuss DBD-Mut lipoprotein remodeling via APOA1/APOA2/APOA4/LDLR, APOB and VLDL themselves are not mentioned in Wang 2019 Results/Discussion (only Fig S4, Table S1, Table S2 row 20, Table S3), giving in_paper='no' per rubric."
+    },
+    {
+      "id": "S3",
+      "type": "mechanism",
+      "text": "CDH1 is down in both axes at both mRNA and protein level, and HNF4A positively regulates E-cadherin expression.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "D"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "FAIL (D) on DBDmut mRNA significance: In mmc4.xlsx, CDH1 protein is strongly and significantly downregulated in both axes (DBD ratio=0.1321, log2=-2.9203, Sig. Down='+'; SUMO ratio=0.1117, log2=-3.1621, Sig. Down='+'). In mmc2.xlsx, SUMO Mut mRNA is significantly down (FC=-2.59, log2=-1.3730, p=0.000114), BUT DBD Mut vs WT mRNA is NOT statistically significant (FC=-1.38, log2=-0.4647, p=0.063) and fails Wang 2019's >=2-fold, p<=0.05 DEG criteria. Because PaintOmics node g:999 carries a single omic-level 'relevant' flag triggered by SUMOmut (and also shares the node with unrelated FZR1), the AI overstated non-significant -0.46 (p=0.063) mRNA noise as 'down in both axes at both mRNA and protein level' (prose: 'markedly down in both mutants at both levels').",
+        "design": "PASS: Both DBDmut_vs_WT and SUMOmut_vs_WT contrasts are explicitly compared without confusing treatment and control.",
+        "citation": "PASS: [3] Wang et al. 2019 (Oncology Reports, PMID 31322246, PMC6667891) shows HNF-4α positively regulates E-cadherin transcriptionally (promoter-luciferase assay in 293T, KD/OE in RCC lines, and positive correlation in human RCC tumors), and the prose properly qualifies the RCC context.",
+        "biology": "PASS: Positive transcriptional regulation of E-cadherin (CDH1) by HNF4A in epithelial/hepatic cells is biologically well supported."
+      },
+      "summary_reason": "CDH1 protein drops strongly in both axes and mRNA drops in SUMOmut, but DBDmut_vs_WT mRNA (-1.38-fold, log2 -0.46, p = 0.063) is neither statistically significant nor a DEG, refuting 'down in both axes at both mRNA and protein level' ('markedly down in both mutants at both levels').",
+      "evidence": "mmc2.xlsx CDH1: DBD Mut vs WT Fold=-1.38, log2=-0.4647, p=0.063 (not significant, <2-fold); SUMO Mut vs WT Fold=-2.59, log2=-1.3730, p=0.000114. mmc4.xlsx CDH1: DBD 0.1321 (log2=-2.9203, Sig. Down='+'), SUMO 0.1117 (log2=-3.1621, Sig. Down='+'). Walk node g:999: GE CDH1 relevant -0.46/-1.37 (alongside FZR1 not rel -0.25/-0.43); Prot CDH1 relevant -2.92/-3.16. CDH1/E-cadherin is absent from Wang 2019 Results/Discussion text (appears only as an unannotated node in Fig 5C SUMO Mut STRING plot and in Tables S1/S3/S4)."
+    },
+    {
+      "id": "S4",
+      "type": "mechanism",
+      "text": "ITGB5 falls at the protein level only, and PRKCE (upstream of integrin signalling) drops specifically in the DBDmut axis.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "D"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "FAIL (D) on ITGB5 transcript vs protein significance: Two discrepancies against Wang 2019's raw tables: (1) ITGB5 does NOT fall 'at the protein level only' — in mmc2.xlsx (Table S1), ITGB5 mRNA is statistically significantly downregulated in BOTH mutants (DBD FC=-1.44, log2=-0.5261, p=2.06e-5; SUMO FC=-1.48, log2=-0.5656, p=1.38e-5), excluded from PaintOmics 'relevant' (g:3693) solely by Wang 2019's 2-fold cutoff; (2) in mmc4.xlsx (Table S3), ITGB5 protein is ONLY flagged significantly down in DBD Mut (ratio=0.2743, log2=-1.8660, Sig. Down='+'), whereas SUMO Mut (ratio=0.2462, log2=-2.0219, Sig. Down='') is NOT significant in Perseus 1% permutation-based FDR testing, contradicting prose's 'strong concordant protein-level downregulation in both axes'. PRKCE mRNA values match mmc2.xlsx (DBD FC=-4.86, log2=-2.2810, p=3.45e-5; SUMO FC=-1.09, log2=-0.1243, p=0.763) and g:5581; PRKCE is not detected in proteomics (mmc4.xlsx).",
+        "design": "PASS: DBDmut_vs_WT vs SUMOmut_vs_WT contrast is applied properly.",
+        "citation": "PASS: [4] Besson et al. 2002 (PMID 11934885, JBC) establishes in human glioma cells that PKCepsilon positively regulates integrin-dependent adhesion/spreading/motility via RACK1 bridging activated PKCepsilon to integrin beta chains (qualified as 'In human glioma cells' in prose). Note that the network walk edge ITGB5 -> PRKCE (chain[14]) came from OmniPath 'Leptin', though PKCepsilon upstream of integrin beta chains is supported by [4].",
+        "biology": "PASS on PKCepsilon-integrin signaling from [4], though note an unexplained tension in S4: PRKCE mRNA is flat in SUMOmut (-0.12) while ITGB5 protein still trends -2.02 in SUMOmut."
+      },
+      "summary_reason": "ITGB5 mRNA is significantly downregulated in both mutants (p = 2.06e-5 and 1.38e-5; < 2-fold cutoff), refuting 'falls at the protein level only', and ITGB5 protein in SUMOmut (-2.02) is not marked significant in Table S3 (''), refuting prose's concordant both-axes claim.",
+      "evidence": "mmc2.xlsx ITGB5: DBD -1.44 (log2 -0.5261, p=2.06e-5), SUMO -1.48 (log2 -0.5656, p=1.38e-5); PRKCE: DBD -4.86 (log2 -2.2810, p=3.45e-5), SUMO -1.09 (log2 -0.1243, p=0.763). mmc4.xlsx ITGB5: DBD 0.2743 (log2 -1.8660, Sig. Down='+'), SUMO 0.2462 (log2 -2.0219, Sig. Down=''); PRKCE absent. Neither ITGB5 nor PRKCE appears in Wang 2019 Results/Discussion or Figures."
+    },
+    {
+      "id": "S5",
+      "type": "association",
+      "text": "DAB2 is lost post-transcriptionally in the DBDmut axis, and DAB2 is a cargo-selective clathrin endocytic adaptor for LDL-receptor family members.",
+      "mark": "Especially good",
+      "reason_codes": [
+        "N"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS: Exact match across all sources. mmc4.xlsx DAB2 Proteomics: DBD ratio=0.08208 (log2=-3.6069, Sig. Down='+'), an ~12.2-fold protein collapse; SUMO ratio=0.7647 (log2=-0.3871, Sig. Down=''). mmc2.xlsx DAB2 mRNA: DBD FC=-1.37 (log2=-0.4542, p=0.0265), SUMO FC=+1.92 (log2=+0.9411, p=0.000253). Walk node g:1601 matches identically (GE not relevant -0.45/+0.94; Prot relevant -3.61/-0.39). The >3.1 log2 divergence between protein (-3.61) and mRNA (-0.45) in DBDmut cleanly supports post-transcriptional loss on the DBDmut axis.",
+        "design": "PASS: Properly contrasts DBDmut_vs_WT vs SUMOmut_vs_WT and frames as association without overclaiming causality from the unsigned OmniPath Wnt edge (chain[15]).",
+        "citation": "PASS: [5] Mishra et al. 2002 (PMID 12234931, EMBO J, PMC126284) proves Dab2 recognizes the FXNPXY internalization motif in LDL-receptor family members via its PTB domain and binds clathrin/AP-2/phosphoinositides as a cargo-selective endocytic adaptor. [6] Zhang et al. 2012 (PMID 22705885, BBA, qualified as K562 cells in prose) shows DAB2 is required as a key clathrin-associated endocytic adaptor for fibrinogen internalization.",
+        "biology": "PASS (N - New connection): Wang 2019 highlighted downregulation of LDLR (Fig 4D), LRP2, and FGA (Fig 4E, Fig 5C) in the HNF4A-edited cells, yet completely missed DAB2 (0 mentions in text, figures, or GO tables). Linking the 12.2-fold post-transcriptional DAB2 protein loss in DBDmut to LDL-receptor family (LDLR/LRP2) and fibrinogen cargo endocytosis is an accurate, novel mechanistic bridge not made in the paper."
+      },
+      "summary_reason": "Fully accurate data, contrasts, and citations [5],[6], and uncovers a novel 12.2-fold post-transcriptional collapse of the clathrin cargo adaptor DAB2 in DBDmut that was completely missed in Wang 2019 despite directly linking to the paper's highlighted LDLR, LRP2, and fibrinogen (FGA) defects.",
+      "evidence": "mmc4.xlsx DAB2: DBD 0.082078 (log2 -3.6069, Sig. Down='+'), SUMO 0.764687 (log2 -0.3871, ''); mmc2.xlsx DAB2: DBD -1.37 (log2 -0.4542, p=0.0265), SUMO +1.92 (log2 +0.9411, p=0.000253). g:1601 matches. PMID 12234931 & PMID 22705885 verified directly. Zero hits for DAB2 in wang2019_text.txt, mmc1.txt, mmc3.xlsx, mmc5.xlsx, or Figures 4D/5C/6B."
+    },
+    {
+      "id": "S6",
+      "type": "mechanism",
+      "text": "The ER quality-control module (PRKCSH, GANAB, CALR) is coherently down at the protein level, and these proteins form the calnexin/calreticulin cycle for N-glycoprotein folding.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS on statement S6 (prose threshold caveat): All three ER proteins are coherently and significantly downregulated ~1.8-2.0-fold in DBD Mut proteomics (mmc4.xlsx: PRKCSH ratio=0.5039, log2=-0.9889, Sig. Down='+'; GANAB ratio=0.5238, log2=-0.9328, Sig. Down='+'; CALR ratio=0.5462, log2=-0.8724, Sig. Down='+'; corroborated by partners CANX -0.92 '+' and PDIA3 -1.02 '+'), with mild non-significant shifts in SUMO Mut (-0.38, -0.31, -0.23; all Sig. Down=''). PRKCSH mRNA is also down in both axes (DBD -2.79, log2=-1.48, p=1.66e-6; SUMO -2.29, log2=-1.20, p=1.54e-5). Node g:5589 correctly reads PRKCSH rather than co-mapped PLD1. Caveat in backing prose only (preventing an 'Especially good' rating): prose states GANAB and CALR 'fall at the protein level only ... with both Gene expression layers not relevant', whereas mmc2.xlsx shows significant <2-fold mRNA drops of similar magnitude (GANAB DBD -0.59 p=7.94e-5 / SUMO -0.68 p=3.52e-5; CALR DBD -0.77 p=1.81e-5 / SUMO -0.37 p=0.00535).",
+        "design": "PASS: Properly distinguishes DBDmut_vs_WT and SUMOmut_vs_WT values.",
+        "citation": "PASS: [7] Kozlov & Gehring 2020 (PMID 32285592, FEBS J, PMC7687155) reviews the calnexin/calreticulin cycle for N-glycosylated ER protein folding, specifically detailing calreticulin and glucosidase II (whose alpha/beta subunits are encoded by GANAB and PRKCSH). (Note: chain[20] traversed a SARS-CoV-1 Reactome edge from PRKCSH to GANAB, but the statement itself sticks cleanly to the ER calnexin/calreticulin cycle.)",
+        "biology": "PASS: Coherent DBD-specific depletion of glucosidase II (PRKCSH/GANAB) and CALR (alongside CANX/PDIA3) is a real ER quality-control module absent from Wang 2019 (relevant to folding of N-glycosylated secreted proteins like APOB)."
+      },
+      "summary_reason": "Statement S6 itself is true across proteomics, ER-cycle biology, and citation [7], and highlights a genuine ER quality-control module omitted from Wang 2019; kept at 'Makes sense' rather than 'Especially good' because the backing prose over-interprets the <2-fold DEG filter by calling GANAB and CALR 'protein level only' despite significant p < 0.01 mRNA decreases.",
+      "evidence": "mmc4.xlsx: PRKCSH DBD 0.5039 (-0.9889 '+') / SUMO 0.7706 (-0.3759 ''); GANAB DBD 0.5238 (-0.9328 '+') / SUMO 0.8093 (-0.3052 ''); CALR DBD 0.5462 (-0.8724 '+') / SUMO 0.8555 (-0.2251 ''). mmc2.xlsx: PRKCSH -1.48 (p=1.66e-6) / -1.20 (p=1.54e-5); GANAB -0.59 (p=7.94e-5) / -0.68 (p=3.52e-5); CALR -0.77 (p=1.81e-5) / -0.37 (p=0.00535). Zero mentions of PRKCSH, GANAB, CALR, calnexin, or calreticulin in Wang 2019 text, figures, or GO tables."
+    },
+    {
+      "id": "S7",
+      "type": "mechanism",
+      "text": "MTTP is the rate-limiting lipid-transfer protein of apoB-containing lipoprotein assembly: it transfers neutral lipids to nascent apoB, and loss of MTTP activity abolishes apoB secretion and causes intracellular lipid accumulation in human iPSC-derived hepatocytes.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "G"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS/NA in prose, GENERIC (G) in statement S7: The statement text S7 reports zero values, fold changes, directions, genes, or contrasts from Wang 2019's dataset (and names 'human iPSC-derived hepatocytes' from cited paper [8] rather than Wang 2019's H9 hESC hepatic progenitors). Note that PaintOmics's expanded prose paragraph 11 does connect [8] back to MTTP (GE -6.46, Prot -8.50) in DBDmut, repeating S1's data.",
+        "design": "FAIL (G): Statement S7 says nothing about the Wang 2019 experiment, HNF4A edits, or DBDmut vs SUMOmut contrasts — matching the exact definition of Generic ('true but says nothing about your experiment').",
+        "citation": "PASS: [11] Hussain et al. 2020 (PMID 32705593) and [8] Liu et al. 2017 (PMID 28514664, Cell Reports, PMC5555078) accurately support MTP transferring neutral lipids to nascent apoB and MTTP R46G abolishing apoB secretion and causing intracellular lipid accumulation in human iPSC-derived hepatocytes.",
+        "biology": "PASS: Calling MTTP the rate-limiting ER lipid-transfer protein for apoB-containing lipoprotein assembly is well-established lipid biochemistry (though neither [8] nor [11] abstract uses the literal phrase 'rate-limiting')."
+      },
+      "summary_reason": "Biologically true and faithfully grounded in [8] and [11], but statement S7 itself is purely generic literature background that mentions nothing about Wang 2019's experiment, HNF4A perturbations, contrasts, or data (and cites iPSC-derived hepatocytes from [8] rather than H9 hESCs).",
+      "evidence": "Verbatim S7 text contains no reference to DBDmut_vs_WT, SUMOmut_vs_WT, HNF4A, H9 hESCs, or any measured value. Citations PMID 28514664 (PMC5555078: 'MTTP R46G iPSC-derived hepatocytes exhibit the hallmark features of ABL, including the absence of apoB secretion, excess intracellular lipid storage') and PMID 32705593 verified. MTTP and apoB-secretion/steatosis are not discussed in Wang 2019 Results/Discussion."
+    },
+    {
+      "id": "S8",
+      "type": "mechanism",
+      "text": "HNF1A itself is not differentially expressed in either axis (Gene expression DBDmut_vs_WT −0.39, SUMOmut_vs_WT −0.10; not relevant), yet its direct transcriptional targets APOA4, APOA1, APOB and MTTP are all strongly down in DBDmut_vs_WT, indicating a DBD-specific loss of HNF1A transactivation rather than a change in HNF1A abundance.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "D",
+        "C",
+        "X"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "FAIL (D) on HNF1A: Target values match mmc2.xlsx & mmc4.xlsx in DBDmut_vs_WT (APOA4 GE -4.77 / Prot -8.70; APOA1 -2.75 / -9.02; APOB -5.28 / -7.09; MTTP -6.46 / -8.50; note APOA4 also falls in SUMOmut -1.95/-1.97). However, asserting HNF1A itself is unchanged / 'HNF1A levels stay flat' directly contradicts Wang 2019 Figure 2C TaqMan qPCR (n=3), where HNF1A mRNA collapses near zero in DBD Mut (p < 0.0001) and is reduced in SUMO Mut (p < 0.05) — only the Affymetrix microarray probeset in mmc2.xlsx showed non-significant -0.39/-0.10 (p=0.089/0.708). Additionally, walk step chain[27] erroneously printed APOA1's log2FCs (-2.75/-0.07, -9.02/-0.96) onto HNF1A's reading.",
+        "design": "FAIL (X): Misattributes the engineered HNF4A DNA-binding-domain deletion ('DBD Mut', exons 2-3 skipped, cytoplasmic truncated HNF4A; design_card.perturbation) to 'a DBD-specific loss of HNF1A transactivation' ('The DBD mutant allele is therefore consistent with a loss of HNF1A transactivation... while HNF1A levels stay flat'). Rooted in PaintOmics choosing checks.anchor='HNF1A' (g:6927) and treating perturbed HNF4A (g:3172, Prot +3.51 / -0.62) in chain[28] as an unperturbed neighbor.",
+        "citation": "FAIL (C): [10] PMID 35327967 (Genes 2022, PMC8949677) investigates somatic POU-domain mutations in HNF1A (Y122C, R229Q, V259F) that impair HNF1A binding to the HNF4A promoter in HCC/HEK293/Huh7 cells — the opposite genetic perturbation and causal polarity from Wang 2019's HNF4A DBD deletion (and [10] itself notes HNF4A loss-of-function mutations reduce HNF1A expression, contradicting 'levels stay flat'). [9] Parrizas et al. 2001 (PMID 11287626, PMC86965) studies Hnf1a-/- knockout mice lacking HNF1A protein altogether, not flat HNF1A abundance.",
+        "biology": "While APOA4/APOA1/APOB/MTTP are genuine HNF4A/HNF1A targets, attributing their collapse in an HNF4A-DBD-null cell line to DNA-binding failure of HNF1A with unchanged HNF1A levels inverts the hepatoblast HNF4A -> HNF1A transcriptional hierarchy shown in Wang 2019."
+      },
+      "summary_reason": "Major multi-error anchor failure: misattributes Wang 2019's HNF4A DBD deletion to loss of HNF1A transactivation (X), asserts HNF1A abundance is unchanged/flat contrary to Figure 2C qPCR p < 0.0001 collapse (D), and misuses HNF1A POU-mutant [10] and Hnf1a-/- KO [9] papers (C).",
+      "evidence": "walk['checks']['anchor']={'gene':'HNF1A','node':'g:6927'}; walk['title']='...in HNF1A-perturbed hepatic progenitors'; chain[27] mislabels APOA1 values on HNF1A step; chain[28] calls perturbed HNF4A only 'the paralogous hepatocyte master regulator'. Wang 2019 Results & Fig 2C: HNF4A exon 2-3 deletion causes cytoplasmic truncated HNF4A that fails to transactivate HNF1A (qPCR **** p < 0.0001 in DBD Mut, * p < 0.05 in SUMO Mut). PMC8949677 ([10]) tests HNF1A Y122C/R229Q/V259F POU mutations suppressing HNF4A promoter; PMID 11287626 ([9]) studies Hnf1a-/- KO mice. S8's central claim contradicts Wang 2019 Fig 2C."
+    }
+  ]
+}

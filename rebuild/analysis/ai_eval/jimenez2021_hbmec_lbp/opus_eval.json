@@ -1,0 +1,280 @@
+{
+ "dataset": "jimenez2021_hbmec_lbp",
+ "evaluator": "Claude Opus 5 (the reader was started as Opus 5.5; Claude Code switched it to Opus 5 after a safety classifier stopped one of its responses, before any statement was marked)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "The numbers check out: IL6 +2.47 under S. pneumoniae and +2.47 under Lbp, both relevant. IL-6 as an NF-kB cytokine of brain endothelium is right and the cited BBB review supports it. The paper states the same, so nothing is added. 'No axis difference at baseline' is loose wording.",
+   "in_paper_where": "Results, S. pneumoniae-induced transcriptome and Lbp senescence section; Discussion (IL-6 over-expressed in both treatments); Table 4 (IL-17 signaling pathway)"
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "K",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Numbers right: TNFSF13B +0.05 (pneumococcus) versus +3.21 (Lbp), with NFKB2 +1.66 and RELB +2.21 also Lbp-biased. BAFF driving p100 processing and RelB is sound and the statement says the citation is B-cell work. The paper reports an Lbp-specific non-canonical arm but never names TNFSF13B.",
+   "in_paper_where": "Discussion ('Lbp activated the non-canonical NF-kB signaling pathway'); Table 3, R-HSA-5676594 (Lbp only)"
+  },
+  {
+   "n": 3,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "GBP5 +1.85/+2.78 and the whole family (GBP1 -0.12/+1.10 up to GBP5) match the files and the paper's own numbers, and calling it interferon-driven host defence is right; the M1/NLRP3 citation is macrophage work and is labelled as such. Leg e8 wrongly calls PGGT1B (-0.10/+0.03) relevant.",
+   "in_paper_where": "Results, 'Biological processes identified in the Lbp-induced hBMECs' (GBP1-5 with LogFC); Table 3, Interferon signaling"
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "wrong"
+   },
+   "justification": "Values are quoted correctly, but the mechanism is wrong: the caspase-4 non-canonical inflammasome senses cytosolic LPS of Gram-negative bacteria (the cited paper uses E. coli, Citrobacter, Vibrio) and S. pneumoniae is Gram-positive. CASP4 does not move (+0.78/+0.98), and GBP2/GBP5 are higher in the Lbp arm, where IL1B is flat.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "The data part is right: IL1B +1.42 versus -0.20 inside a shared NF-kB response (IL6 +2.47/+2.47, TNF +1.81/+2.49). But it again asserts a GBP5/GBP2-CASP4-IL1B 'pneumococcus-specific route'; GBP5 (+1.85/+2.78) and GBP2 are Lbp-biased and CASP4 is unchanged, so that route is not what the data shows.",
+   "in_paper_where": "Results, S. pneumoniae-induced transcriptome (IL-1beta LogFC 1.42 among NF-kB-driven genes)"
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "K",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Numbers match (TNFSF13B +0.05/+3.21, NFKB2 +1.32/+1.66, RELB +1.38/+2.21) and the NIK/p100/RelB citation fits BAFF. Fair, with the caveat that rising mRNA is weak evidence for a pathway run by p100 processing. It largely repeats S2; the paper states the Lbp-specific non-canonical arm without naming the gene.",
+   "in_paper_where": "Discussion ('Lbp activated the non-canonical NF-kB signaling pathway'); Table 3, R-HSA-5676594"
+  },
+  {
+   "n": 7,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "yes",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "IL6 +2.47 on both axes is correct, and the HeLa paper does show an NF-kB site in the IL6 promoter; the statement names that system. True but well known, and it largely repeats S1. The paper reports IL-6 up in both treatments and NF-kB signalling in both.",
+   "in_paper_where": "Discussion (TNF-alpha, IL-6 in both treatments; NF-kB signaling pathway); Table 4, hsa04064"
+  },
+  {
+   "n": 8,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "IFNB1 +1.60 versus +0.00 is in the file (the Lbp value is a literal 0.000000, one of 21 such). But 'the type I interferon response is specific to the live-bacteria stimulus' is contradicted by the same data: IFIT1/2/3, GBP1-5 and CXCL10/CXCL11 are Lbp-driven, as the paper reports.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 9,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "IL15RA +0.89/+1.18 matches, though +0.89 is below the authors' DEG cut, so 'induced on both axes' is generous. The citation is well chosen: mouse cerebral microvascular endothelium, TNF-inducible IL15R-alpha, and the statement says it is mouse. The paper never mentions IL15RA.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 10,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "K",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "SERPING1 is +1.16 (Lbp) and +0.39 (pneumococcus), correctly called weak for that arm, beside C1S +1.23/+2.28 and C1R +1.04/+2.24. C1 inhibitor does block C1r and C1s, so reading the brake as co-induced is fair. The paper reads C1R/C1S only as complement activation.",
+   "in_paper_where": "Discussion ('Up-regulation of C1R, C1S and C3 indicate activity of the complement cascade'); SERPING1 not mentioned"
+  },
+  {
+   "n": 11,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "NFKB2 +1.32/+1.66, TNFAIP3 +2.30/+2.44, IL6 and TNF are all correct. The amplification mechanism comes from mouse colitis epithelium, the statement says so, and it stays conditional ('could amplify'). Reasonable: the paper notes NFKB2 induction but not the crosstalk with the canonical arm.",
+   "in_paper_where": "Discussion (NF-kB signaling pathway activated, BIRC3, TRAF1 and NFKB2 up-regulated)"
+  },
+  {
+   "n": 12,
+   "mark": "Does not make sense",
+   "reasons": [
+    "C",
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "misread",
+    "citation": "does not support",
+    "biology": "ok"
+   },
+   "justification": "The citation is the wrong protein: PMID 22332888 is lactoferrin-binding protein B of Gram-negative Neisseria/Moraxella, not the pneumococcal laminin-binding protein Lbp used here, yet it is called 'pneumococcal LbpB'. The sufficiency hypothesis is reasonable, but 'Lbp consistently exceeds' ignores CXCL6 +4.32/+3.30 and IL1A +2.60/+1.49.",
+   "in_paper_where": "Results, SPdeltaLbp experiment and Discussion (Lbp is a major inducer of signalling), but not this comparison"
+  },
+  {
+   "n": 13,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "CEBPB +0.47/+1.10, CXCL1 +3.91/+3.11, CXCL8 +3.98/+3.60 and CXCL6 +4.32/+3.30 all match, C/EBP-beta as a chemokine driver is standard, the mouse macrophage source is named and the claim is hedged ('plausibly'). Note CEBPB is Lbp-biased while the chemokines are higher under the bacterium.",
+   "in_paper_where": "Results, Lbp senescence section (CEBPB LogFC 1.10); Results and Fig. 4 (CXCL chemokines), but the link is not made"
+  },
+  {
+   "n": 14,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All four values match. The pneumolysin/NLRP3 explanation for the IL1B split (+1.42 versus -0.20) is apt and well cited, and the paper offers none. Caveat: inflammasomes control IL-1beta processing, not its mRNA; what purified Lbp lacks is the toxin and the other PAMPs of a live bacterium.",
+   "in_paper_where": "Results, S. pneumoniae-induced transcriptome (IL-1beta LogFC 1.42); no explanation of the split"
+  },
+  {
+   "n": 15,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "K",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Values are right: IFIT1/2/3 up only under Lbp (+1.09/+1.02/+1.09), CXCL10 +3.17, CXCL11 +3.59, IRF9 not relevant (-0.20/-0.50). The point that ISGF3 is switched on post-translationally, so IRF9 mRNA need not move, is correct and useful. The paper reports the IFITs but not the mechanism.",
+   "in_paper_where": "Results, Lbp-induced transcriptome (IFIT1/2/3 LogFC); Table 3, Interferon signaling"
+  },
+  {
+   "n": 16,
+   "mark": "Especially good",
+   "reasons": [
+    "N"
+   ],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "CXCL10 (+1.43/+3.17) and CXCL11 (+0.28/+3.59) are correct and are CXCR3 ligands, as the cited review states. The paper names neither gene and its chemokine discussion is neutrophil-only, so an Lbp-driven CXCR3/T-cell arm at the barrier is a genuine addition and a testable next step.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "The arithmetic is almost always right and the backbone is the paper's own: a shared NF-kB/IL-6/TNF core, an Lbp-specific non-canonical NF-kB (BAFF) arm and an Lbp-driven interferon module, with useful extras such as SERPING1 as the complement brake and the CXCL10/CXCL11-CXCR3 link. Three things go wrong: a GBP-CASP4-IL1B 'non-canonical inflammasome' route invented for a Gram-positive pathogen and stated as fact twice (S4, S5); S8's claim that the type I interferon response belongs to the live bacterium, which the Lbp-specific IFIT/GBP/CXCL11 signature in the same file contradicts; and S12, which cites and names the wrong protein (lactoferrin-binding protein B of Neisseria), an error repeated in the report's title. It reaches the paper's first two conclusions (adhesin reproduces much of the bacterial response; shared inflammatory signalling) but never touches the ECM remodelling and senescence arm, and several walk legs assert values for features that are not in the uploaded files (PGGT1B, C1QA/B/C) even where the final statements avoid them."
+ },
+ "model": "claude-opus-5"
+}

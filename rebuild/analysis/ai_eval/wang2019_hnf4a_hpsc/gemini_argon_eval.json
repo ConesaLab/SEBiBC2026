@@ -1,0 +1,147 @@
+{
+ "dataset": "wang2019_hnf4a_hpsc",
+ "evaluator": "Gemini 4 Argon, default effort",
+ "model": "gemini-4-argon",
+ "date": "2026-11-12",
+ "overall": {
+  "score_1_to_5": 4,
+  "comment": "PaintOmics AI accurately captures the severe DBD-mutant-specific collapse of the hepatic lipoprotein assembly programme (MTTP, APOB, APOA1, APOA4), the shared loss of epithelial/ECM adhesion proteins (CDH1, ITGB5), and surfaces a coherent post-transcriptional drop in the ER calnexin/glucosidase II glycoprotein-folding complex (PRKCSH, GANAB, CALR). Its main flaw is in S8 (and the report title), where it misreads the flat microarray probe for HNF1A along a CollecTRI HNF1A edge as a DBD-specific loss of HNF1A transactivation rather than direct loss of HNF4A DNA-binding activity (and misses that RT-qPCR in Fig. 2C showed HNF1A mRNA is actually reduced in DBD Mut)."
+ },
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All transcriptomic and proteomic fold changes for MTTP (DBDmut_vs_WT −6.46 and −8.50; SUMOmut_vs_WT +0.31 and −0.43) and HNF1A (−0.39 and −0.10, not relevant in microarray) match the uploaded data, and the prose rightly attributes the MTTP collapse to losing HNF4A DNA-binding transactivation supported by hepatic HNF4A knockout data [1].",
+   "in_paper_where": "Cholesterol metabolism and HNF1A are discussed in Results (Figs. 2C, 4B, 6A), but MTTP is not specifically named in the paper text."
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "APOB log2 fold changes match the uploaded data across both omics layers (Gene expression −5.28 in DBDmut vs +0.67 in SUMOmut; Proteomics −7.09 vs −0.33), and Ref [1] directly supports decreased Apob and Mttp expression upon hepatic HNF4A loss.",
+   "in_paper_where": "Cholesterol homeostasis and apolipoproteins (APOA1, APOA2, APOA4) are discussed in Results (Figs. 4B–E, 6A), though APOB is not explicitly named in the main text."
+  },
+  {
+   "n": 3,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "CDH1 is downregulated in both mutants in Gene expression (DBDmut −0.46, SUMOmut −1.37) and strongly in Proteomics (DBDmut −2.92, SUMOmut −3.16), consistent with known positive transcriptional regulation of E-cadherin by HNF4A (supported by Ref [3] in human RCC cells).",
+   "in_paper_where": "Cell adhesion molecules and focal adhesion are reported as shared enriched pathways in Results (Fig. 6A), though CDH1 is not named in the text."
+  },
+  {
+   "n": 4,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "The uploaded data confirm a protein-only reduction of ITGB5 in both mutants (Proteomics −1.87 and −2.02; Gene expression −0.53 and −0.57, not relevant) alongside a DBDmut-specific drop in PRKCE mRNA (−2.28 vs −0.12), and Ref [4] links PKCepsilon to integrin beta chains in cell adhesion.",
+   "in_paper_where": "ECM-receptor interaction and focal adhesion are discussed in Results (Figs. 4, 6A), but ITGB5 and PRKCE are not specifically named."
+  },
+  {
+   "n": 5,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "DAB2 is strongly downregulated in DBDmut_vs_WT proteomics (−3.61 vs −0.39 in SUMOmut) while its transcript is not relevant (−0.45/+0.94), and Refs [5, 6] directly support DAB2's function as a clathrin endocytic adaptor for LDL-receptor family members and fibrinogen.",
+   "in_paper_where": "Not in the paper (LDLR, LRP2, and FGA are mentioned in Results, but DAB2 is not)."
+  },
+  {
+   "n": 6,
+   "mark": "Especially good",
+   "reasons": [
+    "N",
+    "E"
+   ],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Connects three physically and functionally linked ER quality-control components across omics layers—transcriptional and proteomic reduction of glucosidase II beta (PRKCSH, mRNA −1.48/−1.20, protein −0.99/−0.38) together with protein-level loss of glucosidase II alpha (GANAB, −0.93/−0.31) and calreticulin (CALR, −0.87/−0.23)—identifying a coherent calnexin/calreticulin glycoprotein-folding defect [7] not reported in the source paper.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "The MTTP numbers (Gene expression −6.46, Proteomics −8.50 in DBDmut_vs_WT) match the uploaded data, and Refs [8, 11] directly demonstrate in human pluripotent stem cell-derived hepatocytes that loss of MTTP lipid-transfer activity abolishes apoB secretion and causes intracellular lipid accumulation.",
+   "in_paper_where": "Not in the paper (cholesterol/lipoprotein pathways are discussed in Results, but MTTP and apoB secretion are not)."
+  },
+  {
+   "n": 8,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "C",
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "H",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "The perturbation in DBDmut_vs_WT is a deletion of the DNA-binding domain of HNF4A (not HNF1A), and APOA4, APOA1, APOB, and MTTP are direct transcriptional targets of HNF4A itself. Moreover, the source paper's RT-qPCR (Fig. 2C) explicitly shows that HNF4A DBD Mut failed to transactivate HNF1A mRNA, and Ref [10] studies HNF1A POU-domain mutations acting on the HNF4A promoter rather than an HNF4A DBD mutation.",
+   "in_paper_where": "Results (Fig. 2C) explicitly measure HNF1A by RT-qPCR and report the opposite of the flat microarray probe: HNF4A DBD Mut failed to transactivate HNF1A expression."
+  }
+ ]
+}

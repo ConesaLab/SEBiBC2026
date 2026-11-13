@@ -1,0 +1,255 @@
+{
+ "dataset": "balzano2021_teddy",
+ "evaluator": "Gemini 4 Hydrogen (XHigh)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "Data mappings/relevance match, whole-blood tissue matches TEDDY RNA, and the claim is explicitly hedged ('can reflect') without claiming the prose's 'embryonic stem cell' error or asserting steady-state high expression; Ref [1] culture-induction and low steady-state caveats are noted.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "wrong"
+   },
+   "justification": "Biochemical direction error (B): acyl-CoA thioesterases (ACOT4) generate free fatty acids by hydrolyzing acyl-CoAs, so sustained ACOT4 downregulation ('reduced thioester hydrolysis') predicts lower, not elevated, free fatty acids. In_paper='partly' because Paper D reports elevated plasma fatty acids (Fig. 3b) but never mentions ACOT4.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Overgeneralizes Ref [5]'s mouse oxidative-tissue C16:0-CoA thioesterase fraction unconditionally to human blood (ignoring Ref [5]'s mouse liver exception) [C] and misapplies Ref [4]'s mitochondrial beta-oxidation-enhancing mechanism to explain plasma free-fatty-acid accumulation while ACOT2 is negative at 6mo (-0.0069) when FAs peak [B].",
+   "in_paper_where": ""
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "Misreads the TEDDY Case-vs-Control longitudinal design (X): calls 12mo_before_SC differences ('+0.17 at 12mo', '-0.13 at 12mo') 'baseline-positive' and 'baseline-negative' (treated in walk_design_card and prose as non-effect baseline imbalances), whereas 12 MBSC is already a Case-minus-Control contrast 1 year before seroconversion and Paper D's most predictive time block.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Commits the walk_design_card baseline fallacy (X): labels HDAC11's +0.17 Case-vs-Control elevation at 12mo_before_SC 'baseline-positive' (interpreted in prose as 'a baseline difference, not a response'), misreading TEDDY's 12-MBSC pre-seroconversion disease contrast. Ref [7] and data values match; in_paper='partly' because Paper D reports reduced IL10 and heightened APC activity (Fig. 6) without mentioning HDAC11.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Misreads TEDDY's Case-vs-Control longitudinal design (X): classifies HDAC8's -0.13 difference at 12mo_before_SC as 'baseline-negative' ('a baseline difference, not a response' in walk prose), treating the earliest pre-seroconversion disease window (12 MBSC) as an untreated baseline.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Accurate data values/relevance, sound pre-SC temporal interpretation without the baseline fallacy, and faithful Ref [9] citation ('risk factor in type 1 diabetes', matching T1D CAD/insulin-resistance findings in PMC7887020). Not 'Especially good' given tiny blood-cell APOC3 log2 amplitude (+0.047) and downregulated plasma triglycerides in TEDDY.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Misreads TEDDY's Case-vs-Control longitudinal design (X): classifies PLB1's -0.20 Case-vs-Control divergence at 12mo_before_SC as 'baseline-negative' (alongside prose/SENSE labeling 12mo LCAT/APOA1 as baseline shifts), whereas 12 MBSC is a pre-seroconversion disease window highlighted by Paper D. All numeric data and LCAT citations match; in_paper='partly' because APOA1 (at 9-12 MBSC+) and phosphatidylcholine downregulation are in Paper D while LCAT and PLB1 are absent.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 9,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Applies walk_design_card's baseline misreading (X) by framing 12mo_before_SC as 'baseline' ('appearing at the time of seroconversion rather than at baseline'), whereas TEDDY has no baseline column and aligns matched Case-vs-Control pairs backward from SC (though BTD's Case-vs-Control contrast genuinely stays near zero at 12mo-3mo and spikes at 0mo_at_SC).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 10,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All values, IDs (KARS->KARS1, C00047), and relevance flags match; 12mo (+0.09) is properly treated as positive rather than dismissed as a baseline imbalance, and Ref [14] citation in walk prose is accurate and candidly hedged.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 11,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Commits the walk_design_card baseline design error (X): characterizes C1QA's +0.06 Case-vs-Control elevation at 12mo_before_SC as 'consistently positive from baseline' (explicitly dismissed in walk prose/SENSE as 'a sustained shift rather than a response'), misreading 12 MBSC as a pre-effect baseline. Also note C1QA/B/C are all not relevant in the job.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 12,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "wrong"
+   },
+   "justification": "Flawed biological inference (B): concluding that sustained minimal GALR3 elevation (+0.01 to +0.04 log2) combined with a ligand GAL drop below control (-0.06 at 6mo, remaining negative at 3mo and 0mo) 'points to a tonic galanin/GALR3 tone' is backwards—lower ligand availability opposes ligand-driven GAL/GALR3 tone (opposite to Ref [18]'s saturating-ligand 'tonic' thymocyte inhibition).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 13,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Accurate data values (avoiding both the 12mo='baseline' fallacy and PaintOmics's CCK->RIPK2 mis-mapping), faithful to Ref [19]'s functional characterization of CARD6 on NOD1/RIPK2 signaling, and appropriately hedged.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 14,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "Severe PaintOmics ID-mapping and data error (D): uses the mis-mapped APC2 (Entrez 10297, WNT pathway, -0.08 at 6mo) row as APOC2 (Entrez 344 via ov['344']='APC2|APOC2'), whereas true APOC2 (A0A024R0T9) is not relevant and has no 6mo -0.08 dip (+0.10 at 9mo, -0.02 at 6mo); additionally, CREB3L3 peaks at 6mo (+0.12, same window rather than 'opposite in timing'), and plasma triglycerides (C00422) are persistently downregulated (-0.09 to -0.20), contradicting reduced TG clearance.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "Four statements make sense (S1, S7, S10, S13) and ten do not make sense: six commit TEDDY's 12mo='baseline' design error by treating 12mo_before_SC Case-vs-Control differences as pre-treatment baselines (S4, S5, S6, S8, S9, S11); S2 inverts ACOT4 thioesterase enzymology and S3 overgeneralizes ACOT2 beta-oxidation biology; S12 infers tonic GAL/GALR3 signaling from reduced GAL ligand; and S14 reads the mis-mapped WNT gene APC2 (-0.08 at 6mo) as APOC2 while plasma triglycerides fall across all windows."
+ }
+}

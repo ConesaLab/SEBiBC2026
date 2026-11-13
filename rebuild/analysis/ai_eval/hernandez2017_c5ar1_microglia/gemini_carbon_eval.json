@@ -1,0 +1,151 @@
+{
+  "dataset": "hernandez2017_c5ar1_microglia",
+  "evaluator": "Gemini 4 Carbon",
+  "date": "2026-11-12",
+  "statements": [
+    {
+      "n": 1,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "no",
+      "beyond": "K",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "Uploaded values match Ccl6 (relevant=true) across ages: Arctic_vs_WT rises from +0.17 (2mo) to +1.32 (5mo, 94th percentile), +1.19 (7mo, 97th percentile), and +0.90 (10mo), while ArcticC5aR1KO_vs_Arctic stays slightly positive (+0.27, +0.08, +0.12, +0.42), confirming C5aR1-independent plaque induction. Ccl6 is a canonical DAM/plaque-associated murine microglial chemokine omitted from Hernandez et al.'s prose. Ref [1] tests CCL2/3/4/7 and CXCL2 rather than CCL6, and [2] is this study itself.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 2,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "yes",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "Cxcl2 (relevant=true) matches all quoted log2FC values: Arctic_vs_WT increases from +0.21 (2mo) to +0.92 (5mo), +1.20 (7mo, 97th percentile), and +0.92 (10mo), whereas ArcticC5aR1KO_vs_Arctic reverses it at every age (-0.96, -0.80, -0.80, -0.66) and C5aR1KO_vs_WT is -0.95 at 2mo. Both the time-course RNA-seq Cluster 4 profile and qRT-PCR validation at 5 and 10 months are explicitly reported in Fig. 5a-c, and refs [1, 2] directly support C5a/C5aR1-driven microglial Cxcl2 induction.",
+      "in_paper_where": "Results, 'Pathway analysis reveals less inflammation and higher degradative capacity in Arctic/C5aR1KO'; Fig. 5a-c; Discussion."
+    },
+    {
+      "n": 3,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "yes",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "Vegfa (relevant=true) matches the uploaded table: Arctic_vs_WT reaches +0.57 at 10mo (-0.16, -0.04, +0.28 earlier), while ArcticC5aR1KO_vs_Arctic strongly suppresses Vegfa across all four ages (-1.43, -1.23, -1.14, -0.83; 91st-97th percentiles) and C5aR1KO_vs_WT is -2.06 at 2mo. Hernandez et al. plot Vegfa in Cluster 4 (Fig. 5a,b) and confirm its 5-month Arctic/C5aR1KO reduction (-46%) by qRT-PCR (Fig. 5c, though 10-month qRT-PCR in n=3 was non-significant); ref [4] reviews human AD VEGF/sVEGFR1 without addressing C5aR1.",
+      "in_paper_where": "Results, 'Pathway analysis reveals less inflammation and higher degradative capacity in Arctic/C5aR1KO'; Fig. 5a-c; Discussion."
+    },
+    {
+      "n": 4,
+      "mark": "Especially good",
+      "reasons": [
+        "N",
+        "E"
+      ],
+      "in_paper": "no",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "Axl (relevant=true) dips at 2mo in Arctic_vs_WT (-1.06, rescued +1.77 in ArcticC5aR1KO_vs_Arctic while C5aR1KO_vs_WT is -0.09) and surges at 5-7mo (+2.06, +1.96; >99th percentile; +0.62 at 10mo) without C5aR1KO suppression (-0.14, -0.16, +0.32). Unwalked DAM genes in the uploaded table (Cst7, Lpl, Gpnmb, Spp1; all relevant=true) show the same C5aR1-independent induction, and ref [5] establishes Axl on plaque-engaged phagocytic microglia. This cleanly explains how C5aR1 deletion suppresses NF-kB chemokines while preserving protective plaque-associated TAM/DAM activation, an insight absent from the paper.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 5,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "G"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "partly supports",
+        "biology": "doubtful"
+      },
+      "justification": "Although Hck is flagged relevant=true from age time-course modeling and its numbers match the table, both quoted between-genotype shifts sit at background noise: ArcticC5aR1KO_vs_Arctic +0.29 at 2mo is below the dataset median (abs_p50=0.35), and Arctic_vs_WT -0.36 at 10mo (58th percentile) is mirrored in non-transgenic C5aR1KO_vs_WT (-0.34) with ArcticC5aR1KO_vs_Arctic at -0.14. Treating sub-median between-genotype fluctuations as meaningful Src-family kinase modulation is noise over-interpretation, whereas myeloid paralog Fgr rises +1.03 to +1.96 in Arctic_vs_WT (5-10mo) alongside phagosomal/lysosomal genes.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 6,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "C"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "medium",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "does not support",
+        "biology": "doubtful"
+      },
+      "justification": "Stat5a (relevant=true) matches the cherry-picked values (-1.09 at 2mo and -0.96 at 7mo in ArcticC5aR1KO_vs_Arctic; -1.50 at 2mo in C5aR1KO_vs_WT), but the suppression disappears at 5mo in C5aR1KO_vs_WT (-0.06) and reverses at 10mo in both KO contrasts (+0.13, +0.12). Meanwhile, paralog Stat5b moves upward in C5aR1KO contrasts (+0.38 to +0.67 at 2-7mo in ArcticC5aR1KO_vs_Arctic; +0.92 at 5mo in C5aR1KO_vs_WT) and Jak2 is flat, contradicting a coherent STAT5 shutdown. Ref [7] studies GM-CSF induction of Jak2/STAT5A/B in rat microglia with no connection to C5aR1 or amyloid pathology.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 7,
+      "mark": "Does not make sense",
+      "reasons": [
+        "D",
+        "X"
+      ],
+      "in_paper": "no",
+      "beyond": "",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "misread",
+        "citation": "partly supports",
+        "biology": "ok"
+      },
+      "justification": "Although Cx3cr1 has relevant=true from age time-course modeling, the statement misreads the experimental design by citing non-transgenic C5aR1KO_vs_WT (+0.31 at 2mo, +0.29 at 10mo) to claim restoration of an Arctic APP decline (Arctic_vs_WT -0.06, -0.13, -0.31, -0.25) instead of ArcticC5aR1KO_vs_Arctic (+0.19, -0.13, +0.09, +0.09). Moreover, every between-genotype log2FC (-0.06 to -0.31 and +0.29 to +0.31) sits near or below the dataset median |log2FC| (0.25-0.40), and all four genotypes are CX3CR1+/GFP heterozygotes FACS-sorted on GFP+ microglia.",
+      "in_paper_where": ""
+    },
+    {
+      "n": 8,
+      "mark": "Makes sense",
+      "reasons": [],
+      "in_paper": "partly",
+      "beyond": "L",
+      "confidence": "high",
+      "checks": {
+        "numbers": "match",
+        "design": "ok",
+        "citation": "supports",
+        "biology": "ok"
+      },
+      "justification": "Both genes are relevant=true and show clear mid-to-late Arctic_vs_WT induction in the uploaded table: Tlr2 rises from +0.06 (2mo) to +0.44 (5mo), +0.62 (7mo, 83rd percentile), and +0.30 (10mo), while Cd14 rises from +0.38 (2mo) to +1.02 (5mo, 88th percentile), +0.66 (7mo), and +0.68 (10mo). Refs [8, 9] directly establish the microglial TLR2-CD14 receptor complex for fibrillar Abeta phagocytosis. Hernandez et al. highlight Tlr2 in Fig. 6a,b without mentioning Cd14.",
+      "in_paper_where": "Results, 'Pathway analysis reveals less inflammation and higher degradative capacity in Arctic/C5aR1KO'; Fig. 6a,b; Discussion (Tlr2 only; Cd14 not in paper)."
+    }
+  ],
+  "overall": {
+    "score_1_to_5": 3,
+    "comment": "All numeric values quoted across S1-S8 exactly match the uploaded RNA-seq log2FC table, and five of eight statements are scientifically sound, including one genuinely insightful cross-age finding on Axl/DAM preservation under C5aR1 deletion (S4). The report recovers Conclusion 1 well via Cxcl2, Vegfa, and Tlr2 (though omitting the core Nfkb1/Relb transcriptional hub), but largely misses Conclusion 2's further upregulation of phagosome, lysosome, and antigen-presentation genes in Arctic/C5aR1KO because its App-anchored two-step walk stayed mostly within cytokine/receptor neighborhoods (Conclusion 3 is non-omics behavior and histology). Its three failures stem from over-interpreting sub-median between-genotype noise on age-varying genes (Hck in S5, Cx3cr1 in S7), reading the wrong genotype contrast for rescue (C5aR1KO_vs_WT instead of ArcticC5aR1KO_vs_Arctic in S7), and cherry-picking inconsistent timepoints/paralogs with an unrelated GM-CSF citation (Stat5a in S6)."
+  }
+}

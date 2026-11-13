@@ -1,0 +1,152 @@
+{
+ "dataset": "wang2019_hnf4a_hpsc",
+ "evaluator": "Gemini 4 Hydrogen (XHigh)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "doubtful"
+   },
+   "justification": "MTTP microarray and proteomics values match exactly, but asserting HNF1A's own transcript is 'unchanged' ('rather than a loss of the HNF1A transcript itself') directly contradicts Wang 2019 Figure 2C qPCR showing severe HNF1A mRNA loss in DBD Mut (p < 0.0001) and reduction in SUMO Mut (p < 0.05).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All APOB fold changes, omic layers, axis specificity (DBD-only collapse), and citation [1] in statement S2 are accurate (with a minor caveat only in the expanded prose repeating the microarray-based HNF1A unchanged note).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "CDH1 protein drops strongly in both axes and mRNA drops in SUMOmut, but DBDmut_vs_WT mRNA (-1.38-fold, log2 -0.46, p = 0.063) is neither statistically significant nor a DEG, refuting 'down in both axes at both mRNA and protein level' ('markedly down in both mutants at both levels').",
+   "in_paper_where": ""
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "ITGB5 mRNA is significantly downregulated in both mutants (p = 2.06e-5 and 1.38e-5; < 2-fold cutoff), refuting 'falls at the protein level only', and ITGB5 protein in SUMOmut (-2.02) is not marked significant in Table S3 (''), refuting prose's concordant both-axes claim.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Especially good",
+   "reasons": [
+    "N"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Fully accurate data, contrasts, and citations [5],[6], and uncovers a novel 12.2-fold post-transcriptional collapse of the clathrin cargo adaptor DAB2 in DBDmut that was completely missed in Wang 2019 despite directly linking to the paper's highlighted LDLR, LRP2, and fibrinogen (FGA) defects.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Statement S6 itself is true across proteomics, ER-cycle biology, and citation [7], and highlights a genuine ER quality-control module omitted from Wang 2019; kept at 'Makes sense' rather than 'Especially good' because the backing prose over-interprets the <2-fold DEG filter by calling GANAB and CALR 'protein level only' despite significant p < 0.01 mRNA decreases.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Does not make sense",
+   "reasons": [
+    "G"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Biologically true and faithfully grounded in [8] and [11], but statement S7 itself is purely generic literature background that mentions nothing about Wang 2019's experiment, HNF4A perturbations, contrasts, or data (and cites iPSC-derived hepatocytes from [8] rather than H9 hESCs).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "C",
+    "X"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "misread",
+    "citation": "does not support",
+    "biology": "doubtful"
+   },
+   "justification": "Major multi-error anchor failure: misattributes Wang 2019's HNF4A DBD deletion to loss of HNF1A transactivation (X), asserts HNF1A abundance is unchanged/flat contrary to Figure 2C qPCR p < 0.0001 collapse (D), and misuses HNF1A POU-mutant [10] and Hnf1a-/- KO [9] papers (C).",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "Two statements make sense (S2 APOB, S6 ER quality-control module), one is especially good (S5 uncovers a 12.2-fold post-transcriptional DAB2 protein loss in DBDmut linking to LDLR/LRP2/FGA), and five do not make sense: S1 and S8 assert HNF1A mRNA is unchanged from microarray noise despite Fig. 2C qPCR collapse and S8 misattributes the HNF4A DBD deletion to HNF1A with inverted citations; S3 and S4 misstate mRNA/protein significance for CDH1 and ITGB5; and S7 is generic background unrelated to this experiment."
+ }
+}

@@ -1,6 +1,6 @@
 {
  "deck": "SEBiBC26_TELLME_PaintOmicsAI_v5.pdf",
- "slides": 37,
+ "slides": 38,
  "pick_a_paper": 27,
  "sheet_qr_slides": [],
  "form_qr_slides": [
@@ -8,10 +8,10 @@
  ],
  "materials_qr_slides": [
   1,
-  32
+  33
  ],
  "materials_text_slides": [
   26,
-  32
+  33
  ]
 }

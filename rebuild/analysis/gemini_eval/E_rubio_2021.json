@@ -1,0 +1,199 @@
+{
+  "paper_letter": "E",
+  "paper": "Rubio 2021",
+  "jobID": "3oP1p37B25",
+  "pmcid": "PMC7820002",
+  "doi": "10.1038/s41598-020-80941-7",
+  "counts": {
+    "Makes sense": 5,
+    "Does not make sense": 4,
+    "Especially good": 1,
+    "Can't judge": 0
+  },
+  "reason_code_counts": {
+    "D": 1,
+    "C": 3,
+    "B": 1,
+    "X": 2,
+    "G": 0,
+    "N": 1,
+    "E": 1,
+    "A": 0
+  },
+  "statements": [
+    {
+      "id": "S1",
+      "type": "mechanism",
+      "text": "The IL4 transcript is induced in MHE while its serum cytokine stays flat, and IL4 is linked to CD36, whose up-regulation in IL-4-stimulated macrophages is a known PPARγ-dependent response.",
+      "mark": "Especially good",
+      "reason_codes": [
+        "N",
+        "E"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS. Table_S1 shows IL4 mRNA up (+0.6584, FDR=0.01053) and CD36 mRNA up (+0.6324, FDR=0.03680); serum IL-4 is flat (Table_S6 median 8.00 vs 8.00 pg/ml, PaintOmics mean log2FC +0.0130; Table_S3 median logFC=0, FDR=0.92). Reactome R-HSA-6785807 edge CD36->IL4 is real (leg 20). PPARG mRNA is non-significant (+0.2857, FDR=0.2626), consistent with post-translational PPARgamma regulation rather than transcript induction.",
+        "design": "PASS. Correctly compares MHE vs noMHE in cirrhosis and explicitly distinguishes blood-cell Gene expression from Serum cytokines.",
+        "citation": "PASS. Ref [1] (PMID 32274896, FEBS Open Bio 2020) uses THP-1 and primary human monocyte-derived macrophages and directly supports IL-4 stimulation increasing CD36 via PPARgamma protein stability (verified full-text quote in discussion). Framing in MHE blood monocytes/macrophages is explicitly presented as a hypothesis.",
+        "biology": "PASS. Connects two separately reported blood-cell signals in Rubio 2021 (IL4 in Th1/Th2, CD36 and PPAR pathway enrichment in lipid transport) across a real Reactome edge via the specific IL-4 -> PPARgamma -> CD36 lipid-uptake mechanism, while catching flat IL-4 serum protein missed by Table_S3 (which labeled IL-4 Coincidence=YES)."
+      },
+      "summary_reason": "Accurate data, layers, and human macrophage citation [1] (PMID 32274896) that bridges two disconnected findings in Rubio 2021 (IL4 up-regulation and CD36/PPAR signaling) via a specific PPARgamma-dependent mechanism while noting flat serum IL-4.",
+      "evidence": "Table_S1: IL4 logFC=+0.6584 (FDR=0.01053), CD36 logFC=+0.6324 (FDR=0.03680); Table_S6/S3: serum IL-4 median 8.00 vs 8.00 pg/ml, PaintOmics +0.01 (FDR=0.92). Rubio 2021 discusses IL4 (Th1/Th2) and CD36 (lipid transport/TLR) separately without connecting them. Ref [1] (PMC7262939): 'IL-4 stimulation of macrophages results in PPARγ expression and, as a result, increases lipid accumulation via CD36.'"
+    },
+    {
+      "id": "S2",
+      "type": "association",
+      "text": "The IL6 serum cytokine is strongly up in MHE while the IL6 transcript is flat, and elevated serum IL-6 is a known marker of hepatic encephalopathy risk in cirrhosis.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS. Serum IL-6 is strongly elevated in MHE (PaintOmics mean log2FC +1.8915; Table_S6 median 3.697 vs 1.153 pg/ml; Table_S3 median logFC=+1.68, FDR=0.02), whereas blood-cell IL6 mRNA is flat (Table_S1 logFC=+0.0368, FDR=0.8931; note job.json maps both HGF +0.0751 and IL6 +0.0368 to g:3569, and the walk correctly reads IL6 +0.04).",
+        "design": "PASS. Compares MHE vs noMHE in human cirrhosis and cleanly separates Serum cytokines from blood-cell Gene expression.",
+        "citation": "PASS. Ref [2] (PMID 31583743, Aliment Pharmacol Ther 2019) is a prospective cohort of human liver cirrhosis patients showing serum IL-6 above the median independently predicts overt hepatic encephalopathy within 180 days (AUROC 0.931 vs MELD 0.841 / CRP 0.835).",
+        "biology": "PASS. Extra-blood-cell (e.g. hepatic) origin hypothesis for serum IL-6 matches Rubio 2021 Discussion. Solid and accurate, though elevated serum IL-6 as an HE risk marker and hepatic cytokine origin are already well-known / discussed in the paper."
+      },
+      "summary_reason": "All numbers, omic layers, cirrhosis design, and clinical citation [2] (PMID 31583743) are accurate; not 'Especially good' because serum IL-6 elevation and extra-blood-cell cytokine sources are already reported/discussed in Rubio 2021 and standard HE literature.",
+      "evidence": "Table_S6/S3: IL-6 serum median 1.153 vs 3.697 pg/ml, PaintOmics +1.89 (Table_S3 +1.68, FDR=0.02); Table_S1: IL6 mRNA logFC=+0.0368 (FDR=0.8931). Rubio 2021 reports serum IL-6 elevation (Table 2) and hepatic/non-blood origin of plasma cytokines (Discussion), though Table_S3 marks IL-6 Coincidence=YES."
+    },
+    {
+      "id": "S3",
+      "type": "association",
+      "text": "The IL4 transcript is up in MHE while its serum cytokine is flat, and AhR and IL-4 cooperate in human macrophages, linking the induced AHR arm to the IL4 signal.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS. IL4 mRNA (+0.6584, FDR=0.01053), AHR mRNA (+0.5028, FDR=0.01847), and CYP1B1 mRNA (+0.9246, FDR=0.00465) are all significantly up in MHE blood cells; serum IL-4 is flat (+0.0130, Table_S3 FDR=0.92). Note AHR links to CD36->IL4 via an un-edged walk jump (leg 18), and CCL1 (the Ref [3] target) is absent from Table_S1.",
+        "design": "PASS. Properly distinguishes MHE vs noMHE in cirrhosis and blood-cell transcript vs serum protein layers.",
+        "citation": "PASS. Ref [3] (PMID 27888289, J Mol Med 2017) demonstrates AhR/IL-4 cooperation in human (not mouse) monocyte-derived M(IL-4) macrophages (TCDD induces CCL1 via distal DRE H3K27 demethylation, and plasma IL-4 correlates with AhR DRE binding in human monocytes).",
+        "biology": "PASS (cautious hypothesis). Despite flat circulating IL-4 protein and missing CCL1 in Table_S1, prose explicitly frames AhR/IL-4 cooperation in MHE blood cells as a hypothesis rather than a proven mechanism."
+      },
+      "summary_reason": "Data values, layers, design, and human macrophage citation [3] (PMID 27888289) are accurate and cautiously framed; connection between AHR and IL4 in the walk is only via a jump through CD36 and Ref [3] effector CCL1 is unmeasured in Table_S1.",
+      "evidence": "Table_S1: IL4 +0.6584 (FDR=0.01053), AHR +0.5028 (FDR=0.01847), CYP1B1 +0.9246 (FDR=0.00465), CCL1 absent. Walk connects AHR->CD36 via jump (leg 18), then CD36->IL4 (leg 19). Rubio 2021 mentions IL4 transcript increase in Results but has 0 mentions of AHR or CYP1B1."
+    },
+    {
+      "id": "S4",
+      "type": "mechanism",
+      "text": "Serum IL6 is up in MHE while the IL6 transcript is flat, and this protein-dominant signal matches published data that serum IL-6 is elevated in MHE patients.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS (with minor prose caveat). Serum IL-6 (+1.8915; Table_S3 +1.68, FDR=0.02) vs flat IL6 transcript (+0.0368, FDR=0.8931) is accurate. Prose also quotes CD163 +0.6206 (FDR=0.00755), though calling IL6 'the only relevant neighbour of CD163' overlooks HP (+1.02, visited earlier at leg 22); this prose slip is absent from the statement claim.",
+        "design": "PASS. Correctly compares MHE vs noMHE cirrhosis and separates Serum cytokines from blood-cell Gene expression.",
+        "citation": "PASS. Ref [4] (PMID 35032100, Hepatol Commun 2022: median serum IL-6 16 vs 7 pg/mL in MHE vs no-HE, P<0.001) and Ref [5] (PMID 26039496, PLoS One 2015: serum IL-6 OR=6.50 for MHE) directly confirm elevated serum IL-6 in human cirrhosis MHE; Ref [6] (PMID 27031405) supports sCD163 as macrophage activation marker in cirrhosis in prose.",
+        "biology": "PASS. Biologically accurate confirmation of Rubio 2021 serum IL-6 findings; essentially duplicates S2 using diagnostic MHE cohorts rather than adding a new mechanism."
+      },
+      "summary_reason": "Claim numbers, layers, and clinical MHE cohorts [4,5] (PMIDs 35032100, 26039496) are accurate; overlaps heavily with S2 and repeats serum IL-6 elevation already reported in Rubio 2021 Table 2.",
+      "evidence": "Table_S6/S3: IL-6 serum median 1.153 vs 3.697 pg/ml (+1.89 mean log2FC; Table_S3 +1.68, FDR=0.02); Table_S1: IL6 +0.0368 (FDR=0.8931), CD163 +0.6206 (FDR=0.00755). Rubio 2021 Table 2 reports significant serum IL-6 elevation in MHE, while Table_S3 labels IL-6 Coincidence=YES."
+    },
+    {
+      "id": "S5",
+      "type": "association",
+      "text": "The IL4 transcript is up in MHE while its serum protein is flat, and the TNF transcript is down while its serum protein trends up, showing transcript-protein discordance per cytokine.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS. Table_S1/S3/S6 verify: IL4 transcript +0.6584 (FDR=0.01053) vs serum IL-4 +0.0130 (Table_S3 logFC=0, FDR=0.92, med 8.00 vs 8.00 pg/ml); TNF transcript -0.4540 (FDR=0.02004) vs serum TNF-alpha +0.4589 (Table_S3 med logFC=+0.75, FDR=0.12, med 2.020 vs 3.398 pg/ml). Edge IL4->TNF is real (Reactome R-HSA-6785807, leg 28).",
+        "design": "PASS. Correctly frames MHE vs noMHE cirrhosis and explicitly contrasts transcript vs serum protein per cytokine.",
+        "citation": "PASS for statement (no external ref inside statement claim). Prose cites Ref [7] (PMID 23425082, J Gastroenterol Hepatol 2013: TNF-alpha and IL-6 fall after lactulose in MHE; abstract does not print baseline MHE vs no-MHE TNF-alpha values) and Ref [8] (PMID 25794550, Hepatol Int 2015: serum IL-6, IFNgamma, IL-17a correlate with MHE in HBV cirrhosis, p<0.001).",
+        "biology": "PASS. Accurately captures transcript-protein discordance per cytokine and improves on Rubio 2021 Table_S3, which erroneously marked IL-4 Coincidence=YES while marking TNF-a Coincidence=NO; Rubio 2021 Discussion already explains general cytokine mRNA-protein non-coincidence via post-transcriptional regulation and non-blood sources."
+      },
+      "summary_reason": "Every value, direction, statistical relevance, and layer distinction for IL4 and TNF is exact, and the statement reflects cytokine transcript-protein discordance already noted generally in Rubio 2021 Discussion and Table_S3 (for TNF-a).",
+      "evidence": "Table_S1: IL4 +0.6584 (FDR=0.01053), TNF -0.4540 (FDR=0.02004); Table_S6/S3: IL-4 med 8.00 vs 8.00 pg/ml (+0.01, FDR=0.92), TNF-a med 2.020 vs 3.398 pg/ml (+0.46 mean log2FC; Table_S3 +0.75, FDR=0.12, Coincidence=NO). Discussion of Rubio 2021 explicitly addresses blood mRNA vs plasma cytokine discordance."
+    },
+    {
+      "id": "S6",
+      "type": "mechanism",
+      "text": "PSME1 is down in MHE while IFNG is up, and PSME1 encodes the PA28 proteasome activator subunit whose induction is classically IFN-γ-driven.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "D",
+        "C"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "FAIL (D). Claims 'PSME1 is down in MHE while IFNG is up', but while PSME1 is significantly down (Table_S1 logFC=-0.5167, FDR=0.01286), IFNG is NOT significant/relevant (logFC=+0.3266, FDR=0.2114). In walk chain leg 30 (PSME1->IFNG), the walker misread IFNG as 'relevant at noMHE +0.66' (confusing it with IL4), leaking 'IFNG is up' into the claim even though prose later notes IFNG is 'not relevant at +0.33'. Moreover, Rubio 2021 attributes PSME1 down-regulation to TNF (-0.4540, FDR=0.02004; 'TNF is able to activate PSME1'), not IFNG.",
+        "design": "PASS for comparison/tissue framing (all values are Gene expression in MHE vs noMHE blood cells).",
+        "citation": "FAIL (C). Sole cited paper Ref [9] (PMID 18184038, Shin et al. 2007) studies human hepatoma/hepatocytes and chimpanzee acute-HCV liver biopsies (wrong tissue, disease, and species; walk['papers']['9'] falsely tags Hepatocytes as system='same'), AND directly undermines the claim's 'classically IFN-γ-driven' point by showing PA28 (PSME1) subunits are induced by type I IFN weeks before intrahepatic IFN-γ responses.",
+        "biology": "WEAK/MISAPPLIED. Classical textbook IFN-gamma induction of PSME1/PA28alpha exists, but claiming IFN-gamma pathway discordance from a non-significant IFNG shift (+0.33, FDR=0.21) while ignoring significant TNF down-regulation (the mechanism highlighted in Rubio 2021) is unsupported."
+      },
+      "summary_reason": "Two major errors: (D) IFNG is not significantly changed (+0.33, FDR=0.211) and leg 30 misread it as relevant +0.66, while Rubio 2021 explains PSME1 down-regulation via TNF (-0.45, FDR=0.020); (C) sole Ref [9] (PMID 18184038) studies HCV-infected hepatocytes/chimpanzee liver and demonstrates type I IFN—not IFN-γ—regulation of PA28.",
+      "evidence": "Table_S1: PSME1 logFC=-0.5167 (FDR=0.01286), IFNG logFC=+0.3266 (FDR=0.21143, NS), TNF logFC=-0.4540 (FDR=0.02004). Walk leg 30 reading: \"IFNG's Gene expression is relevant at noMHE +0.66\". Rubio 2021 Results: 'TNF is able to activate PSME1'. Ref [9] abstract: 'increases in PA28 subunit... correlated with intrahepatic type I IFN responses and preceded intrahepatic IFN-gamma responses by several weeks.'"
+    },
+    {
+      "id": "S7",
+      "type": "association",
+      "text": "The HOXA9–MEIS1–FLT3 chain (e39–e41) is a known transcriptional axis in which MEIS1 induces expression of FLT3; in the MHE-vs-noMHE comparison of blood cells from cirrhosis patients, HOXA9 is up (+0.53) while MEIS1 is down (−0.62), and FLT3 is not relevant (+0.34).",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS (minor notation leak). Table_S1 verifies HOXA9 +0.5252 (FDR=0.01821, relevant), MEIS1 -0.6194 (FDR=0.00460, relevant), FLT3 +0.3357 (FDR=0.22949, not relevant). Minor UI leak '(e39–e41)' includes step 39 (a SPARC->HOXA9 jump, leg 38) alongside OmniPath edges HOXA9->MEIS1->FLT3 (legs 39-40).",
+        "design": "PASS (minor prose slip). Statement explicitly specifies 'in the MHE-vs-noMHE comparison of blood cells from cirrhosis patients' (prose awkwardly writes 'diverge at baseline' when meaning MHE vs noMHE).",
+        "citation": "PASS. Ref [10] (PMID 15755900, Blood 2005) establishes Meis1 transcriptional activation of FLT3 in mouse hematopoietic progenitors and human AML, explicitly labeled as mouse HSCs/AML in prose.",
+        "biology": "PASS. Cautiously observes that HOXA9 and MEIS1 move in opposite directions while FLT3 is unchanged, arguing against engagement of a HOXA9-MEIS1-FLT3 programme in MHE blood cells."
+      },
+      "summary_reason": "Accurate expression values, blood-cell MHE-vs-noMHE framing, hematopoietic Meis1->FLT3 reference [10] (PMID 15755900), and cautious negative conclusion; minor internal step tag '(e39–e41)' and prose phrase 'at baseline' do not make the scientific claim wrong.",
+      "evidence": "Table_S1: HOXA9 +0.5252 (FDR=0.01821), MEIS1 -0.6194 (FDR=0.00460), FLT3 +0.3357 (FDR=0.22949). Rubio 2021 main text has 0 mentions of HOXA9, MEIS1, or FLT3."
+    },
+    {
+      "id": "S8",
+      "type": "mechanism",
+      "text": "PDGFRB is up (noMHE +0.76, relevant) in the MHE-vs-noMHE comparison, the strongest of EREG's relevant receptor-tyrosine-kinase neighbours, in the same direction as the EGFR ligands EREG and AREG; PDGFRβ signalling is a well-established driver of hepatic stellate cell activation in liver fibrosis.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "C",
+        "X"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS for numbers (minor caveat in notes). Table_S1: PDGFRB +0.7585 (FDR=0.01665), EREG +0.6365 (FDR=0.01331), AREG +1.9577 (FDR=0.00030). In KEGG hsa04010, EREG's relevant RTK neighbors are PDGFRB (+0.76), FGFR2 (+0.6469, FDR=0.0167), and FLT4 (-0.6154, FDR=0.0363); NGFR (+0.6624, FDR=0.0451) listed in walk notes is a TNFRSF receptor, not an RTK.",
+        "design": "FAIL (X). (1) Conflates peripheral blood-cell transcriptomics in cirrhosis WITH vs WITHOUT MHE (where all patients already have cirrhosis) with hepatic stellate cell (HSC) activation during liver fibrogenesis; (2) embeds PaintOmics's baseline label directly into 'PDGFRB is up (noMHE +0.76, relevant)', reading inverted as if noMHE were +0.76 (prose also writes 'blood cells and serum' when only blood-cell mRNA is cited).",
+        "citation": "FAIL (C). Sole cited paper Ref [11] (PMID 37451016, Int Immunopharmacol 2023) examines Salvianolic acid B inhibiting mouse hepatic stellate cells and CCl4-induced mouse liver fibrosis (wrong tissue and wrong species: mouse liver HSCs vs human peripheral blood cells), offering no support for blood-cell PDGFRB in MHE.",
+        "biology": "MISAPPLIED CONTEXT (captured by C/X). While PDGFRbeta drives HSC activation in fibrotic liver tissue, invoking liver HSC fibrosis biology for whole-blood RNA changes between cirrhotic MHE and noMHE patients misapplies tissue/disease context."
+      },
+      "summary_reason": "Tissue/species citation mismatch (C) and experimental-design conflation (X): uses a mouse CCl4 liver-fibrosis / HSC study [11] (PMID 37451016) to interpret peripheral blood-cell PDGFRB expression between already-cirrhotic MHE and noMHE patients, and leaks the baseline tag '(noMHE +0.76, relevant)' in an inverted way.",
+      "evidence": "Table_S1: PDGFRB +0.7585 (FDR=0.01665), EREG +0.6365 (FDR=0.01331), AREG +1.9577 (FDR=0.00030); KEGG hsa04010 confirms PDGFRB > FGFR2 (+0.65) > FLT4 (-0.62). Ref [11] abstract: mouse HSCs and CCl4-induced mouse liver fibrosis (organism=mouse, system=HSCs). Rubio 2021 main text has 0 mentions of PDGFRB, EREG, AREG, or stellate cells."
+    },
+    {
+      "id": "S9",
+      "type": "association",
+      "text": "The post-squalene cholesterol-synthesis enzymes around DHCR24 respond divergently in MHE: DHCR24 is down (−0.72, relevant) and SC5D is up (+0.60, relevant), while EBP, DHCR7 and LIPA are not relevant; DHCR24 catalyses the terminal desmosterol-to-cholesterol step of cholesterol biosynthesis.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "B"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "PASS for values. Table_S1: DHCR24 -0.7187 (FDR=0.01227), SC5D +0.6033 (FDR=0.00746), EBP -0.0240 (FDR=0.9164), DHCR7 -0.2014 (FDR=0.3094), LIPA +0.0556 (FDR=0.7821). Note an actual third relevant post-squalene cholesterol-synthesis enzyme down-regulated in Table_S1 (TM7SF2 -0.6382, FDR=0.00932) was omitted from the claim.",
+        "design": "PASS for claim (MHE vs noMHE Gene expression; prose mentions 'blood cells and serum' while citing only transcripts).",
+        "citation": "PASS. Ref [12] (PMID 24095826, Prog Lipid Res 2013) accurately states DHCR24 catalyzes the conversion of desmosterol to cholesterol, the final step of cholesterol biosynthesis.",
+        "biology": "FAIL (B). Explicitly classifies LIPA ('lipase A, lysosomal acid, cholesterol esterase', EC 3.1.1.13, KEGG rn:R01462) as one of 'The post-squalene cholesterol-synthesis enzymes around DHCR24' (and 'post-squalene sterol enzymes' in prose). LIPA is a lysosomal hydrolase that breaks down cholesteryl esters and triglycerides from endocytosed lipoproteins—not a post-squalene de novo cholesterol-biosynthesis enzyme; it was swept in solely from walking KEGG Steroid biosynthesis (hsa00100) legs 45-48."
+      },
+      "summary_reason": "Biochemical error (B): misclassifies LIPA (lysosomal acid lipase / cholesteryl ester hydrolase, EC 3.1.1.13) as a post-squalene cholesterol-synthesis enzyme due to blindly reading KEGG hsa00100 edge DHCR7->LIPA, while omitting an actual altered synthesis enzyme (TM7SF2 -0.64, FDR=0.0093).",
+      "evidence": "KEGG hsa00100 & Table_S1: LIPA = 'lipase A, lysosomal acid, cholesterol esterase' (rn:R01462 cholesteryl ester hydrolysis, logFC=+0.0556, FDR=0.7821); actual post-squalene synthesis enzymes in Table_S1 include DHCR24 (-0.7187, FDR=0.0123), SC5D (+0.6033, FDR=0.00746), TM7SF2 (-0.6382, FDR=0.00932), EBP (-0.0240, NS), DHCR7 (-0.2014, NS). Rubio 2021 only names 'Steroid biosynthesis' in a pathway list (0 mentions of all 5 genes)."
+    },
+    {
+      "id": "S10",
+      "type": "association",
+      "text": "APOB, the core protein of VLDL and chylomicrons, is down (noMHE −0.97, relevant) in MHE, the strongest relevant neighbour of LIPA; reduced hepatic ApoB lowers VLDL secretion, and APOB loss-of-function predisposes to steatotic liver disease and cirrhosis.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "C",
+        "X"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "PASS for numbers. Table_S1: APOB -0.9673 (FDR=4.193e-5, #2 hit overall), LIPA +0.0556 (FDR=0.7821). Reactome R-HSA-174824 links LIPA->APOB (leg 49), and APOB has larger |logFC| than LIPA's other walked relevant neighbors DHCR24 (-0.72) and NR1H2 (-0.4802, FDR=0.0433).",
+        "design": "FAIL (X). (1) Conflates peripheral blood-cell APOB mRNA comparing cirrhotic patients WITH vs WITHOUT MHE (both groups already have cirrhosis, and circulating blood cells do not secrete hepatic VLDL) with hepatic hepatocyte VLDL secretion and genetic risk of developing cirrhosis; (2) leaks PaintOmics's baseline prefix into 'APOB... is down (noMHE −0.97, relevant) in MHE', reading inverted as if noMHE were -0.97.",
+        "citation": "FAIL (C). Both cited papers examine liver hepatocytes / liver disease risk rather than blood cells or MHE: Ref [13] (PMID 35524581, Adv Sci 2022) studies MDM2-mediated ApoB degradation and TG-VLDL secretion in hepatocytes/MAFLD liver (walk['papers']['13'] falsely tags Liver as system='same'); Ref [14] (PMID 41665936, JCI 2026) examines rare germline APOB LoF variants predisposing to steatotic liver disease, cirrhosis (OR 1.82), and HCC vs non-cirrhotic populations.",
+        "biology": "MISAPPLIED CONTEXT (captured by C/X). While ApoB indeed anchors VLDL/chylomicrons and hepatic APOB loss promotes steatotic cirrhosis, invoking hepatocyte VLDL secretion and cirrhosis predisposition does not explain blood-cell APOB mRNA differences between cirrhotic MHE and noMHE patients."
+      },
+      "summary_reason": "Citation tissue/cohort mismatch (C) and design conflation (X): applies hepatocyte VLDL-secretion [13] (PMID 35524581) and germline cirrhosis-predisposition [14] (PMID 41665936) studies to peripheral blood-cell APOB mRNA between patients who all already have cirrhosis (MHE vs noMHE), and leaks baseline label '(noMHE −0.97, relevant)'.",
+      "evidence": "Table_S1: APOB logFC=-0.9673 (FDR=4.193e-5), LIPA +0.0556 (FDR=0.7821). Rubio 2021 Results mentions 'the down-regulated apolipoproteins APOA1 and APOB' in immune/blood cells, not hepatic VLDL or cirrhosis risk. Walk papers[13] erroneously labels Liver as system='same'; papers[14] studies MASLD/cirrhosis risk vs controls."
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "paper_letter": "D",
+  "paper": "Balzano-Nogueira 2021",
+  "jobID": "560S3O473C",
+  "pmcid": "PMC7818777",
+  "doi": "10.1186/s13059-021-02262-w",
+  "counts": {
+    "Makes sense": 4,
+    "Does not make sense": 10,
+    "Especially good": 0,
+    "Can't judge": 0
+  },
+  "reason_code_counts": {
+    "D": 1,
+    "C": 1,
+    "B": 3,
+    "X": 6,
+    "G": 0,
+    "N": 0,
+    "E": 0,
+    "A": 0
+  },
+  "statements": [
+    {
+      "id": "S1",
+      "type": "association",
+      "text": "Pluripotency transcription factors including OCT4, SOX2 and NANOG are expressed in human peripheral blood leukocytes, so the observed blood transcript changes of SALL1/SALL4/SOX2/NANOG can reflect a circulating cell population rather than an artifact.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "All four genes are relevant=[True] in pa_recover_job.json with clean 1:1 mappings: SALL1 (6299) [-0.0044, -0.0003, +0.0723, -0.0069, -0.0058], SALL4 (57167) [+0.0035, -0.0131, +0.0174, +0.0758, -0.0247], SOX2 (6657) [-0.0050, +0.0182, -0.0459, -0.0105, +0.0067], NANOG (79923) [+0.0185, +0.0644, +0.0089, -0.0448, -0.0079]. Walk checks failed the artifact module gate (p_modules=1.0, real.modules=0), and POU5F1B/POU5F1P4 are not relevant.",
+        "design": "Consistent with Balzano-Nogueira 2021 RNA extraction from 2.5 mL whole peripheral blood (Illumina HumanHT-12, paired Case vs Control across 12, 9, 6, 3, 0 months before seroconversion); no baseline fallacy.",
+        "citation": "Partially strained in context but not factually false in the claim text: Ref [1] (Lee et al. 2023, PMID 36701726, PMC9857475) detected OCT4, SOX2, and NANOG in human peripheral blood leukocytes (upregulated 12.62x, 116.72x, 2.43x on day 5 vs day 0 after 4-7 days in stem-cell culture medium), though Ref [1] notes steady-state uncultured PB pluripotent gene levels are low, does not measure SALL1/SALL4, and walk_statements prose erroneously labels Ref [1] as 'human embryonic stem cell studies'.",
+        "biology": "Hedged cautiously ('can reflect ... rather than an artifact'): circulating rare progenitor/VSEL populations in peripheral blood can express low levels of pluripotency transcripts, though single-timepoint +/-0.05 to +0.08 whole-blood microarray shifts are small and discordant in direction."
+      },
+      "summary_reason": "Data mappings/relevance match, whole-blood tissue matches TEDDY RNA, and the claim is explicitly hedged ('can reflect') without claiming the prose's 'embryonic stem cell' error or asserting steady-state high expression; Ref [1] culture-induction and low steady-state caveats are noted.",
+      "evidence": "pa_recover_job.json inputGene (6299/57167/6657/79923 all rel=[True]); PMC7818777 Methods (2.5 mL peripheral blood total RNA; SALL1/SALL4/SOX2/NANOG/OCT4 0 hits in paper); PMC9857475 (cultured PB leukocytes day 5 vs day 0)."
+    },
+    {
+      "id": "S2",
+      "type": "mechanism",
+      "text": "ACOT4 is the human peroxisomal acyl-CoA thioesterase that hydrolyzes medium- to long-chain acyl-CoAs, so its sustained downregulation is consistent with reduced thioester hydrolysis and a rise in free fatty acids.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "B"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "ACOT4 (122970, rel=[True]) is negative at all 5 windows [-0.0740, -0.1218, -0.0110, -0.0912, -0.0402]. The 3 relevant fatty acids rise mid-window (6mo peak) from negative 12mo values and turn negative again at 0mo_at_SC: oleic acid C00712 [-0.3021, +0.0392, +0.0991, -0.0077, -0.0904], stearic acid C01530 [-0.0500, +0.0284, +0.0831, +0.0695, -0.0835], palmitic acid C00249 [-0.0489, +0.0152, +0.0591, +0.0125, -0.0275].",
+        "design": "Contrasts blood gene expression vs plasma metabolomics without a 12mo='baseline' error, though Paper D itself notes blood cells and plasma represent distinct compartments.",
+        "citation": "Ref [2] (PMID 16940157) and Ref [3] (PMID 22465940) explicitly state that ACOT4 hydrolyzes acyl-CoAs TO free fatty acids + CoASH (with human peroxisomes also containing ACOT8); neither supports reduced hydrolysis raising free fatty acids.",
+        "biology": "Inverted enzymology (B): ACOT4 catalyzes acyl-CoA + H2O -> free fatty acid + CoASH. Reduced thioester hydrolysis from ACOT4 downregulation retains acyl chains as CoA esters and produces FEWER, not more, free fatty acids. Also directly contradicts S3's ACOT2 claim and Paper D's attribution of fatty-acid accumulation to impaired PPARalpha/beta-oxidation."
+      },
+      "summary_reason": "Biochemical direction error (B): acyl-CoA thioesterases (ACOT4) generate free fatty acids by hydrolyzing acyl-CoAs, so sustained ACOT4 downregulation ('reduced thioester hydrolysis') predicts lower, not elevated, free fatty acids. In_paper='partly' because Paper D reports elevated plasma fatty acids (Fig. 3b) but never mentions ACOT4.",
+      "evidence": "PMID 16940157 & PMID 22465940 abstracts ('hydrolyze acyl-CoAs to the free fatty acid and CoASH'); pa_recover_job.json ACOT4 (122970) and C00712/C01530/C00249; PMC7818777 Results/Discussion (fatty acids upregulated, ACOT4 0 hits)."
+    },
+    {
+      "id": "S3",
+      "type": "mechanism",
+      "text": "ACOT2 is a mitochondrial acyl-CoA thioesterase that hydrolyzes long-chain acyl-CoAs and accounts for about half of the mitochondrial thioesterase activity on C16:0-CoA, linking its 9mo expression bump to the fatty-acid rise.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "B",
+        "C"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "ACOT2 (10965, rel=[True]) values [-0.0067, +0.0447, -0.0069, -0.0172, -0.0100] show only a +0.045 blip at 9mo and turn negative (-0.0069) at 6mo when C18:1 (+0.10), C18:0 (+0.08), and C16:0 (+0.06) peak (and all three FAs fall below control at 0mo_at_SC). On KEGG hsa01040, ACOT2 connects only to oleic acid (C00712), whereas palmitic acid (C00249, C16:0) connects to ACOT7 (not relevant).",
+        "design": "Reads 9mo_before_SC appropriately as mid-window without calling 12mo 'baseline', though linking whole-blood leukocyte ACOT2 mRNA (+0.045 at 9mo) to plasma free fatty acids ignores compartment mismatch.",
+        "citation": "Citation overgeneralization (C): Ref [5] (PMID 31676684, PMC6916504) reported Acot2 accounted for ~half of C14:0/C16:0-CoA thioesterase activity in mouse heart, skeletal muscle, BAT, and kidney mitochondria while explicitly contrasting mouse liver ('expressed little Acot activity... due mainly to Acot7 and Acot13') and never testing human blood leukocytes. Ref [4] (PMID 25114170, PMC4242439) studied mouse liver Ad-Acot2 overexpression and showed Acot2 promotes fatty-acid oxidation/utilization rather than plasma FFA buildup.",
+        "biology": "Biological/mechanistic mismatch (B): Ref [4] demonstrates that mitochondrial matrix ACOT2 hydrolyzes long-chain acyl-CoAs for efflux and re-activation on the outer membrane to ENHANCE fatty-acid beta-oxidation (consumption), not to cause extracellular plasma FFA accumulation. Conversely, Balzano-Nogueira 2021 attributes the TEDDY plasma FFA rise to impaired beta-oxidation (downregulated PPARalpha) and excess acetyl-CoA, and S3 directly clashes with S2's ACOT4 mechanism."
+      },
+      "summary_reason": "Overgeneralizes Ref [5]'s mouse oxidative-tissue C16:0-CoA thioesterase fraction unconditionally to human blood (ignoring Ref [5]'s mouse liver exception) [C] and misapplies Ref [4]'s mitochondrial beta-oxidation-enhancing mechanism to explain plasma free-fatty-acid accumulation while ACOT2 is negative at 6mo (-0.0069) when FAs peak [B].",
+      "evidence": "PMC6916504 ('In all tissues [heart, skeletal muscle, BAT, kidney], Acot2 accounted for about half... In contrast, liver mitochondria... expressed little Acot activity'); PMC4242439 ('Acot2 increases the utilization of FA substrate... enhance FAO'); pa_recover_job.json ACOT2 (10965); PMC7818777 (fatty acids in paper, ACOT2 0 hits)."
+    },
+    {
+      "id": "S4",
+      "type": "association",
+      "text": "The relevant HIST1H2BI signal (mild positive, peak +0.05 at 9mo) sits on the KEGG Alcoholism histone H2B hub shared by HDAC10, HDAC11, HDAC8 and H2BC4, while HDAC11 and HDAC8 themselves are not relevant (baseline-positive +0.17 at 12mo and baseline-negative −0.13 at 12mo, respectively).",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "Numerical values match walk_nodes: HDAC11 (79885, not rel) [+0.1672, +0.0217, +0.0114, -0.0388, +0.0150]; HDAC8 (55869, not rel) [-0.1348, -0.0341, -0.0460, -0.0750, +0.0007]; HIST1H2BI (relevant, +0.02, +0.05, -0.06, +0.02, +0.01) appears on both g:8346 (H2BC10) and g:8347 (H2BC4) via shared UniProt P62807 mapping (ov['8346']=ov['8347']='HIST1H2BC|HIST1H2BG|H2BC6|HIST1H2BE|HIST1H2BF|HIST1H2BI').",
+        "design": "Design error (X): Explicitly labels 12mo_before_SC values as 'baseline-positive +0.17 at 12mo and baseline-negative -0.13 at 12mo' (and walk prose dismisses them as 'baseline differences rather than a coordinated response'). In TEDDY, there is no pre-treatment baseline column: all 5 windows are matched Case-vs-Control differences before seroconversion, and Paper D proves 9-12 MBSC carries the strongest disease signature (Fig. 2c).",
+        "citation": "Claim text cites no paper directly (walk prose cites Ref [6] PMID 33670779 / PMC7923030 on decreased HDAC4/5/10/11 and increased AcH3 in aged/UV human skin, which does not study histone H2B, HDAC8, or blood T1D).",
+        "biology": "KEGG Alcoholism (hsa05034) co-grouping of HDAC8/10/11 and replication-dependent H2B isoforms reflects a generic chromatin/ethanol KEGG template rather than a T1D-specific mechanism."
+      },
+      "summary_reason": "Misreads the TEDDY Case-vs-Control longitudinal design (X): calls 12mo_before_SC differences ('+0.17 at 12mo', '-0.13 at 12mo') 'baseline-positive' and 'baseline-negative' (treated in walk_design_card and prose as non-effect baseline imbalances), whereas 12 MBSC is already a Case-minus-Control contrast 1 year before seroconversion and Paper D's most predictive time block.",
+      "evidence": "walk_design_card.json ('baseline: not stated; a difference at the baseline is read as baseline, not effect'); walk_statements.json S4 prose/SENSE; PMC7818777 Fig. 2c & Abstract ('predictive of IA as early as 1 year before seroconversion'); pa_recover_job.json ov['8346']/ov['8347'], HDAC11 (79885), HDAC8 (55869)."
+    },
+    {
+      "id": "S5",
+      "type": "association",
+      "text": "HDAC11 is not relevant (baseline-positive +0.17 at 12mo decaying to ~0), yet HDAC11 is a negative regulator of IL-10 in antigen-presenting cells, so its direction matters for immune tolerance.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "HDAC11 (79885) is not relevant (rel=[]) with values [+0.1672, +0.0217, +0.0114, -0.0388, +0.0150], matching '+0.17 at 12mo decaying to ~0'.",
+        "design": "Design error (X): Labels Case_vs_Control_12mo_before_SC '+0.17 at 12mo' as 'baseline-positive' (walk prose: 'a baseline difference, not a response'), creating the artificial 'yet' contrast and misreading an early 12-MBSC Case-vs-Control elevation as a baseline artifact.",
+        "citation": "Ref [7] (Villagra et al. 2009, PMID 19011628, PMC3925685) directly demonstrates in mouse and human APCs that HDAC11 negatively regulates IL-10 transcription and modulates immune tolerance vs activation.",
+        "biology": "Mechanistically sound and directionally consistent with Balzano-Nogueira 2021 (Fig. 6 & Results L50-L51 independently report decreased IL10 and increased APC activity in IA cases), making the dismissal of 12mo HDAC11 elevation as a mere 'baseline' difference even more clearly a design misread."
+      },
+      "summary_reason": "Commits the walk_design_card baseline fallacy (X): labels HDAC11's +0.17 Case-vs-Control elevation at 12mo_before_SC 'baseline-positive' (interpreted in prose as 'a baseline difference, not a response'), misreading TEDDY's 12-MBSC pre-seroconversion disease contrast. Ref [7] and data values match; in_paper='partly' because Paper D reports reduced IL10 and heightened APC activity (Fig. 6) without mentioning HDAC11.",
+      "evidence": "pa_recover_job.json HDAC11 (79885); walk_design_card.json & walk_statements.json S5 prose ('a baseline difference, not a response'); PMC3925685 (HDAC11 negatively regulates IL-10 in mouse & human APCs); PMC7818777 L4, L49-L51, Fig. 6 (IL10 downregulated, APCs active; HDAC11 0 hits)."
+    },
+    {
+      "id": "S6",
+      "type": "association",
+      "text": "HDAC8 is not relevant (baseline-negative −0.13 at 12mo, ~0 at SC), and HDAC8 promotes innate antiviral immunity by deacetylating RIG-I, so its direction matters for the interferon axis.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "HDAC8 (55869) is not relevant (rel=[]) with values [-0.1348, -0.0341, -0.0460, -0.0750, +0.0007], matching '-0.13 at 12mo, ~0 at SC'.",
+        "design": "Design error (X): Explicitly labels Case_vs_Control_12mo_before_SC '-0.13 at 12mo' as 'baseline-negative' (walk prose: 'a baseline difference, not a response'), misreading an early 12-MBSC Case-vs-Control difference as a pre-perturbation baseline.",
+        "citation": "Ref [8] (2024, PMID 39035358, PMC11257846) shows in HEK293T/A549 cells during VSV infection that HDAC8 interacts with and deacetylates RIG-I to promote RIG-I-mediated IFN production and innate antiviral immunity (while noting prior Meng 2016 work reported opposing HDAC8 IFN-beta suppression in another context).",
+        "biology": "Biological link from Ref [8] is accurately stated, though extrapolated from VSV-infected HEK293T assays to unstimulated whole blood; Paper D mentions neither HDAC8 nor RIG-I/interferon."
+      },
+      "summary_reason": "Misreads TEDDY's Case-vs-Control longitudinal design (X): classifies HDAC8's -0.13 difference at 12mo_before_SC as 'baseline-negative' ('a baseline difference, not a response' in walk prose), treating the earliest pre-seroconversion disease window (12 MBSC) as an untreated baseline.",
+      "evidence": "pa_recover_job.json HDAC8 (55869); walk_design_card.json & walk_statements.json S6 prose; PMC11257846 (HDAC8 deacetylates RIG-I); PMC7818777 (HDAC8, RIG-I, interferon all 0 hits)."
+    },
+    {
+      "id": "S7",
+      "type": "association",
+      "text": "APOC3 is relevant and rises from −5.4e-03 at 12mo to +0.05 at 3mo before SC, peaking just before seroconversion; APOC3 is a regulator of triglyceride metabolism whose elevation is a risk factor in type 1 diabetes.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "APOC3 (345, rel=[True]) values [-0.005444, +0.025544, +0.019852, +0.047239, +0.024319] match '-5.4e-03 at 12mo to +0.05 at 3mo before SC, peaking just before seroconversion' (+0.02 at 0mo).",
+        "design": "Properly treats 12mo_before_SC through 0mo_at_SC as a longitudinal pre-seroconversion Case-vs-Control time course peaking at 3mo before SC; no baseline error.",
+        "citation": "Ref [9] (2021, PMID 33257283, PMC7887020) confirms APOC3 inhibits lipoprotein lipase to slow triglyceride hydrolysis and reports serum APOC3 is a risk factor for incident CAD, CAC (OR 1.68), and insulin resistance in people with T1D (statement carefully says 'a risk factor in type 1 diabetes', not 'for causing T1D', and prose frames pre-SC lipid shift as a hypothesis).",
+        "biology": "Biochemically accurate description of APOC3's role in triglyceride metabolism, though APOC3 is primarily hepatic/intestinal (blood mRNA shifts are small, +0.047 log2) and plasma triglycerides in TEDDY (C00422, -0.09 to -0.20) are actually downregulated rather than elevated."
+      },
+      "summary_reason": "Accurate data values/relevance, sound pre-SC temporal interpretation without the baseline fallacy, and faithful Ref [9] citation ('risk factor in type 1 diabetes', matching T1D CAD/insulin-resistance findings in PMC7887020). Not 'Especially good' given tiny blood-cell APOC3 log2 amplitude (+0.047) and downregulated plasma triglycerides in TEDDY.",
+      "evidence": "pa_recover_job.json APOC3 (345, rel=[True]); PMC7887020 (APOC3 slows TG hydrolysis via LPL and associates with IR, CAC, and CAD in T1D); PMC7818777 (APOC3 0 hits)."
+    },
+    {
+      "id": "S8",
+      "type": "association",
+      "text": "APOA1 is relevant and persistently down (from −0.06 at 12mo to −0.02 at SC); LCAT is relevant with a transient 9mo trough (−0.15); phosphatidylcholine is relevant and troughs at 9mo (−0.08) and 3mo (−0.09); PLB1 is not relevant (baseline-negative −0.20 at 12mo).",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X"
+      ],
+      "in_paper": "partly",
+      "checks": {
+        "data": "All four uploaded profiles and relevance flags match pa_recover_job.json: APOA1 (335, rel=[True]) [-0.0625, -0.0340, -0.0425, -0.0286, -0.0162]; LCAT (3931, rel=[True]) [-0.0347, -0.1537, -0.0529, +0.0093, +0.0128]; Phosphatidylcholine (C00157, rel=[True]) [-0.0195, -0.0755, -0.0088, -0.0853, -0.0464]; PLB1 (151056, rel=[]) [-0.2022, +0.0365, +0.0539, -0.0141, -0.0617].",
+        "design": "Design error (X): Explicitly labels PLB1 at 12mo_before_SC as '(baseline-negative -0.20 at 12mo)' (and walk prose/SENSE likewise refer to LCAT's 12mo -0.03 as 'a -0.03 baseline' and APOA1's 12mo drop as a 'baseline difference'). In Balzano-Nogueira 2021, 9-12 MBSC is the top predictive disease block and APOA1 downregulation at 9-12 MBSC is highlighted as a central pathological finding, not a pre-experiment baseline.",
+        "citation": "Refs [10] (PMID 10882342) and [11] (PMID 9127701) cited in walk prose accurately state LCAT's in vivo role in reverse cholesterol transport and decreased plasma LCAT in IDDM/NIDDM patients.",
+        "biology": "APOA1, LCAT, and phosphatidylcholine genuinely form the HDL reverse-cholesterol-transport axis; however, the 'baseline-negative' framing of 12mo_before_SC misreads TEDDY's early pre-SC window."
+      },
+      "summary_reason": "Misreads TEDDY's Case-vs-Control longitudinal design (X): classifies PLB1's -0.20 Case-vs-Control divergence at 12mo_before_SC as 'baseline-negative' (alongside prose/SENSE labeling 12mo LCAT/APOA1 as baseline shifts), whereas 12 MBSC is a pre-seroconversion disease window highlighted by Paper D. All numeric data and LCAT citations match; in_paper='partly' because APOA1 (at 9-12 MBSC+) and phosphatidylcholine downregulation are in Paper D while LCAT and PLB1 are absent.",
+      "evidence": "pa_recover_job.json APOA1 (335), LCAT (3931), C00157, PLB1 (151056); walk_design_card.json & walk_statements.json S8 prose/SENSE; PMC7818777 L26, L37, L42, L65 (APOA1 and phosphatidylcholines downregulated; LCAT/PLB1 0 hits)."
+    },
+    {
+      "id": "S9",
+      "type": "association",
+      "text": "BTD mRNA is flat through 12mo to 3mo before seroconversion and rises sharply at 0mo_at_SC (+0.14), an effect appearing at the time of seroconversion rather than at baseline, while HLCS (not relevant) stays flat/negative.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "Values and relevance match: BTD (686, rel=[True]) [+0.0020, +0.0103, +0.0411, +0.0188, +0.1365] rises sharply at 0mo_at_SC (+0.14) after staying <=+0.04 from 12mo to 3mo; HLCS (3141, rel=[]) [-0.0303, +0.0127, -0.0405, +0.0076, -0.0349] stays flat/mostly negative.",
+        "design": "Design error (X): States 'an effect appearing at the time of seroconversion rather than at baseline' (walk prose: 'not at baseline'; SENSE.timing: 'distinguishes the 0mo effect from baseline'), directly reflecting walk_design_card's incorrect assumption that 12mo_before_SC is a pre-effect 'baseline'. In TEDDY, children are followed from infancy and binned backward from SC into 5 matched Case-vs-Control windows; there is no baseline time point, and 12 MBSC already exhibits strong disease effects for other markers. (Empirically, BTD's Case-vs-Control difference does emerge at 0mo_at_SC rather than 12mo-3mo.)",
+        "citation": "Walk prose accurately cites Ref [12] (PMID 39125325, PMC11314543) on BTD/HLCS roles in the biotin cycle and Ref [13] (PMID 27413170, PMC5129763) on biotin deficiency enhancing proinflammatory cytokines (TNF-alpha, IL-12p40, IL-23, IL-1beta) and Th1/Th17 bias in human DCs, appropriately hedging inflammatory direction.",
+        "biology": "Plausible biotinidase transcriptional spike at seroconversion, though higher BTD mRNA would increase free biotin recycling (whereas Ref [13] shows biotin deficiency, not excess, enhances DC inflammation)."
+      },
+      "summary_reason": "Applies walk_design_card's baseline misreading (X) by framing 12mo_before_SC as 'baseline' ('appearing at the time of seroconversion rather than at baseline'), whereas TEDDY has no baseline column and aligns matched Case-vs-Control pairs backward from SC (though BTD's Case-vs-Control contrast genuinely stays near zero at 12mo-3mo and spikes at 0mo_at_SC).",
+      "evidence": "pa_recover_job.json BTD (686) & HLCS (3141); walk_design_card.json & walk_statements.json S9 prose/SENSE; PMC11314543; PMC5129763; PMC7818777 (BTD, HLCS 0 hits)."
+    },
+    {
+      "id": "S10",
+      "type": "mechanism",
+      "text": "KARS1 mRNA is positive at 12mo (+0.09), dips at 9mo (−0.03), then rises again at 3mo (+0.10) and stays up at 0mo (+0.06), a sustained late positive signal; L-Lysine itself returns to baseline at 0mo.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "Values and relevance match: KARS1 (3735, orig='KARS', rel=[True]) [+0.0897, -0.0259, +0.0312, +0.0982, +0.0551] ('+0.09 at 12mo, dips at 9mo (-0.03), then rises again at 3mo (+0.10) and stays up at 0mo (+0.06)', omitting +0.03 at 6mo); L-Lysine (C00047, rel=[True]) [-0.0196, -0.1688, +0.0143, +0.1318, -0.0013] returns to ~0 (-1.3e-03) at 0mo.",
+        "design": "Does NOT misread 12mo_before_SC as 'baseline' (correctly calls 12mo '+0.09' positive); 'returns to baseline at 0mo' accurately refers to zero Case-vs-Control difference (-1.3e-03) for L-Lysine.",
+        "citation": "Walk prose accurately cites Ref [14] (PMID 30715177, Itoh et al. 2019, Brain) verbatim ('Additionally, LysRS acts as a non-canonical inducer of the immune response and has transcriptional activity') while transparently noting the leukodystrophy context and hedging.",
+        "biology": "Descriptive summary of blood KARS1 mRNA and plasma L-Lysine trajectories (though labeled 'mechanism' in the sheet, S10 makes no overclaimed causal mechanism; calling 6mo-0mo '+0.03/+0.10/+0.06' a 'sustained late positive signal' alongside 12mo +0.09 is consistent with the data)."
+      },
+      "summary_reason": "All values, IDs (KARS->KARS1, C00047), and relevance flags match; 12mo (+0.09) is properly treated as positive rather than dismissed as a baseline imbalance, and Ref [14] citation in walk prose is accurate and candidly hedged.",
+      "evidence": "pa_recover_job.json KARS1 (3735) & C00047; PMID 30715177 abstract; PMC7818777 (KARS, lysine, aminoacyl 0 hits)."
+    },
+    {
+      "id": "S11",
+      "type": "mechanism",
+      "text": "C1QB and C1QC mRNA rise from negative early values toward positive endpoints at 0mo_at_SC (+0.11 and +0.06), a rising trajectory toward seroconversion, whereas C1QA is consistently positive from baseline and C1R (relevant) is flat/negative.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "X"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "Numeric trajectories match: C1QB (713, rel=[]) [-0.0719, -0.0310, +0.0046, +0.0004, +0.1111]; C1QC (714, rel=[]) [-0.0101, -0.0588, +0.0189, +0.0418, +0.0592]; C1QA (712, rel=[]) [+0.0592, +0.0593, +0.0012, +0.0488, +0.0772]; C1R (715, rel=[True]) [-0.0002, -0.0317, -0.0003, -0.0143, -0.0319]. Note C1QA/B/C are all not relevant (and C1QA dips near zero +0.0012 at 6mo), while only C1R is relevant.",
+        "design": "Design error (X): Calls 12mo_before_SC 'baseline' in 'whereas C1QA is consistently positive from baseline', which walk prose and SENSE.timing explicitly explain as 'up from baseline (+0.06 at 12mo, +0.08 at 0mo), a sustained shift rather than a response'. This misreads TEDDY's Case_vs_Control_12mo_before_SC contrast as a non-effect baseline.",
+        "citation": "Refs [15] (PMID 39697348, PMC11653359) and [16] (PMID 12396002) cited in walk prose accurately describe extrahepatic C1QA/B/C expression by monocytes/macrophages/immature DCs and C1q deficiency/consumption links to autoimmunity (SLE).",
+        "biology": "Biologically plausible classical complement remodeling toward seroconversion (and properly hedged in prose), though Ref [15] shows tight co-expression of C1QA/B/C whereas here C1QA diverges early from C1QB/C1QC and none of the three C1q genes passed VIP relevance."
+      },
+      "summary_reason": "Commits the walk_design_card baseline design error (X): characterizes C1QA's +0.06 Case-vs-Control elevation at 12mo_before_SC as 'consistently positive from baseline' (explicitly dismissed in walk prose/SENSE as 'a sustained shift rather than a response'), misreading 12 MBSC as a pre-effect baseline. Also note C1QA/B/C are all not relevant in the job.",
+      "evidence": "pa_recover_job.json C1QA (712), C1QB (713), C1QC (714), C1R (715); walk_design_card.json & walk_statements.json S11 prose/SENSE; PMC11653359 & PMID 12396002; PMC7818777 (C1Q/C1R/complement 0 hits)."
+    },
+    {
+      "id": "S12",
+      "type": "association",
+      "text": "GALR3 is constitutively up in cases across the whole window while its ligand GAL dips below baseline at 6 months before seroconversion; galanin signalling through GALR3 is pro-inflammatory in immune settings, so the sustained receptor upregulation with a transient ligand trough points to a tonic galanin/GALR3 tone in the pre-seroconversion period.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "B"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "GALR3 (8484, rel=[True]) is weakly positive [+0.0130, +0.0419, +0.0112, +0.0099, +0.0283] (~1-3% log2 shifts); GAL (51083, rel=[True]) [+0.0075, +0.0189, -0.0614, -0.0133, -0.0016] dips to -0.061 at 6mo and stays negative at 3mo and 0mo (also GAL overwrote GALP 85569 via ov['85569']='GAL|GALP', though GAL 51083 itself is clean).",
+        "design": "Uses 'below baseline' to mean below 0 (Case < Control at 6mo), rather than treating 12mo_before_SC as a baseline; no baseline design error.",
+        "citation": "Ref [17] (PMID 28844939) supports GalR3 promoting skin inflammation/neutrophil infiltration in murine imiquimod-induced psoriasis (primarily dermal endothelial vessels). Note walk prose also cites Ref [18] (PMID 12119556) in immature rat thymocytes, where galanin exerted an antiproliferative/proapoptotic 'maximal tonic inhibitory effect' only via saturating endogenous ligand.",
+        "biology": "Biological non-sequitur (B): A drop/trough in the ligand GAL below control (-0.061 at 6mo, remaining negative at 3mo and 0mo) alongside negligible (+0.01 to +0.04 log2) GALR3 elevation opposes, rather than 'points to', an active 'tonic galanin/GALR3 tone' (GPCR signaling tone requires ligand engagement or demonstrated constitutive activity; unlike Ref [18]'s saturating endogenous galanin ligand, here ligand GAL falls)."
+      },
+      "summary_reason": "Flawed biological inference (B): concluding that sustained minimal GALR3 elevation (+0.01 to +0.04 log2) combined with a ligand GAL drop below control (-0.06 at 6mo, remaining negative at 3mo and 0mo) 'points to a tonic galanin/GALR3 tone' is backwards—lower ligand availability opposes ligand-driven GAL/GALR3 tone (opposite to Ref [18]'s saturating-ligand 'tonic' thymocyte inhibition).",
+      "evidence": "pa_recover_job.json GALR3 (8484) & GAL (51083); PMID 28844939 & PMID 12119556 abstracts; PMC7818777 (GALR3/galanin 0 hits)."
+    },
+    {
+      "id": "S13",
+      "type": "association",
+      "text": "CARD6 is a CARD-domain adaptor that binds RIPK2 (Cardiak/RICK) and NOD1 and selectively suppresses NF-κB activation by these proteins, so the early rise in CARD6 expression (12mo +0.11, 9mo +0.16) points to modulation of NOD/RIPK2-dependent innate immune signalling in the pre-SC window.",
+      "mark": "Makes sense",
+      "reason_codes": [],
+      "in_paper": "no",
+      "checks": {
+        "data": "CARD6 (84674, rel=[True]) [+0.1062, +0.1580, -0.0521, +0.1337, +0.0538] matches '12mo +0.11, 9mo +0.16' (dips -0.05 at 6mo and rebounds +0.13 at 3mo, noted in walk prose). Crucially, on g:8767 (RIPK2), PaintOmics mis-mapped CCK (rel=[True]) onto RIPK2, and walk prose properly ignored the CCK artifact and read true RIPK2 (not rel, -0.08 to +0.08).",
+        "design": "Correctly interprets 12mo (+0.11) and 9mo (+0.16) as an 'early rise in CARD6 expression... in the pre-SC window' rather than dismissing 12mo as a baseline artifact.",
+        "citation": "Ref [19] (Stehlik et al. 2003, PMID 12775719) directly establishes that CARD6 binds RIPK2 (Cardiak/RICK) and NOD1 and selectively suppresses NF-kappa B activation induced by Nod1 or Cardiak (even correcting KEGG's generic activation edge annotation on hsa04621).",
+        "biology": "Biologically sound and appropriately hedged ('points to modulation of NOD/RIPK2-dependent innate immune signalling', which accommodates both Stehlik 2003 suppression and later context-dependent positive modulation reports such as Dufner et al. 2006), though RIPK2 itself is not relevant and CARD6 dips briefly at 6mo."
+      },
+      "summary_reason": "Accurate data values (avoiding both the 12mo='baseline' fallacy and PaintOmics's CCK->RIPK2 mis-mapping), faithful to Ref [19]'s functional characterization of CARD6 on NOD1/RIPK2 signaling, and appropriately hedged.",
+      "evidence": "pa_recover_job.json CARD6 (84674, rel=[True]) & RIPK2 (not rel vs 8767 CCK); PMID 12775719 & PMID 16582588 abstracts; PMC7818777 (CARD6/RIPK2/NOD1 0 hits)."
+    },
+    {
+      "id": "S14",
+      "type": "association",
+      "text": "APOC2 is the obligate cofactor that activates lipoprotein lipase for triglyceride hydrolysis, so the transient 6mo dip in APOC2 (APC2 row, −0.08) indicates a mid-window reduction in LPL-mediated triglyceride clearance in plasma, opposite in timing to the CREB3L3 peak.",
+      "mark": "Does not make sense",
+      "reason_codes": [
+        "D"
+      ],
+      "in_paper": "no",
+      "checks": {
+        "data": "Multiple fatal data errors (D): (1) Gene-ID mis-mapping: PaintOmics alias collision (ov['344']='APC2|APOC2') mapped the unrelated WNT-pathway gene APC2 (Entrez 10297, rel=[True], [-0.0122, +0.0113, -0.0836, +0.0148, +0.0148]) onto KEGG node g:344 (APOC2). The actual uploaded APOC2 transcript (A0A024R0T9, rel=[]) is NOT relevant and has [+0.0378, +0.1031, -0.0166, +0.0345, -0.0204]—no -0.08 dip at 6mo and a +0.10 peak at 9mo! S14 relies directly on the mis-mapped APC2 row ('(APC2 row, -0.08)') as if it were APOC2. (2) Timing error: CREB3L3 (84699, rel=[True], [+0.0160, -0.0596, +0.1160, -0.0120, -0.0164]) peaks at 6mo (+0.12), the SAME time point as APC2's -0.08 dip (opposite in sign, not 'opposite in timing'). (3) Direction error on triglycerides: reduced LPL-mediated TG clearance raises plasma TGs, whereas measured Triglyceride (C00422, rel=[True], [-0.0856, -0.2046, -0.1298, -0.1409, -0.1505]) is persistently downregulated across all 5 windows.",
+        "design": "Reads 6mo_before_SC mid-window timing without a 12mo baseline error, though infers plasma LPL clearance from a mis-mapped blood-cell APC2 mRNA row.",
+        "citation": "Ref [21] (PMID 2307668) accurately supports apoC-II as the obligate cofactor for LPL-mediated triglyceride hydrolysis (and prose Ref [22] PMID 12138091 supports lipid-free apoE/SR-BI).",
+        "biology": "The general biochemistry of APOC2/LPL is valid, but the entire biological inference collapses because the underlying -0.08 dip comes from APC2 (a WNT-signaling paralog, Entrez 10297), not APOC2, and plasma triglycerides in TEDDY are persistently reduced rather than elevated."
+      },
+      "summary_reason": "Severe PaintOmics ID-mapping and data error (D): uses the mis-mapped APC2 (Entrez 10297, WNT pathway, -0.08 at 6mo) row as APOC2 (Entrez 344 via ov['344']='APC2|APOC2'), whereas true APOC2 (A0A024R0T9) is not relevant and has no 6mo -0.08 dip (+0.10 at 9mo, -0.02 at 6mo); additionally, CREB3L3 peaks at 6mo (+0.12, same window rather than 'opposite in timing'), and plasma triglycerides (C00422) are persistently downregulated (-0.09 to -0.20), contradicting reduced TG clearance.",
+      "evidence": "pa_recover_job.json ov['344']='APC2|APOC2', key='10297' APC2 vs key='A0A024R0T9' APOC2, CREB3L3 (84699), Triglyceride (C00422); walk_nodes['g:344']; PMC7818777 (triglycerides downregulated at all time points; APOC2/APC2/CREB3L3 0 hits)."
+    }
+  ]
+}

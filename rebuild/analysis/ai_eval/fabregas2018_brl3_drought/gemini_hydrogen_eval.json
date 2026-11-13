@@ -1,0 +1,250 @@
+{
+ "dataset": "fabregas2018_brl3_drought",
+ "evaluator": "Gemini 4 Hydrogen (XHigh)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "wrong"
+   },
+   "justification": "Conflates two distinct ferulate 5-hydroxylase paralogs (relevant FAH1/AT4G36220 vs non-relevant CYP84A4/AT5G04330) into 'FAH1/CYP84A4' due to a chain reading hallucination, and misattributes constitutive vascular monolignol commitment to defense-inducible CCR2 rather than CCR1.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 2,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "wrong"
+   },
+   "justification": "Falsely asserts trehalose's drought induction is 'lost' despite +0.60 log2FC additional accumulation on top of +1.60 baseline priming, falsely states A/N-InvC is repressed by BRL3ox under drought (MOESM6=No, -0.28), and misidentifies vacuolar invertase ATBETAFRUCT4 as a cell-wall beta-fructofuranosidase.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Data values for D-Glucose and HKL1 are accurate, but the mechanistic claim conflates non-catalytic mitochondrial negative growth regulator HKL1 with catalytic AtHXK1 and cites a tobacco guard-cell AtHXK1 transgene study [5] to hypothesize about 'stomatal control' in Arabidopsis roots.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "C"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Numeric trends match the upload (noting BGLU24 M6=No), but the biological interpretation misattributes BGLU18's leaf ABA-GE hydrolase activity to uncharacterized root BGLU24 using Ref [6] (which mentions BGLU18 162 times and BGLU24 zero times).",
+   "in_paper_where": ""
+  },
+  {
+   "n": 5,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "wrong"
+   },
+   "justification": "Numbers match, but the biological conclusion treats PYL4/5 downregulation plus negative-regulator HAI3 upregulation (ignoring discordant_legs=[30]) as 'a coherent ABA-signalling readout' rather than ABA negative feedback/attenuation or PYL-independent HAI regulation.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Conflates Arabidopsis SnRK2 subclasses by chaining ABA-independent Subclass I SNRK2.9 and Subclass II SNRK2.7 with HAI3 and ABF2 (ignoring discordant leg 31 and opposite drought signs), and misapplies Ref [10] which explicitly specifies Subclass III SRK2D/E/I upstream of AREB1/ABF2.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All numbers, relevance flags, experimental contrasts, Arabidopsis MAPK biology (with the 'at the transcript level' caveat for MKK3), and Ref [11] citation are accurate.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "Quantitative values, module ranking for LOX3 interaction shift, contrast framing, 13-LOX biology, and Ref [12] summary are accurate and consistent with Fabregas 2018's observation of basal JA biosynthesis repression.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 9,
+   "mark": "Does not make sense",
+   "reasons": [
+    "B",
+    "C"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Treats catalytically inactive Class II TPS7 as 'the synthase' controlling trehalose biosynthesis despite baseline repression (-0.98) when trehalose is elevated (+1.60), overinterprets non-significant TRE1 noise (-0.15/-0.42) while omitting its drought induction (+0.89), and cites a 2026 mulberry (Morus alba) paper [15] without species disclosure.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 10,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All numbers, loop ranking, contrast framing, biological phrasing, and transparent citations to Ref [1] (SUS3 and root sucrose) and Ref [17] (leaf Sus1 osmotic regulation) are accurate.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 11,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B",
+    "C",
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "misread",
+    "citation": "does not support",
+    "biology": "wrong"
+   },
+   "justification": "Severe multi-axis failure: places 9-LOX LOX5 at the head of the 13-LOX jasmonate pathway despite LOX5 deepening in repression under drought (-0.95 BRL3ox vs WT, -0.06 drought BRL3ox), relies on non-relevant AOS (with hallucinated LOX4 numbers in leg 66), conflates baseline genotype vs within-genotype drought axes as 'flips it', and contradicts Ref [13]'s key finding that root drought JA depends on LOX6.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 12,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "G"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "doubtful"
+   },
+   "justification": "Overinterprets non-significant r=0 noise (TPS1 MOESM5/6/11=No, relevant=[]) as 'mildly BRL3ox-up under drought (+0.28) and drought-induced in BRL3ox (+0.50)', paired with an unconnected heat-tolerance summary [16] whose sucrose direction opposes the BRL3ox phenotype.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 13,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D",
+    "B",
+    "X"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "misread",
+    "citation": "partly supports",
+    "biology": "wrong"
+   },
+   "justification": "Mixes watered-baseline genotype contrasts with within-BRL3ox drought induction and draws a biologically inverted conclusion: drought induces sucrose-hydrolyzing A/N-InvC (+0.79) while sucrose's relative drought increment slows (+0.44), and SUS3 is predominantly sucrose-cleaving in vivo rather than driving a shift toward synthesis.",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "Three statements make sense (S7 MAPKKK18/MKK3, S8 LOX3 interaction shift, S10 SUS3/sucrose) and ten do not make sense: S1 conflates FAH1 with CYP84A4 and assigns lignification to defense-inducible CCR2; S2 and S13 misread BRL3ox baseline priming vs drought kinetics and misclassify vacuolar ATBETAFRUCT4 or sucrose-cleaving SUS3; S3/S4/S9 misapply guard-cell AtHXK1, leaf BGLU18, and mulberry MaTPS studies to root HKL1, uncharacterized BGLU24, and inactive Class II TPS7; S5/S6 misread discordant ABA PYL-HAI3-SnRK2 subclass links; S11 puts 9-LOX LOX5 and non-relevant AOS into root JA synthesis against Ref [13]; and S12 builds a generic claim on non-relevant TPS1."
+ }
+}

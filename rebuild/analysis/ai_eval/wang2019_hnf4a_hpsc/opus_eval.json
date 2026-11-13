@@ -1,0 +1,146 @@
+{
+ "dataset": "wang2019_hnf4a_hpsc",
+ "evaluator": "Claude Opus 5 (the reader was started as Opus 5.5; Claude Code switched it to Opus 5 after a safety classifier stopped one of its responses, before any statement was marked)",
+ "date": "2026-11-12",
+ "statements": [
+  {
+   "n": 1,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "All values match the files (MTTP -6.46/-8.50, SUMO +0.31/-0.43; HNF1A -0.39/-0.10, not a DEG) and both citations say what is claimed. It correctly attributes the collapse to lost HNF4A DNA-binding, not HNF1A levels. Caveat: the paper's qPCR (Figure 2C) does report HNF1alpha reduced in DBD Mut.",
+   "in_paper_where": "Results, Transcriptomic Analysis (sterol import / cholesterol homeostasis unique to DBD Mut) and Figure 6A (cholesterol metabolism, top DBD pathway); MTTP itself is never named."
+  },
+  {
+   "n": 2,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "partly",
+   "beyond": "L",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "APOB -5.28/-7.09 with SUMO +0.67/-0.33 matches the files, and the HNF4alpha-null mouse paper does report reduced apoB and MTP. The DBD-dominant reading is right, though APOA4 has a real SUMO component (-1.95/-1.97). Substantially a repeat of S1.",
+   "in_paper_where": "Results, Transcriptomic Analysis (cholesterol homeostasis genes down only in DBD Mut; APOA1, APOA2, LDLR named) and Figure 6A; APOB is not named."
+  },
+  {
+   "n": 3,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "mismatch",
+    "design": "ok",
+    "citation": "partly supports",
+    "biology": "ok"
+   },
+   "justification": "The four values are quoted correctly, but \"markedly down in both mutants at both levels\" is not what they show: CDH1 mRNA in DBD Mut is -0.46 (about 1.4-fold, under the study's 2-fold DEG rule), and \"SUMO axis dominant\" at protein rests on -3.16 versus -2.92. The E-cadherin protein loss itself is real.",
+   "in_paper_where": "Figure 6A lists cell adhesion molecules in both mutants' top 10; CDH1 and E-cadherin appear nowhere in the paper."
+  },
+  {
+   "n": 4,
+   "mark": "Does not make sense",
+   "reasons": [
+    "D"
+   ],
+   "in_paper": "partly",
+   "beyond": "",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "ITGB5 protein falls equally in both mutants (-1.87 / -2.02), yet the statement concludes a \"DBD-specific impairment of the integrin/adhesion programme\" from one transcript, PRKCE (-2.28 / -0.12). The paper's adhesion/ECM defect is the shared one. ITGB5 mRNA (-0.53/-0.57) also trends down, weakening \"post-transcriptional\".",
+   "in_paper_where": "Results, Integrating Transcriptomics and Proteomics (ECM-receptor interaction and focal adhesion in both mutants) and 169 genes down in both, focal adhesion enriched; ITGB5 and PRKCE are not named."
+  },
+  {
+   "n": 5,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "L",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "DAB2 protein -3.61 in DBD against -0.39 in SUMO, with mRNA flat or up (-0.45 / +0.94), so \"post-transcriptional\" is well supported here, and both citations state exactly what is used. Linking it to LRP2/LDLR endocytosis is a reasonable untested extension; APOB is a ligand, not a receptor.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 6,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "H",
+   "confidence": "medium",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "PRKCSH, GANAB and CALR values all match, and the calnexin-cycle review describes exactly the glucosidase II / calreticulin steps used. The drops are modest (about 2-fold, essentially DBD-driven), and the impaired-folding consequence is offered as a possibility, not asserted. The paper never discusses this module.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 7,
+   "mark": "Makes sense",
+   "reasons": [],
+   "in_paper": "no",
+   "beyond": "K",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "ok",
+    "citation": "supports",
+    "biology": "ok"
+   },
+   "justification": "MTTP -6.46/-8.50 and APOB -5.28/-7.09 match, and both citations say what is claimed, the second in human iPSC-derived hepatocytes, a close system. Correct but largely textbook and overlapping S1; the block on secretion is inferred, since no secretion was measured in this job.",
+   "in_paper_where": ""
+  },
+  {
+   "n": 8,
+   "mark": "Does not make sense",
+   "reasons": [
+    "X",
+    "C"
+   ],
+   "in_paper": "no",
+   "beyond": "",
+   "confidence": "high",
+   "checks": {
+    "numbers": "match",
+    "design": "misread",
+    "citation": "does not support",
+    "biology": "doubtful"
+   },
+   "justification": "The edited gene is HNF4A, not HNF1A, so \"a DBD-specific loss of HNF1A transactivation\" names the wrong factor, and PMID 35327967 (HNF1A POU-domain mutants in liver cancer) cannot carry it. S1 and S2 get this right. The paper's Figure 2C also shows HNF1alpha reduced in DBD Mut, against \"HNF1A levels stay flat\".",
+   "in_paper_where": ""
+  }
+ ],
+ "overall": {
+  "comment": "The lipoprotein half is solid: MTTP, APOB, APOA1 and APOA4 are quoted exactly and their DBD-specific collapse is correctly traced to loss of HNF4alpha DNA binding, which reaches the paper's cholesterol-metabolism conclusion and adds mechanism (MTP/apoB assembly, ER folding) the paper left out. The adhesion half is weaker: CDH1 and ITGB5 fall in both mutants, yet the text calls them markedly or specifically DBD-driven, missing the paper's point that ECM/adhesion is the module shared by the two mutants. S8 loses the perturbed gene altogether and blames HNF1A, and the paper's other main conclusion, the DBD-specific loss of the respiratory chain and mitochondrial metabolism, is never reached."
+ },
+ "model": "claude-opus-5"
+}
